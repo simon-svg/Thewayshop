@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateHeaderSubmenusTable extends Migration
+class CreateTeamsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,12 @@ class CreateHeaderSubmenusTable extends Migration
      */
     public function up()
     {
-        Schema::create('header_submenus', function (Blueprint $table) {
+        Schema::create('teams', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->integer('parentCategoryId');
-            $table->string('link')->nullable(true);
+            $table->string('position');
+            $table->string('img');
+            $table->text('description');
             $table->timestamps();
             $table->softDeletes();
         });
@@ -30,6 +31,6 @@ class CreateHeaderSubmenusTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('header_submenus');
+        Schema::dropIfExists('teams');
     }
 }

@@ -44,13 +44,17 @@
     min-height: 100vh;
     background-color: #2e2e2e;
 }
-.admin__item{
+.admin__item,
+.admin__item_title{
     display: block;
     width: 100%;
     color: #ffffff;
     font-size: 20px;
     padding: 5px 20px;
 }
+.admin__nav_header:hover,
+.admin__nav_header:hover .admin__nav_icon,
+.admin__nav_header:hover .admin__item_title,
 .admin__item:hover{
     text-decoration: none;
     color: #000000;
@@ -107,4 +111,34 @@
 .error{
     margin-top: 10px;
     color: red;
+}
+
+.admin__nav_header{
+    cursor: pointer;
+}
+.admin__nav_header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 20px;
+}
+.admin__nav_header_list{
+    height: 0;
+    background-color: #202020;
+    padding: 0;
+    overflow: hidden;
+    transition: height ease .5s;
+    -webkit-transition: height ease .5s;
+    -moz-transition: height ease .5s;
+    -ms-transition: height ease .5s;
+    -o-transition: height ease .5s;
+}
+.admin__nav_icon{
+    color: #ffffff;
+    font-size: 20px;
+    transition: transform ease .5s;
+    -webkit-transition: transform ease .5s;
+    -moz-transition: transform ease .5s;
+    -ms-transition: transform ease .5s;
+    -o-transition: transform ease .5s;
 }

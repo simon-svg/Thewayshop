@@ -15,7 +15,7 @@ class Header extends Model
 
     public $timestamps = true;
     protected $fillable = [
-        'name', 'parentId', 'link', 'created_at', 'updated_at', 'deleted_at'
+        'name', 'link', 'created_at', 'updated_at', 'deleted_at'
     ];
 
     

@@ -5,5 +5,5 @@
 @endsection
 
 @section('adminContent')
-    @include('includes.admin.header.headerInsertForm')
+    @include('includes.admin.header.headerCat.headerCatUpdateForm')
 @endsection

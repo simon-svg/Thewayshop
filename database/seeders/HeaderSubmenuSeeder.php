@@ -17,43 +17,36 @@ class HeaderSubmenuSeeder extends Seeder
         DB::table('header_submenus')->insert([
             [
                 'name' => 'Jackets',
-                'parentId' => 3,
                 'parentCategoryId' => 1,
                 'link' => null
             ],
             [
                 'name' => 'Shirts',
-                'parentId' => 3,
                 'parentCategoryId' => 1,
                 'link' => null
             ], 
             [
                 'name' => 'Jeans',
-                'parentId' => 3,
                 'parentCategoryId' => 2,
                 'link' => null
             ], 
             [
                 'name' => 'Trousers',
-                'parentId' => 3,
                 'parentCategoryId' => 2,
                 'link' => null
             ],
             [
                 'name' => 'Cart',
-                'parentId' => 3,
                 'parentCategoryId' => 3,
                 'link' => 'cart'
             ],
             [
                 'name' => 'Checkout',
-                'parentId' => 3,
                 'parentCategoryId' => 3,
                 'link' => 'checkout'
             ],
             [
                 'name' => 'Shop Details',
-                'parentId' => 3,
                 'parentCategoryId' => 3,
                 'link' => 'shopDetail'
             ]

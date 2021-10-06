@@ -5,6 +5,7 @@
                 <tr>
                     <th class="admin__table_title">id</th>
                     <th class="admin__table_title">name</th>
+                    <th class="admin__table_title">parent category id</th>
                     <th class="admin__table_title">link</th>
                     <th class="admin__table_title">panel</th>
                 </tr>
@@ -17,13 +18,16 @@
                             <h3 class="admin__section_item_info">{{ $item->name }}</h3>
                         </td>
                         <td class="admin__section_item_td">
+                            <h3 class="admin__section_item_info">{{ $item->parentCategoryId }}</h3>
+                        </td>
+                        <td class="admin__section_item_td">
                             <h3 class="admin__section_item_info">{{ $item->link }}</h3>
                         </td>
                         <td class="admin__section_item_td">
-                            <a href="{{ route('admin.header.update', ['id' => $item->id]) }}">
+                            <a href="{{ route('admin.header.sub.update', ['id' => $item->id]) }}">
                                 <i class="admin__icon fas fa-pencil-alt"></i>
                             </a>
-                            <a href="{{ route('admin.header.delete', ['id' => $item->id]) }}">
+                            <a href="{{ route('admin.header.sub.delete', ['id' => $item->id]) }}">
                                 <i class="admin__icon fas fa-times"></i>
                             </a>
                         </td>
@@ -32,8 +36,8 @@
             </table>
         </div>
         <div>
-            <a href="{{ route('admin.header.add') }}">
-                <button class="btn custom-btn admin__form_btn" name="submit">Add Header Item</button>
+            <a href="{{ route('admin.header.sub.add') }}">
+                <button class="btn custom-btn admin__form_btn" name="submit">Add Header Submenu</button>
             </a>
         </div>
     </div>

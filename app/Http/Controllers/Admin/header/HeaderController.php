@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Admin\header;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -32,7 +32,7 @@ class HeaderController extends Controller
 
 
     public function add(){
-        return view('admin.header.insert', ['data' => $this->data]);
+        return view('admin.header.insert');
     }
 
 
@@ -40,7 +40,6 @@ class HeaderController extends Controller
     public function insert(Request $request){
         Header::insert([
             'name' => $request->name,
-            'parentId' => $request->parentId,
             'link' => $request->link
         ]);
         return redirect(route('admin.header'));
@@ -64,7 +63,6 @@ class HeaderController extends Controller
             'data' => $this->data,
             'id' => $id,
             'name' => $item->name,
-            'parentId' => $item->parentId,
             'link' => $item->link
         ]);
     }
@@ -78,14 +76,8 @@ class HeaderController extends Controller
 
         $item->update([
             'name' => $request->name,
-            'parentId' => $request->parentId,
             'link' => $request->link
         ]);
         return redirect(route('admin.header'));
     }
-
-
-
-
-
 }

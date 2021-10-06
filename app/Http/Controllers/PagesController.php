@@ -8,13 +8,18 @@ use Illuminate\Support\Facades\DB;
 
 // Models
 use App\Models\Header;
+use App\Models\Home;
 
 class PagesController extends Controller
 {
     public $data;
+    public $homeSlide;
 
     public function setData($data){
         $this->data = $data;
+    }
+    public function setHomeSlide($homeSlide){
+        $this->homeSlide = $homeSlide;
     }
     
     public function __construct(){
@@ -24,7 +29,12 @@ class PagesController extends Controller
 
 
     public function home(){
-        return view('index', ['data' => $this->data]);
+        $homeSlide = Home::get();
+        $this->setHomeSlide($homeSlide);
+        return view('index', [
+            'data' => $this->data,
+            'homeSlide' => $this->homeSlide
+        ]);
     }
     public function about(){
         return view('about', ['data' => $this->data]);

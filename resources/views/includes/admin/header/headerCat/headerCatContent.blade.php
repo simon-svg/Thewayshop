@@ -5,7 +5,7 @@
                 <tr>
                     <th class="admin__table_title">id</th>
                     <th class="admin__table_title">name</th>
-                    <th class="admin__table_title">link</th>
+                    <th class="admin__table_title">parentId</th>
                     <th class="admin__table_title">panel</th>
                 </tr>
                 @foreach ($data as $item)
@@ -17,13 +17,13 @@
                             <h3 class="admin__section_item_info">{{ $item->name }}</h3>
                         </td>
                         <td class="admin__section_item_td">
-                            <h3 class="admin__section_item_info">{{ $item->link }}</h3>
+                            <h3 class="admin__section_item_info">{{ $item->parentId }}</h3>
                         </td>
                         <td class="admin__section_item_td">
-                            <a href="{{ route('admin.header.update', ['id' => $item->id]) }}">
+                            <a href="{{ route('admin.header.cat.update', ['id' => $item->id]) }}">
                                 <i class="admin__icon fas fa-pencil-alt"></i>
                             </a>
-                            <a href="{{ route('admin.header.delete', ['id' => $item->id]) }}">
+                            <a href="{{ route('admin.header.cat.delete', ['id' => $item->id]) }}">
                                 <i class="admin__icon fas fa-times"></i>
                             </a>
                         </td>
@@ -32,8 +32,8 @@
             </table>
         </div>
         <div>
-            <a href="{{ route('admin.header.add') }}">
-                <button class="btn custom-btn admin__form_btn" name="submit">Add Header Item</button>
+            <a href="{{ route('admin.header.cat.add') }}">
+                <button class="btn custom-btn admin__form_btn" name="submit">Add Header Category</button>
             </a>
         </div>
     </div>
