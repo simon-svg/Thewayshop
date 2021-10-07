@@ -52,9 +52,13 @@
     font-size: 20px;
     padding: 5px 20px;
 }
-.admin__nav_header:hover,
-.admin__nav_header:hover .admin__nav_icon,
-.admin__nav_header:hover .admin__item_title,
+.admin__item_submenu{
+    font-size: 16px;
+    margin-left: 15px;
+}
+.admin__nav_item:hover,
+.admin__nav_item:hover .admin__nav_icon,
+.admin__nav_item:hover .admin__item_title,
 .admin__item:hover{
     text-decoration: none;
     color: #000000;
@@ -113,10 +117,10 @@
     color: red;
 }
 
-.admin__nav_header{
+.admin__nav_item{
     cursor: pointer;
 }
-.admin__nav_header{
+.admin__nav_item{
     display: flex;
     justify-content: space-between;
     align-items: center;

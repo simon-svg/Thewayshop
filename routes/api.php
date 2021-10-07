@@ -17,9 +17,3 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
-
-
-// restfull api
-Route::get('pages', 'App\Http\Controllers\admin\MenuController@getPages');
-Route::get('pages/{id}', 'App\Http\Controllers\admin\MenuController@getPageById');
-Route::post('pages', 'App\Http\Controllers\admin\MenuController@pageAdd');  

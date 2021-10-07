@@ -1,9 +1,3 @@
-<?php
-// echo "<pre>"; print_r($data); die();
-?>
-
-
-
 <div class="main-top">
     <div class="container-fluid">
         <div class="row">

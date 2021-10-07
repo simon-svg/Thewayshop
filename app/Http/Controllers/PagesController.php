@@ -9,11 +9,13 @@ use Illuminate\Support\Facades\DB;
 // Models
 use App\Models\Header;
 use App\Models\Home;
+use App\Models\Team;
 
 class PagesController extends Controller
 {
     public $data;
     public $homeSlide;
+    public $teamData;
 
     public function setData($data){
         $this->data = $data;
@@ -21,10 +23,16 @@ class PagesController extends Controller
     public function setHomeSlide($homeSlide){
         $this->homeSlide = $homeSlide;
     }
+    public function setTeamData($teamData){
+        $this->teamData = $teamData;
+    }
     
     public function __construct(){
         $all = Header::headers();
         $this->setData($all);
+
+        $team = Team::get();
+        $this->setTeamData($team);
     }
 
 
@@ -37,7 +45,10 @@ class PagesController extends Controller
         ]);
     }
     public function about(){
-        return view('about', ['data' => $this->data]);
+        return view('about', [
+            'data' => $this->data,
+            'team' => $this->teamData
+        ]);
     }
     public function shop(){
         return view('shop', ['data' => $this->data]);
@@ -52,7 +63,10 @@ class PagesController extends Controller
         return view('shopDetail', ['data' => $this->data]);
     }
     public function service(){
-        return view('service', ['data' => $this->data]);
+        return view('service', [
+            'data' => $this->data,
+            'team' => $this->teamData
+    ]);
     }
     public function contact(){
         return view('contact', ['data' => $this->data]);

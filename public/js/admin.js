@@ -1,23 +1,28 @@
-const adminNavHeaders = document.querySelectorAll(".admin__nav_header");
+const adminNavItems = document.querySelectorAll(".admin__nav_item");
 const adminNavHeaderLists = document.querySelectorAll(".admin__nav_header_list");
 const adminNavIcons = document.querySelectorAll(".admin__nav_icon ");
 
-let adminNavHeaderBool = true;
-adminNavHeaders.forEach((item, i) => {
+
+let selectedElem = null;
+
+adminNavItems.forEach((item, i) => {
     item.addEventListener("click", () => {
-        adminNavHeaders.forEach((item2, j) => {
-            if(i != j){
+        adminNavItems.forEach((item2, j) => {
+            if (i != j) {
                 adminNavHeaderLists[j].style.height = "0px";
+                adminNavIcons[j].style.transform = "rotate(0)";
+            }
+            else {
+                adminNavHeaderLists[i].style.height = "auto";
+                adminNavIcons[i].style.transform = "rotate(180deg)";
             }
         })
-        if(adminNavHeaderBool){
-            adminNavHeaderLists[i].style.height = "120px";
-            adminNavIcons[i].style.transform = "rotate(180deg)";
-        }
-        else{
+        if (selectedElem == item) {
             adminNavHeaderLists[i].style.height = "0px";
-            adminNavIcons[i].style.transform = "rotate(00deg)";
+            adminNavIcons[i].style.transform = "rotate(0)";
+            selectedElem = null;
+        } else {
+            selectedElem = item;
         }
-        adminNavHeaderBool = !adminNavHeaderBool;
     })
 })

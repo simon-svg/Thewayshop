@@ -37,7 +37,7 @@ class TeamSeeder extends Seeder
                 'name' => 'Williamson',
                 'position' => 'Web Developer',
                 'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent urna diam, maximus ut ullamcorper quis, placerat id eros. Duis semper justo sed condimentum rutrum. Nunc tristique purus turpis. Maecenas vulputate.',
-                'img' => '1633519810.jpg'
+                'img' => '1633521560.jpg'
             ]
         ]);
     }

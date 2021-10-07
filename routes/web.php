@@ -109,6 +109,26 @@ Route::post('/admin/team/updateForm', 'App\Http\Controllers\Admin\TeamController
 
 
 
+// contact
+Route::get('/admin/contact', 'App\Http\Controllers\Admin\ContactController@contact')
+->name('admin.contact');
+Route::post('/admin/contact/insert', 'App\Http\Controllers\Admin\ContactController@insert')
+->name('admin.contact.insert');
+Route::get('/admin/contact/delete/{id}', 'App\Http\Controllers\Admin\ContactController@delete')
+->name('admin.contact.delete')->where('id', '[0-9]+');
+Route::get('/admin/contact/update/{id}', 'App\Http\Controllers\Admin\ContactController@update')
+->name('admin.contact.update')->where('id', '[0-9]+');
+Route::post('/admin/contact/updateForm', 'App\Http\Controllers\Admin\ContactController@updateForm')
+->name('admin.contact.updateForm');
+
+
+
+
+
+
+
+
+
 
 
 // product
@@ -118,3 +138,15 @@ Route::get('/admin/product/add', 'App\Http\Controllers\Admin\ProductController@a
 ->name('admin.product.add');
 Route::post('/admin/product/insert', 'App\Http\Controllers\Admin\ProductController@insert')
 ->name('admin.product.insert');
+
+
+
+
+
+// product size
+// Route::get('/admin/product/size', 'App\Http\Controllers\Admin\ProductSizeController@productSize')
+// ->name('admin.product.size');
+// Route::get('/admin/product/add', 'App\Http\Controllers\Admin\ProductController@add')
+// ->name('admin.product.add');
+// Route::post('/admin/product/insert', 'App\Http\Controllers\Admin\ProductController@insert')
+// ->name('admin.product.insert');
