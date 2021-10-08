@@ -9,13 +9,13 @@
             </div>
             <ul class="admin__nav_header_list">
                 <li class="admin__nav_header_item">
-                    <a class="admin__item admin__item_submenu" href="{{ route('admin.header') }}">Header</a>
+                    <a class="admin__item admin__item_submenu" href="{{ route('admin.header.view') }}">Header</a>
                 </li>
                 <li class="admin__nav_header_item">
-                    <a class="admin__item admin__item_submenu" href="{{ route('admin.header.cat') }}">Categories</a>
+                    <a class="admin__item admin__item_submenu" href="{{ route('admin.header.cat.view') }}">Categories</a>
                 </li>
                 <li class="admin__nav_header_item">
-                    <a class="admin__item admin__item_submenu" href="{{ route('admin.header.sub') }}">Submenus</a>
+                    <a class="admin__item admin__item_submenu" href="{{ route('admin.header.sub.view') }}">Submenus</a>
                 </li>
             </ul>
         </li>
@@ -28,21 +28,21 @@
             </div>
             <ul class="admin__nav_header_list">
                 <li class="admin__nav_header_item">
-                    <a class="admin__item admin__item_submenu" href="{{ route('admin.product') }}">Product</a>
+                    <a class="admin__item admin__item_submenu" href="{{ route('admin.product.view') }}">Product</a>
                 </li>
                 {{-- <li class="admin__nav_header_item">
-                    <a class="admin__item admin__item_submenu" href="{{ route('admin.product.size') }}">Product</a>
+                    <a class="admin__item admin__item_submenu" href="{{ route('admin.product.size.view') }}">Product</a>
                 </li> --}}
             </ul>
         </li>
         <li class="sidebar-admin__item">
-            <a class="admin__item" href="{{ route('admin.home') }}">Home</a>
+            <a class="admin__item" href="{{ route('admin.home.view') }}">Home</a>
         </li>
         <li class="sidebar-admin__item">
-            <a class="admin__item" href="{{ route('admin.team') }}">Team</a>
+            <a class="admin__item" href="{{ route('admin.team.view') }}">Team</a>
         </li>
         <li class="sidebar-admin__item">
-            <a class="admin__item" href="{{ route('admin.contact') }}">Contact</a>
+            <a class="admin__item" href="{{ route('admin.contact.view') }}">Contact</a>
         </li>
     </ul>
 </nav>

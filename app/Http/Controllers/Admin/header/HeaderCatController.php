@@ -51,7 +51,7 @@ class HeaderCatController extends Controller
             'name' => $request->name,
             'parentId' => $request->parentId
         ]);
-        return redirect(route('admin.header.cat'));
+        return redirect(route('admin.header.cat.view'));
     }
 
 
@@ -59,16 +59,16 @@ class HeaderCatController extends Controller
 
 
     public function delete($id){
-        $item = HeaderCategory::find($id);
+        $item = HeaderCategory::findorFail($id);
         $item->delete();
-        return redirect(route('admin.header.cat'));
+        return redirect(route('admin.header.cat.view'));
     }
 
 
     
 
     public function update($id){
-        $item = HeaderCategory::find($id);
+        $item = HeaderCategory::findorFail($id);
         return view('admin.header.headerCategories.update',[
             'headerData' => $this->HeaderData,
             'id' => $id,
@@ -81,12 +81,12 @@ class HeaderCatController extends Controller
 
 
     public function updateForm(Request $request){
-        $item = HeaderCategory::find($request->id);
+        $item = HeaderCategory::findorFail($request->id);
 
         $item->update([
             'name' => $request->name,
             'parentId' => $request->parentId
         ]);
-        return redirect(route('admin.header.cat'));
+        return redirect(route('admin.header.cat.view'));
     }
 }

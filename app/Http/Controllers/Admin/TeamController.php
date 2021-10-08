@@ -67,7 +67,7 @@ class TeamController extends Controller
             'img' => $this->setImg($request),
             'description' => $request->description
         ]);
-        return redirect(route('admin.team'));
+        return redirect(route('admin.team.view'));
     }
 
 
@@ -75,10 +75,10 @@ class TeamController extends Controller
 
 
     public function delete($id, $name){
-        $item = Team::find($id);
+        $item = Team::findorFail($id);
         $item->delete();
         unlink(public_path("images/team/$name"));
-        return redirect(route('admin.team'));
+        return redirect(route('admin.team.view'));
     }
 
 
@@ -87,7 +87,7 @@ class TeamController extends Controller
 
 
     public function update($id){
-        $item = Team::find($id);
+        $item = Team::findorFail($id);
         return view('admin.team.update', [
             'id' => $id,
             'name' => $item->name,
@@ -102,7 +102,7 @@ class TeamController extends Controller
 
 
     public function updateForm(Request $request){
-        $item = Team::find($request->id);
+        $item = Team::findorFail($request->id);
         // $img = $request->img ? $this->setImg($request) : $item->img;
         $item->update([
             'name' => $request->name,
@@ -110,6 +110,6 @@ class TeamController extends Controller
             'img' => $this->setImg($request),
             'description' => $request->description
         ]);
-        return redirect(route('admin.team'));
+        return redirect(route('admin.team.view'));
     }
 }

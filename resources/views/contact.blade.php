@@ -62,8 +62,7 @@
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <textarea class="form-control" id="message" placeholder="Your Message"
-                                            name="message" rows="4"
-                                            data-error="Write your message" required></textarea>
+                                            name="message" rows="4" data-error="Write your message" required></textarea>
                                         <div class="help-block with-errors"></div>
                                     </div>
                                     <div class="submit-button text-center">
@@ -74,6 +73,12 @@
                                 </div>
                             </div>
                         </form>
+                        {{-- errors --}}
+                        @if ($errors->any())
+                            @foreach ($errors->all() as $e)
+                                <p class="error">{{ $e }}</p>
+                            @endforeach
+                        @endif
                     </div>
                 </div>
             </div>

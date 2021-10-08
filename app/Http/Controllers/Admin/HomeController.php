@@ -80,7 +80,7 @@ class HomeController extends Controller
             'subtitle' => $request->subtitle,
             'img' => $this->setImg($request)
         ]);
-        return redirect(route('admin.home'));
+        return redirect(route('admin.home.view'));
     }
 
 
@@ -91,10 +91,10 @@ class HomeController extends Controller
 
 
     public function delete($id, $name){
-        $item = Home::find($id);
+        $item = Home::findorFail($id);
         $item->delete();
         unlink(public_path("images/home/$name"));
-        return redirect(route('admin.home'));
+        return redirect(route('admin.home.view'));
     }
 
 
@@ -104,7 +104,7 @@ class HomeController extends Controller
 
 
     public function update($id){
-        $item = Home::find($id);
+        $item = Home::findorFail($id);
         return view('admin.home.update',[
             'data' => $this->data,
             'id' => $id,
@@ -120,12 +120,12 @@ class HomeController extends Controller
 
 
     public function updateForm(Request $request){
-        $item = Home::find($request->id);
+        $item = Home::findorFail($request->id);
         $item->update([
             'title' => $request->title,
             'subtitle' => $request->subtitle,
             'img' => $this->setImg($request)
         ]);
-        return redirect(route('admin.home'));
+        return redirect(route('admin.home.view'));
     }
 }

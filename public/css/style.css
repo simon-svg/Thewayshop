@@ -2361,3 +2361,55 @@
      vertical-align: middle;
      white-space: nowrap;
 }
+
+
+/*------------------------------------------------------------------ login and registration -------------------------------------------------------------------*/
+
+.login-reg__section{
+    width: 100%;
+    padding: 100px;
+}
+.login-reg__section_cont{
+    width: 100%;
+}
+.reg__form,
+.login__form{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.login-reg__inp{
+    width: 100%;
+    padding: 3px 10px;
+    font-size: 15px;
+}
+.login-reg__input_cont{
+    width: 48%;
+    margin-bottom: 20px;
+}
+.login-reg__btn_cont{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+.login-reg__btn{
+    background-color: #d33b33;
+    color: #ffffff;
+    font-size: 16px;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    transition: background-color ease .3s;
+    -webkit-transition: background-color ease .3s;
+    -moz-transition: background-color ease .3s;
+    -ms-transition: background-color ease .3s;
+    -o-transition: background-color ease .3s;
+}
+.login-reg__btn:hover{
+    background-color: #d33b33d5;
+}
+.error{
+    margin-top: 10px;
+    color: red;
+    font-size: 20px;
+}

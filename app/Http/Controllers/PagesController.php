@@ -26,7 +26,6 @@ class PagesController extends Controller
     public function setTeamData($teamData){
         $this->teamData = $teamData;
     }
-    
     public function __construct(){
         $all = Header::headers();
         $this->setData($all);
@@ -34,6 +33,7 @@ class PagesController extends Controller
         $team = Team::get();
         $this->setTeamData($team);
     }
+
 
 
     public function home(){
@@ -44,33 +44,69 @@ class PagesController extends Controller
             'homeSlide' => $this->homeSlide
         ]);
     }
+
+
+
     public function about(){
         return view('about', [
             'data' => $this->data,
             'team' => $this->teamData
         ]);
     }
+
+
+
     public function shop(){
         return view('shop', ['data' => $this->data]);
     }
+
+
+
     public function cart(){
         return view('cart', ['data' => $this->data]);
     }
+
+
+
     public function checkout(){
         return view('checkout', ['data' => $this->data]);
     }
+
+
+
     public function shopDetail(){
         return view('shopDetail', ['data' => $this->data]);
     }
+
+
+
     public function service(){
         return view('service', [
             'data' => $this->data,
             'team' => $this->teamData
-    ]);
+        ]);
     }
+
+
+
     public function contact(){
         return view('contact', ['data' => $this->data]);
     }
+
+
+
+    public function registration(){
+        return view('registration', ['data' => $this->data]);
+    }
+
+
+
+    public function login(){
+        return view('login', ['data' => $this->data]);
+    }
+
+
+
     public function myAccount(){
         return view('my-account', ['data' => $this->data]);
     }

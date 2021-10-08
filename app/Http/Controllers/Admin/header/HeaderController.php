@@ -42,15 +42,15 @@ class HeaderController extends Controller
             'name' => $request->name,
             'link' => $request->link
         ]);
-        return redirect(route('admin.header'));
+        return redirect(route('admin.header.view'));
     }
 
 
 
     public function delete($id){
-        $item = Header::find($id);
+        $item = Header::findorFail($id);
         $item->delete();
-        return redirect(route('admin.header'));
+        return redirect(route('admin.header.view'));
     }
 
 
@@ -58,7 +58,7 @@ class HeaderController extends Controller
 
 
     public function update($id){
-        $item = Header::find($id);
+        $item = Header::findorFail($id);
         return view('admin.header.update',[
             'data' => $this->data,
             'id' => $id,
@@ -72,12 +72,12 @@ class HeaderController extends Controller
 
 
     public function updateForm(Request $request){
-        $item = Header::find($request->id);
+        $item = Header::findorFail($request->id);
 
         $item->update([
             'name' => $request->name,
             'link' => $request->link
         ]);
-        return redirect(route('admin.header'));
+        return redirect(route('admin.header.view'));
     }
 }

@@ -112,11 +112,6 @@
     width: 100%;
     display: block;
 }
-.error{
-    margin-top: 10px;
-    color: red;
-}
-
 .admin__nav_item{
     cursor: pointer;
 }

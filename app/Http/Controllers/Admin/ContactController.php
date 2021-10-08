@@ -25,6 +25,9 @@ class ContactController extends Controller
 
 
     public function insert(Request $request){
+        $validateFields = $request->validate([
+            'email' => 'email'
+        ]);
         Contact::insert([
             'name' => $request->name,
             'email' => $request->email,
@@ -38,15 +41,15 @@ class ContactController extends Controller
 
 
     public function delete($id){
-        $item = Contact::find($id);
+        $item = Contact::findorFail($id);
         $item->delete();
-        return redirect(route('admin.contact'));
+        return redirect(route('admin.contact.view'));
     }
 
 
 
     public function update($id){
-        $item = Contact::find($id);
+        $item = Contact::findorFail($id);
         return view('admin.contact.update', [
             'id' => $item->id,
             'name' => $item->name,
@@ -59,13 +62,13 @@ class ContactController extends Controller
 
 
     public function updateForm(Request $request){
-        $item = Contact::find($request->id);
+        $item = Contact::findorFail($request->id);
         $item->update([
             'name' => $request->name,
             'email' => $request->email,
             'subject' => $request->subject,
             'message' => $request->message
         ]);
-        return redirect(route('admin.contact'));
+        return redirect(route('admin.contact.view'));
     }
 }

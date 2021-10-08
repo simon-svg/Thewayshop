@@ -45,11 +45,14 @@
                 </div>
                 <div class="our-link">
                     <ul>
-                        <li>
+                        {{-- <li>
                             <a href="{{ route('myAccount') }}">My Account</a>
+                        </li> --}}
+                        <li>
+                            <a href="{{ route('registration') }}">Register</a>
                         </li>
                         <li>
-                            <a href="{{ route('contact') }}">Contact Us</a>
+                            <a href="{{ route('login') }}">Log In</a>
                         </li>
                     </ul>
                 </div>

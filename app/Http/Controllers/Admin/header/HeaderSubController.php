@@ -63,16 +63,16 @@ class HeaderSubController extends Controller
             'parentCategoryId' => $request->parentCategoryId,
             'link' => $request->link
         ]);
-        return redirect(route('admin.header.sub'));
+        return redirect(route('admin.header.sub.view'));
     }
     
 
     
 
     public function delete($id){
-        $item = HeaderSubmenu::find($id);
+        $item = HeaderSubmenu::findorFail($id);
         $item->delete();
-        return redirect(route('admin.header.sub'));
+        return redirect(route('admin.header.sub.view'));
     }
 
 
@@ -80,7 +80,7 @@ class HeaderSubController extends Controller
 
     
     public function update($id){
-        $item = HeaderSubmenu::find($id);
+        $item = HeaderSubmenu::findorFail($id);
         return view('admin.header.headerSubmenus.update',[
             'headerData' => $this->HeaderData,
             'headerCategoryData' => $this->HeaderCategoryData,
@@ -95,12 +95,12 @@ class HeaderSubController extends Controller
 
 
     public function updateForm(Request $request){
-        $item = HeaderSubmenu::find($request->id);
+        $item = HeaderSubmenu::findorFail($request->id);
         $item->update([
             'name' => $request->name,
             'parentCategoryId' => $request->parentCategoryId,
             'link' => $request->link
         ]);
-        return redirect(route('admin.header.sub'));
+        return redirect(route('admin.header.sub.view'));
     }
 }
