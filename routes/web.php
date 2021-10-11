@@ -11,9 +11,6 @@ Route::get('/checkout', 'App\Http\Controllers\PagesController@checkout')->name('
 Route::get('/shopDetail', 'App\Http\Controllers\PagesController@shopDetail')->name('shopDetail');
 Route::get('/service', 'App\Http\Controllers\PagesController@service')->name('service');
 Route::get('/contact', 'App\Http\Controllers\PagesController@contact')->name('contact');
-Route::get('/registration', 'App\Http\Controllers\PagesController@registration')->name('registration');
-Route::get('/login', 'App\Http\Controllers\PagesController@login')->name('login');
-Route::get('/myAccount', 'App\Http\Controllers\PagesController@myAccount')->name('myAccount');
 
 
 
@@ -22,17 +19,17 @@ Route::get('/myAccount', 'App\Http\Controllers\PagesController@myAccount')->name
 // header
 Route::name('admin.header.')->group(function () {
     Route::get('/admin/header', 'App\Http\Controllers\Admin\header\HeaderController@header')
-    ->name('view');
+        ->name('view');
     Route::get('/admin/header/add', 'App\Http\Controllers\Admin\header\HeaderController@add')
-    ->name('add');
+        ->name('add');
     Route::post('/admin/header/insert', 'App\Http\Controllers\Admin\header\HeaderController@insert')
-    ->name('insert');
+        ->name('insert');
     Route::get('/admin/header/delete/{id}', 'App\Http\Controllers\Admin\header\HeaderController@delete')
-    ->name('delete')->where('id', '[0-9]+');
+        ->name('delete')->where('id', '[0-9]+');
     Route::get('/admin/header/update/{id}', 'App\Http\Controllers\Admin\header\HeaderController@update')
-    ->name('update')->where('id', '[0-9]+');
+        ->name('update')->where('id', '[0-9]+');
     Route::post('/admin/header/updateForm', 'App\Http\Controllers\Admin\header\HeaderController@updateForm')
-    ->name('updateForm');
+        ->name('updateForm');
 });
 
 
@@ -41,17 +38,17 @@ Route::name('admin.header.')->group(function () {
 // header categories
 Route::name('admin.header.cat.')->group(function () {
     Route::get('/admin/header/cat', 'App\Http\Controllers\Admin\header\HeaderCatController@headerCat')
-    ->name('view');
+        ->name('view');
     Route::get('/admin/header/cat/add', 'App\Http\Controllers\Admin\header\HeaderCatController@add')
-    ->name('add');
+        ->name('add');
     Route::post('/admin/header/cat/insert', 'App\Http\Controllers\Admin\header\HeaderCatController@insert')
-    ->name('insert');
+        ->name('insert');
     Route::get('/admin/header/cat/delete/{id}', 'App\Http\Controllers\Admin\header\HeaderCatController@delete')
-    ->name('delete')->where('id', '[0-9]+');
+        ->name('delete')->where('id', '[0-9]+');
     Route::get('/admin/header/cat/update/{id}', 'App\Http\Controllers\Admin\header\HeaderCatController@update')
-    ->name('update')->where('id', '[0-9]+');
+        ->name('update')->where('id', '[0-9]+');
     Route::post('/admin/header/cat/updateForm', 'App\Http\Controllers\Admin\header\HeaderCatController@updateForm')
-    ->name('updateForm');
+        ->name('updateForm');
 });
 
 
@@ -60,17 +57,17 @@ Route::name('admin.header.cat.')->group(function () {
 // header submenus
 Route::name('admin.header.sub.')->group(function () {
     Route::get('/admin/header/submenu', 'App\Http\Controllers\Admin\header\HeaderSubController@headerSub')
-    ->name('view');
+        ->name('view');
     Route::get('/admin/header/submenu/add', 'App\Http\Controllers\Admin\header\HeaderSubController@add')
-    ->name('add');
+        ->name('add');
     Route::post('/admin/header/sub/insert', 'App\Http\Controllers\Admin\header\HeaderSubController@insert')
-    ->name('insert');
+        ->name('insert');
     Route::get('/admin/header/sub/delete/{id}', 'App\Http\Controllers\Admin\header\HeaderSubController@delete')
-    ->name('delete')->where('id', '[0-9]+');
+        ->name('delete')->where('id', '[0-9]+');
     Route::get('/admin/header/sub/update/{id}', 'App\Http\Controllers\Admin\header\HeaderSubController@update')
-    ->name('update')->where('id', '[0-9]+');
+        ->name('update')->where('id', '[0-9]+');
     Route::post('/admin/header/sub/updateForm', 'App\Http\Controllers\Admin\header\HeaderSubController@updateForm')
-    ->name('updateForm');
+        ->name('updateForm');
 });
 
 
@@ -80,17 +77,17 @@ Route::name('admin.header.sub.')->group(function () {
 // home
 Route::name('admin.home.')->group(function () {
     Route::get('/admin/home', 'App\Http\Controllers\Admin\HomeController@home')
-    ->name('view');
+        ->name('view');
     Route::get('/admin/home/add', 'App\Http\Controllers\Admin\HomeController@add')
-    ->name('add');
+        ->name('add');
     Route::post('/admin/home/insert', 'App\Http\Controllers\Admin\HomeController@insert')
-    ->name('insert');
+        ->name('insert');
     Route::get('/admin/home/delete/{id}/{name}', 'App\Http\Controllers\Admin\HomeController@delete')
-    ->name('delete')->where('id', '[0-9]+');
+        ->name('delete')->where('id', '[0-9]+');
     Route::get('/admin/home/update/{id}', 'App\Http\Controllers\Admin\HomeController@update')
-    ->name('update')->where('id', '[0-9]+');
+        ->name('update')->where('id', '[0-9]+');
     Route::post('/admin/home/updateForm', 'App\Http\Controllers\Admin\HomeController@updateForm')
-    ->name('updateForm');
+        ->name('updateForm');
 });
 
 
@@ -102,17 +99,17 @@ Route::name('admin.home.')->group(function () {
 // our team
 Route::name('admin.team.')->group(function () {
     Route::get('/admin/team', 'App\Http\Controllers\Admin\TeamController@team')
-    ->name('view');
+        ->name('view');
     Route::get('/admin/team/add', 'App\Http\Controllers\Admin\TeamController@add')
-    ->name('add');
+        ->name('add');
     Route::post('/admin/team/insert', 'App\Http\Controllers\Admin\TeamController@insert')
-    ->name('insert');
+        ->name('insert');
     Route::get('/admin/team/delete/{id}/{name}', 'App\Http\Controllers\Admin\TeamController@delete')
-    ->name('delete')->where('id', '[0-9]+');
+        ->name('delete')->where('id', '[0-9]+');
     Route::get('/admin/team/update/{id}', 'App\Http\Controllers\Admin\TeamController@update')
-    ->name('update')->where('id', '[0-9]+');
+        ->name('update')->where('id', '[0-9]+');
     Route::post('/admin/team/updateForm', 'App\Http\Controllers\Admin\TeamController@updateForm')
-    ->name('updateForm');
+        ->name('updateForm');
 });
 
 
@@ -124,15 +121,15 @@ Route::name('admin.team.')->group(function () {
 // contact
 Route::name('admin.contact.')->group(function () {
     Route::get('/admin/contact', 'App\Http\Controllers\Admin\ContactController@contact')
-    ->name('view');
+        ->name('view');
     Route::post('/admin/contact/insert', 'App\Http\Controllers\Admin\ContactController@insert')
-    ->name('insert');
+        ->name('insert');
     Route::get('/admin/contact/delete/{id}', 'App\Http\Controllers\Admin\ContactController@delete')
-    ->name('delete')->where('id', '[0-9]+');
+        ->name('delete')->where('id', '[0-9]+');
     Route::get('/admin/contact/update/{id}', 'App\Http\Controllers\Admin\ContactController@update')
-    ->name('update')->where('id', '[0-9]+');
+        ->name('update')->where('id', '[0-9]+');
     Route::post('/admin/contact/updateForm', 'App\Http\Controllers\Admin\ContactController@updateForm')
-    ->name('updateForm');
+        ->name('updateForm');
 });
 
 
@@ -147,11 +144,11 @@ Route::name('admin.contact.')->group(function () {
 // product
 Route::name('admin.product.')->group(function () {
     Route::get('/admin/product', 'App\Http\Controllers\Admin\ProductController@product')
-    ->name('view');
+        ->name('view');
     Route::get('/admin/product/add', 'App\Http\Controllers\Admin\ProductController@add')
-    ->name('add');
+        ->name('add');
     Route::post('/admin/product/insert', 'App\Http\Controllers\Admin\ProductController@insert')
-    ->name('insert');
+        ->name('insert');
 });
 
 
@@ -167,3 +164,27 @@ Route::name('admin.product.')->group(function () {
 //     Route::post('/admin/product/insert', 'App\Http\Controllers\Admin\ProductController@insert')
 //     ->name('insert');
 // });
+
+
+
+
+
+
+
+
+// registration
+Route::middleware('auth')->group(function () {
+    Route::get('/myAccount', 'App\Http\Controllers\PagesController@myAccount')->name('myAccount');
+    Route::get('logout', 'App\Http\Controllers\Admin\AuthController@logout')
+        ->name('logout');
+});
+
+Route::middleware('guest')->group(function () {
+    Route::get('/registration', 'App\Http\Controllers\PagesController@registration')->name('registration');
+    Route::get('/login', 'App\Http\Controllers\PagesController@login')->name('login');
+
+    Route::post('registration/process', 'App\Http\Controllers\Admin\AuthController@registration')
+        ->name('registration.process');
+    Route::post('login', 'App\Http\Controllers\Admin\AuthController@login')
+        ->name('login.process');
+});

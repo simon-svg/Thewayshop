@@ -13,4 +13,9 @@ class ProductController extends Controller
     public function add(){
         return view('admin.product.insert');
     }
+
+
+    public function insert(Request $request){
+        dd($request);
+    }
 }

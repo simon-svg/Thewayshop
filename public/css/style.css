@@ -2387,10 +2387,16 @@
     width: 48%;
     margin-bottom: 20px;
 }
-.login-reg__btn_cont{
+.auth__more{
     width: 100%;
     display: flex;
     justify-content: flex-end;
+    align-items: center;
+}
+.login-reg__btn_cont{
+    display: flex;
+    justify-content: flex-end;
+    margin-left: 30px;
 }
 .login-reg__btn{
     background-color: #d33b33;
@@ -2408,8 +2414,12 @@
 .login-reg__btn:hover{
     background-color: #d33b33d5;
 }
-.error{
+.error,
+.text__red-500{
     margin-top: 10px;
     color: red;
     font-size: 20px;
+}
+.text__red-500{
+    font-size: 14px;
 }

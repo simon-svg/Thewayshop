@@ -1,5 +1,5 @@
 <div class="admin__section_content">
-    <form class="admin__form" action="{{ route('admin.header.insert') }}" method="POST">
+    <form class="admin__form" action="{{ route('admin.product.insert') }}" method="POST">
         @csrf
         <div class="form__flex">
             <input class="admin__inp admin__inp_header form-control" type="text" name="name" placeholder="Name">
@@ -11,10 +11,17 @@
             <input class="admin__inp admin__inp_header form-control" type="text" name="sale" placeholder="Sale">
         </div>
         <div class="form__flex">
-            <textarea class="admin__inp admin__inp_header form-control" type="text" name="description" placeholder='Description'></textarea>
+            <textarea class="admin__inp admin__inp_header form-control" type="text" name="description"
+                placeholder='Description'></textarea>
         </div>
-        <div class="form__flex">
-            <input class="admin__inp admin__inp_header form-control" type="text" name="size" placeholder="Size">
+        <div class="product__select_group">
+            <div class="more__info_group">
+                <div class="more__info_group_plus more__size_group_plus">+</div>
+                <div class="admin__inps_with_plus">
+                    <input class="admin__inp admin__inp_header form-control admin__inp_with_plus" type="text"
+                        name="size[]" placeholder="Size">
+                </div>
+            </div>
         </div>
         <div class="form__flex">
             <input class="admin__inp admin__inp_header form-control" type="number" name="count" placeholder="Count">
@@ -25,20 +32,28 @@
         <div class="form__flex">
             <input class="admin__inp admin__inp_header form-control" type="file" name="img" placeholder="Img">
         </div>
-        <div class="form__flex">show 
+        <div class="form__flex admin__select">show
             <select name="show">
                 <option value="1">yes</option>
                 <option value="0">no</option>
             </select>
         </div>
         <div class="form__flex">
-            <input class="admin__inp admin__inp_header form-control" type="text" name="bestProduct" placeholder="Best Product">
+            <input class="admin__inp admin__inp_header form-control" type="text" name="bestProduct"
+                placeholder="Best Product">
         </div>
         <div class="form__flex">
-            <input class="admin__inp admin__inp_header form-control" type="number" name="categoryId" placeholder="Category Id">
+            <input class="admin__inp admin__inp_header form-control" type="number" name="categoryId"
+                placeholder="Category Id">
         </div>
-        <div class="form__flex">
-            <input class="admin__inp admin__inp_header form-control" type="file" name="imgs[]" placeholder="Imgs">
+        <div class="product__select_group">
+            <span class="select__info">Images</span>
+            <div class="more__info_group">
+                <div class="more__info_group_plus more__img_group_plus">+</div>
+                <div class="admin__imgs_with_plus">
+                    <input class="admin__inp admin__inp_header form-control admin__inp_with_plus" type="file" name="imgs[]" placeholder="Imgs">
+                </div>
+            </div>
         </div>
         <div class="form__flex">
             <input class="admin__inp admin__inp_header form-control" type="text" name="sale" placeholder="Sale">

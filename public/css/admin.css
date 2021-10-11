@@ -84,10 +84,12 @@
 }
 .admin__section_content{
     width: 100%;
+    padding: 0 10px;
 }
 .admin__inp,
 .admin__form_btn,
-.admin__select{
+.admin__select,
+.product__select_group{
     margin-top: 20px;
 }
 .admin__section_item_info{
@@ -140,4 +142,27 @@
     -moz-transition: transform ease .5s;
     -ms-transition: transform ease .5s;
     -o-transition: transform ease .5s;
+}
+.more__info_group{
+    display: flex;
+}
+.admin__inps_with_plus,
+.admin__imgs_with_plus{
+    width: 100%;
+    margin-left: 10px;
+}
+.admin__inp_with_plus{
+    margin: 0;
+    margin-top: 5px;
+}
+.admin__inp_with_plus:first-child{
+    margin-top: 0;
+}
+.more__info_group_plus{
+    font-size: 25px;
+    cursor: pointer;
+}
+.select__info{
+    margin-bottom: 10px;
+    display: inline-block;
 }

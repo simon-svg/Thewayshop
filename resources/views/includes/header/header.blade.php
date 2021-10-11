@@ -45,15 +45,22 @@
                 </div>
                 <div class="our-link">
                     <ul>
-                        {{-- <li>
-                            <a href="{{ route('myAccount') }}">My Account</a>
-                        </li> --}}
-                        <li>
-                            <a href="{{ route('registration') }}">Register</a>
-                        </li>
-                        <li>
-                            <a href="{{ route('login') }}">Log In</a>
-                        </li>
+                        @auth("web")
+                            <li>
+                                <a href="{{ route('myAccount') }}">My Account</a>
+                            </li>
+                            <li>
+                                <a href="{{ route('logout') }}">Log Out</a>
+                            </li>
+                        @endauth
+                        @guest("web")
+                            <li>
+                                <a href="{{ route('registration') }}">Register</a>
+                            </li>
+                            <li>
+                                <a href="{{ route('login') }}">Log In</a>
+                            </li>
+                        @endguest
                     </ul>
                 </div>
             </div>
