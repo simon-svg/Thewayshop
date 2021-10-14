@@ -51,7 +51,8 @@
             <div class="more__info_group">
                 <div class="more__info_group_plus more__img_group_plus">+</div>
                 <div class="admin__imgs_with_plus">
-                    <input class="admin__inp admin__inp_header form-control admin__inp_with_plus" type="file" name="imgs[]" placeholder="Imgs">
+                    <input class="admin__inp admin__inp_header form-control admin__inp_with_plus" type="file"
+                        name="imgs[]" placeholder="Imgs">
                 </div>
             </div>
         </div>

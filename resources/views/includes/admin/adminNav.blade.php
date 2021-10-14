@@ -44,5 +44,8 @@
         <li class="sidebar-admin__item">
             <a class="admin__item" href="{{ route('admin.contact.view') }}">Contact</a>
         </li>
+        <li class="sidebar-admin__item">
+            <a class="admin__item" href="{{ route('admin.users.view') }}">Users</a>
+        </li>
     </ul>
 </nav>

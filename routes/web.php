@@ -98,6 +98,7 @@ Route::prefix('admin/header')->group(function () {
 
 
 
+
 // home
 Route::prefix('admin/home')->group(function () {
     Route::name('admin.home.')->group(function () {
@@ -169,6 +170,31 @@ Route::prefix('admin/contact')->group(function () {
 
 
 
+// our team
+Route::prefix('admin/users')->group(function () {
+    Route::name('admin.users.')->group(function () {
+        Route::get('/', 'App\Http\Controllers\Admin\UserController@user')
+            ->name('view');
+        Route::get('/add', 'App\Http\Controllers\Admin\UserController@add')
+            ->name('add');
+        Route::post('/insert', 'App\Http\Controllers\Admin\UserController@insert')
+            ->name('insert');
+        Route::get('/delete/{id}', 'App\Http\Controllers\Admin\UserController@delete')
+            ->name('delete')->where('id', '[0-9]+');
+        Route::get('/update/{id}', 'App\Http\Controllers\Admin\UserController@update')
+            ->name('update')->where('id', '[0-9]+');
+        Route::post('/updateForm', 'App\Http\Controllers\Admin\UserController@updateForm')
+            ->name('updateForm');
+    });
+});
+
+
+
+
+
+
+
+
 
 
 // product
@@ -206,8 +232,8 @@ Route::prefix('admin/product')->group(function () {
 
 // registration
 Route::middleware('auth')->group(function () {
-    Route::get('/myAccount', 'App\Http\Controllers\PagesController@myAccount')->name('myAccount');
-    Route::get('logout', 'App\Http\Controllers\Admin\AuthController@logout')
+        Route::get('/myAccount', 'App\Http\Controllers\PagesController@myAccount')->name('myAccount');
+        Route::get('logout', 'App\Http\Controllers\Admin\AuthController@logout')
         ->name('logout');
 });
 

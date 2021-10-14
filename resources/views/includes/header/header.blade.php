@@ -47,6 +47,9 @@
                     <ul>
                         @auth("web")
                             <li>
+                                <a href="{{ route('admin.header.view') }}">Admin</a>
+                            </li>
+                            <li>
                                 <a href="{{ route('myAccount') }}">My Account</a>
                             </li>
                             <li>

@@ -19,5 +19,6 @@ class DatabaseSeeder extends Seeder
         $this->call(HeaderSubmenuSeeder::class);
         $this->call(HomeSeeder::class);
         $this->call(TeamSeeder::class);
+        $this->call(UserSeeder::class);
     }
 }
