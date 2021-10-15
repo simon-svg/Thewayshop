@@ -2423,3 +2423,12 @@
 .text__red-500{
     font-size: 14px;
 }
+.header__change_lang{
+    color: white !important;
+}
+.header__change_lang:hover{
+    color: #d33b33d5 !important;
+}
+.header__change_lang:last-child{
+    margin-left: 10px;
+}

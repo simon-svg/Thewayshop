@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Http\Controllers\admin\header;
+namespace App\Http\Controllers\Admin\header;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 // Models
 use App\Models\HeaderSubmenu;
-use App\Models\HeaderCategory;
 use App\Models\Header;
+use App\Models\HeaderCategory;
 
 class HeaderSubController extends Controller
 {
@@ -36,71 +36,101 @@ class HeaderSubController extends Controller
         $this->setheaderCategoryData($HeaderCategoryData);
     }
 
-
-
-    public function headerSub(){
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
         return view('admin.header.headerSubmenus.headerSub', [
             'data' => $this->data
         ]);
     }
 
-
-
-
-    public function add(){
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
         return view('admin.header.headerSubmenus.insert', [
             'headerData' => $this->HeaderData,
             'headerCategoryData' => $this->HeaderCategoryData
         ]);
     }
 
-    
-
-    
-    public function insert(Request $request){
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
         HeaderSubmenu::insert([
             'name' => $request->name,
             'parentCategoryId' => $request->parentCategoryId,
             'link' => $request->link
         ]);
-        return redirect(route('admin.header.sub.view'));
-    }
-    
-
-    
-
-    public function delete($id){
-        $item = HeaderSubmenu::findorFail($id);
-        $item->delete();
-        return redirect(route('admin.header.sub.view'));
+        return redirect(route('submenu.index'));
     }
 
-
-
-
+    /**
+     * Display the specified resource.
+     *
+     * @param  \App\Models\HeaderSubmenu  $headerSubmenu
+     * @return \Illuminate\Http\Response
+     */
+    public function show(HeaderSubmenu $headerSubmenu)
+    {
+        
+    }
     
-    public function update($id){
-        $item = HeaderSubmenu::findorFail($id);
-        return view('admin.header.headerSubmenus.update',[
-            'headerData' => $this->HeaderData,
-            'headerCategoryData' => $this->HeaderCategoryData,
-            'id' => $id,
-            'name' => $item->name,
-            'parentCategoryId' => $item->parentCategoryId,
-            'link' => $item->link
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  \App\Models\HeaderSubmenu  $headerSubmenu
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
+        $item = HeaderSubmenu::find($id);
+        return view('admin.header.headerSubmenus.update', [
+            'item' => $item,
+            'headerCategoryData' => $this->HeaderCategoryData
         ]);
     }
 
-
-
-
-    public function updateForm(Request $request){
-        $item = HeaderSubmenu::findorFail($request->id);
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Models\HeaderSubmenu  $headerSubmenu
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
+        $item = HeaderSubmenu::findorFail($id);
         $item->update([
             'name' => $request->name,
             'parentCategoryId' => $request->parentCategoryId,
             'link' => $request->link
         ]);
-        return redirect(route('admin.header.sub.view'));
+        return redirect(route('submenu.index'));
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  \App\Models\HeaderSubmenu  $headerSubmenu
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        $item = HeaderSubmenu::findorFail($id);
+        $item->delete();
+        return redirect(route('submenu.index'));
     }
 }

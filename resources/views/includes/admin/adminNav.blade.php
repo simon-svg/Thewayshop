@@ -15,7 +15,7 @@
                     <a class="admin__item admin__item_submenu" href="{{ route('admin.header.cat.view') }}">Categories</a>
                 </li>
                 <li class="admin__nav_header_item">
-                    <a class="admin__item admin__item_submenu" href="{{ route('admin.header.sub.view') }}">Submenus</a>
+                    <a class="admin__item admin__item_submenu" href="{{ route('submenu.index') }}">Submenus</a>
                 </li>
             </ul>
         </li>

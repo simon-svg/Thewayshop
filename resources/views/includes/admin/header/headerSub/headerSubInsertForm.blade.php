@@ -1,5 +1,5 @@
 <div class="admin__section_content">
-    <form class="admin__form" action="{{ route('admin.header.sub.insert') }}" method="POST">
+    <form class="admin__form" action="{{ route('submenu.store') }}" method="POST">
         @csrf
 
         <div class="form__flex">
@@ -10,7 +10,7 @@
             <select name="parentCategoryId" class="admin__select">
                 <option value="">no</option>
                 @foreach ($headerCategoryData as $item)
-                <option value="{{ $item->id }}">{{ $item->name }}</option>
+                    <option value="{{ $item->id }}">{{ $item->name }}</option>
                 @endforeach
             </select>
             <span>Parent Category Id</span>

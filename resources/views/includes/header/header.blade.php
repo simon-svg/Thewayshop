@@ -35,10 +35,12 @@
             </div>
             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                 <div class="custom-select-box">
-                    <select id="basic" class="selectpicker show-tick form-control" data-placeholder="en">
+                        <a class="header__change_lang" href="{{ route('en') }}">EN</a>
+                        <a class="header__change_lang" href="{{ route('ru') }}">RU</a>
+                    {{-- <select id="basic" class="selectpicker show-tick form-control" data-placeholder="en">
                         <option>EN</option>
                         <option>AM</option>
-                    </select>
+                    </select> --}}
                 </div>
                 <div class="right-phone-box">
                     <p>Call US :- +374 55-32-14-13</p>

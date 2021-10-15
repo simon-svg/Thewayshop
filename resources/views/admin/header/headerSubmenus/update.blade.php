@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('adminHeader')
-    @include('includes.admin.header', ['title' => 'header submenus'])
+    @include('includes.admin.header', ['title' => 'header submenu'])
 @endsection
 
 @section('adminContent')
