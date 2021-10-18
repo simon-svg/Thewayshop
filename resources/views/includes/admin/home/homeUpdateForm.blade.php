@@ -19,6 +19,10 @@
                 <input class="admin__inp admin__inp_header form-control" type="hidden" value='{{ $id }}'
                     name="id">
             </div>
+            <div class="form__flex">
+                <input class="admin__inp admin__inp_header form-control" type="hidden" value='{{ $img }}'
+                    name="imgHid">
+            </div>
             <div>
                 <button class="btn custom-btn admin__form_btn" name="submit">Update Home Item</button>
             </div>

@@ -18,17 +18,17 @@ class HomeSeeder extends Seeder
             [
                 'title' => 'Welcome To <br> Thewayshop',
                 'subtitle' => 'See how your users experience your website in realtime or view <br> trends to see any changes in performance over time.',
-                'img' => '1633438109.jpg'
+                'img' => 'home/tso2aAbnM3oZoqOTdZORYp3e8meGGJnvwoOoLS1z.jpg'
             ],
             [
                 'title' => 'Welcome To <br> Thewayshop',
                 'subtitle' => 'See how your users experience your website in realtime or view <br> trends to see any changes in performance over time.',
-                'img' => '1633438127.jpg'
+                'img' => 'home/hlqQb2Yl7E1YW4OdaAQtZ5QDzigXYzJzhzimMvYw.jpg'
             ],
             [
                 'title' => 'Welcome To <br> Thewayshop',
                 'subtitle' => 'See how your users experience your website in realtime or view <br> trends to see any changes in performance over time.',
-                'img' => '1633438140.jpg'
+                'img' => 'home/rxpcCNUXxt3M2BSfZTHxrAKPXD4nC3c6LRS4CPRv.jpg'
             ]
         ]);
     }

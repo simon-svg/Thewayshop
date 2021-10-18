@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 // Models
 use App\Models\Team;
@@ -36,17 +37,6 @@ class TeamController extends Controller
 
 
 
-    public function setImg($request)
-    {
-        $request->validate([
-            'img' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
-        ]);
-        $imageName = time().'.'.$request->img->extension();
-        $request->img->move(public_path('images/team'), $imageName);
-        return $imageName;
-    }
-
-
 
     public function team(){
         return view('admin.team.team', ['data' => $this->data]);
@@ -61,10 +51,11 @@ class TeamController extends Controller
 
 
     public function insert(Request $request){
+        $path = $request->file('img')->store('team');
         Team::insert([
             'name' => $request->name,
             'position' => $request->position,
-            'img' => $this->setImg($request),
+            'img' => $path,
             'description' => $request->description
         ]);
         return redirect(route('admin.team.view'));
@@ -74,10 +65,11 @@ class TeamController extends Controller
 
 
 
-    public function delete($id, $name){
+    public function delete($id){
         $item = Team::findorFail($id);
+        $img = $item->img;
         $item->delete();
-        unlink(public_path("images/team/$name"));
+        Storage::delete($img);
         return redirect(route('admin.team.view'));
     }
 
@@ -102,12 +94,13 @@ class TeamController extends Controller
 
 
     public function updateForm(Request $request){
+        Storage::delete($request->imgHid);
+        $path = $request->file('img')->store('team');
         $item = Team::findorFail($request->id);
-        // $img = $request->img ? $this->setImg($request) : $item->img;
         $item->update([
             'name' => $request->name,
             'position' => $request->position,
-            'img' => $this->setImg($request),
+            'img' => $path,
             'description' => $request->description
         ]);
         return redirect(route('admin.team.view'));

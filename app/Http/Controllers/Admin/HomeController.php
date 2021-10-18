@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Home;
+use Illuminate\Support\Facades\Storage;
 
 class HomeController extends Controller
 {
@@ -35,20 +36,6 @@ class HomeController extends Controller
 
 
 
-    public function setImg($request)
-    {
-        $request->validate([
-            'img' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
-        ]);
-        $imageName = time().'.'.$request->img->extension();
-        $request->img->move(public_path('images/home'), $imageName);
-        return $imageName;
-    }
-
-
-
-
-
 
 
     public function home()
@@ -75,10 +62,11 @@ class HomeController extends Controller
 
     public function insert(Request $request)
     {
+        $path = $request->file('img')->store('home');
         Home::insert([
             'title' => $request->title,
             'subtitle' => $request->subtitle,
-            'img' => $this->setImg($request)
+            'img' => $path,
         ]);
         return redirect(route('admin.home.view'));
     }
@@ -90,10 +78,11 @@ class HomeController extends Controller
 
 
 
-    public function delete($id, $name){
+    public function delete($id){
         $item = Home::findorFail($id);
+        $img = $item->img;
         $item->delete();
-        unlink(public_path("images/home/$name"));
+        Storage::delete($img);
         return redirect(route('admin.home.view'));
     }
 
@@ -120,11 +109,13 @@ class HomeController extends Controller
 
 
     public function updateForm(Request $request){
+        Storage::delete($request->imgHid);
+        $path = $request->file('img')->store('home');
         $item = Home::findorFail($request->id);
         $item->update([
             'title' => $request->title,
             'subtitle' => $request->subtitle,
-            'img' => $this->setImg($request)
+            'img' => $path
         ]);
         return redirect(route('admin.home.view'));
     }

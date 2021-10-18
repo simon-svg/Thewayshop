@@ -19,25 +19,25 @@ class TeamSeeder extends Seeder
                 'name' => 'Williamson',
                 'position' => 'Web Developer',
                 'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent urna diam, maximus ut ullamcorper quis, placerat id eros. Duis semper justo sed condimentum rutrum. Nunc tristique purus turpis. Maecenas vulputate.',
-                'img' => '1633519779.jpg'
+                'img' => 'team/AxHpGkKsRIBDjM4Okty7ZUDJNCsNbOUyqq2lXm1z.jpg'
             ],
             [
                 'name' => 'Kristiana',
                 'position' => 'Designer',
                 'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent urna diam, maximus ut ullamcorper quis, placerat id eros. Duis semper justo sed condimentum rutrum. Nunc tristique purus turpis. Maecenas vulputate.',
-                'img' => '1633519787.jpg'
+                'img' => 'team/EhZa94zmDoVGso0cGUxED6fS4q1dTn8mHaZvdDqq.jpg'
             ],
             [
                 'name' => 'Steve Thomas',
                 'position' => 'Designer',
                 'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent urna diam, maximus ut ullamcorper quis, placerat id eros. Duis semper justo sed condimentum rutrum. Nunc tristique purus turpis. Maecenas vulputate.',
-                'img' => '1633519798.jpg'
+                'img' => 'team/VM2wZiZZjuL4skWGhA4f0phxNh0wRHEv62PhO9qn.jpg'
             ],
             [
                 'name' => 'Williamson',
                 'position' => 'Web Developer',
                 'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent urna diam, maximus ut ullamcorper quis, placerat id eros. Duis semper justo sed condimentum rutrum. Nunc tristique purus turpis. Maecenas vulputate.',
-                'img' => '1633521560.jpg'
+                'img' => 'team/ktGENoqwLWbpXzAU2ledXT4ZWldpgXNdBRNrVeZx.jpg'
             ]
         ]);
     }

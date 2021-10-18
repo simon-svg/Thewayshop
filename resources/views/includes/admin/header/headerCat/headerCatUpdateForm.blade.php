@@ -10,7 +10,11 @@
             <select name="parentId" class="admin__select">
                 <option value="">no</option>
                 @foreach ($headerData as $item)
-                    <option value="{{ $item->id }}">{{ $item->name }}</option>
+                    @if ($item->id == $parentId)
+                        <option value="{{ $item->id }}" selected>{{ $item->name }}</option>
+                    @else
+                        <option value="{{ $item->id }}">{{ $item->name }}</option>
+                    @endif
                 @endforeach
             </select>
         </div>
@@ -23,11 +27,6 @@
         </div>
     </form>
 </div>
-
-<script src="/js/jquery-3.2.1.min.js"></script>
-<script>
-    $('option[value="{{ $parentId }}"]').attr('selected', true);
-</script>
 
 {{-- errors --}}
 @if ($errors->any())

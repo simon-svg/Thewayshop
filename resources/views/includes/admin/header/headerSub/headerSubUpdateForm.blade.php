@@ -10,7 +10,11 @@
             <select name="parentCategoryId" class="admin__select">
                 <option value="">no</option>
                 @foreach ($headerCategoryData as $categoryItem)
-                    <option value="{{ $categoryItem->id }}" class="parentCatId-option">{{ $categoryItem->name }}</option>
+                    @if($categoryItem->id == $item->parentCategoryId){}
+                        <option value="{{ $categoryItem->id }}" selected class="parentCatId-option">{{ $categoryItem->name }}</option>
+                    @else
+                        <option value="{{ $categoryItem->id }}" class="parentCatId-option">{{ $categoryItem->name }}</option>
+                    @endif
                 @endforeach
             </select>
             <span>Parent Category Id</span>
@@ -25,11 +29,6 @@
         </div>
     </form>
 </div>
-
-<script src="/js/jquery-3.2.1.min.js"></script>
-<script>
-    $('option[value="{{ $item->parentCategoryId }}"][class="parentCatId-option"]').attr('selected', true);
-</script>
 
 {{-- errors --}}
 @if ($errors->any())

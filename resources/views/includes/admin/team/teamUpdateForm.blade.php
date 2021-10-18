@@ -21,8 +21,8 @@
 
             <input class="admin__inp admin__inp_header form-control" type="hidden" value='{{ $id }}'
                 name="id">
-            {{-- <input class="admin__inp admin__inp_header form-control" type="hidden" value='{{ $img }}'
-                name="img"> --}}
+            <input class="admin__inp admin__inp_header form-control" type="hidden" value='{{ $img }}'
+                name="imgHid">
             <div>
                 <button class="btn custom-btn admin__form_btn" name="submit">Update Team</button>
             </div>

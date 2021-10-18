@@ -22,7 +22,7 @@
                         </td>
                         <td class="admin__section_item_td">
                             <div class="admin__img_cont">
-                                <img class="admin__img" src="/images/home/{{ $item->img }}" alt="home">
+                                <img class="admin__img" src="{{ Storage::url("$item->img") }}" alt="home">
                             </div>
                             <h3 class="admin__section_item_info">{{ $item->img }}</h3>
                         </td>
@@ -30,7 +30,7 @@
                             <a href="{{ route('admin.home.update', ['id' => $item->id]) }}">
                                 <i class="admin__icon fas fa-pencil-alt"></i>
                             </a>
-                            <a href="{{ route('admin.home.delete', ['id' => $item->id, 'name' => $item->img]) }}">
+                            <a href="{{ route('admin.home.delete', ['id' => $item->id]) }}">
                                 <i class="admin__icon fas fa-times"></i>
                             </a>
                         </td>

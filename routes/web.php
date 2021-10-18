@@ -91,7 +91,7 @@ Route::middleware('auth')->group(function () {
                 ->name('add');
             Route::post('/insert', 'App\Http\Controllers\Admin\HomeController@insert')
                 ->name('insert');
-            Route::get('/delete/{id}/{name}', 'App\Http\Controllers\Admin\HomeController@delete')
+            Route::get('/delete/{id}', 'App\Http\Controllers\Admin\HomeController@delete')
                 ->name('delete')->where('id', '[0-9]+');
             Route::get('/update/{id}', 'App\Http\Controllers\Admin\HomeController@update')
                 ->name('update')->where('id', '[0-9]+');
@@ -115,7 +115,7 @@ Route::middleware('auth')->group(function () {
                 ->name('add');
             Route::post('/insert', 'App\Http\Controllers\Admin\TeamController@insert')
                 ->name('insert');
-            Route::get('/delete/{id}/{name}', 'App\Http\Controllers\Admin\TeamController@delete')
+            Route::get('/delete/{id}', 'App\Http\Controllers\Admin\TeamController@delete')
                 ->name('delete')->where('id', '[0-9]+');
             Route::get('/update/{id}', 'App\Http\Controllers\Admin\TeamController@update')
                 ->name('update')->where('id', '[0-9]+');
