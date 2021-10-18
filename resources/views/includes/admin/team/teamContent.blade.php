@@ -31,19 +31,23 @@
                             <h3 class="admin__section_item_info">{{ $item->description }}</h3>
                         </td>
                         <td class="admin__section_item_td">
-                            <a href="{{ route('admin.team.update', ['id' => $item->id]) }}">
-                                <i class="admin__icon fas fa-pencil-alt"></i>
-                            </a>
-                            <a href="{{ route('admin.team.delete', ['id' => $item->id]) }}">
-                                <i class="admin__icon fas fa-times"></i>
-                            </a>
+                            <form action="{{ route('team.destroy', ['team' => $item]) }}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <a href="{{ route('team.edit', ['team' => $item]) }}">
+                                    <i class="admin__icon fas fa-pencil-alt"></i>
+                                </a>
+                                <button>
+                                    <i class="admin__icon fas fa-times"></i>
+                                </button>
+                            </form>
                         </td>
                     </tr>
                 @endforeach
             </table>
         </div>
         <div>
-            <a href="{{ route('admin.team.add') }}">
+            <a href="{{ route('team.create') }}">
                 <button class="btn custom-btn admin__form_btn" name="submit">Add Team</button>
             </a>
         </div>

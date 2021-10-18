@@ -22,44 +22,65 @@ class HeaderController extends Controller
     }
 
 
-
-    public function header(){
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
         return view('admin.header.header', [
             'data' => $this->data
         ]);
     }
 
-
-
-    public function add(){
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
         return view('admin.header.insert');
     }
 
-
-
-    public function insert(Request $request){
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
         Header::insert([
             'name' => $request->name,
             'link' => $request->link
         ]);
-        return redirect(route('admin.header.view'));
+        return redirect(route('header.index'));
     }
 
-
-
-    public function delete($id){
-        $item = Header::findorFail($id);
-        $item->delete();
-        return redirect(route('admin.header.view'));
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        //
     }
 
-
-
-
-
-    public function update($id){
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
         $item = Header::findorFail($id);
         return view('admin.header.update',[
+            'item' => $item,
             'data' => $this->data,
             'id' => $id,
             'name' => $item->name,
@@ -67,17 +88,34 @@ class HeaderController extends Controller
         ]);
     }
 
-
-
-
-
-    public function updateForm(Request $request){
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
         $item = Header::findorFail($request->id);
 
         $item->update([
             'name' => $request->name,
             'link' => $request->link
         ]);
-        return redirect(route('admin.header.view'));
+        return redirect(route('header.index'));
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        $item = Header::findorFail($id);
+        $item->delete();
+        return redirect(route('header.index'));
     }
 }

@@ -1,6 +1,6 @@
 <div class="admin__section_form">
     <div class="admin__section_content">
-        <form class="admin__form" action="{{ route('admin.team.insert') }}" method="POST"
+        <form class="admin__form" action="{{ route('team.store') }}" method="POST"
             enctype='multipart/form-data'>
             @csrf
             <div class="form__flex">

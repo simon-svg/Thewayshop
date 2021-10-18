@@ -52,7 +52,7 @@
             @foreach ($team as $person)
                 <div class="col-sm-6 col-lg-3">
                     <div class="hover-team">
-                        <div class="our-team"> <img src="/images/team/{{ $person->img }}" alt="" />
+                        <div class="our-team"> <img src="{{ Storage::url($person->img) }}" alt="" />
                             <div class="team-content">
                                 <h3 class="title">{{ $person->name }}</h3>
                                 <span class="post">{{ $person->position }}</span>

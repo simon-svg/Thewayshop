@@ -5,7 +5,7 @@
         <ul class="slides-container">
             @foreach ($homeSlide as $item)
                 <li class="text-center">
-                    <img src="images/home/{{ $item->img }}" alt="">
+                    <img src="{{ Storage::url($item->img) }}" alt="">
                     <div class="container">
                         <div class="row">
                             <div class="col-md-12">

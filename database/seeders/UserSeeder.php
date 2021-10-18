@@ -19,10 +19,18 @@ class UserSeeder extends Seeder
                 'name' => 'simon',
                 'last_name' => 'Karapetyan',
                 'email' => 'simonkarapetyan605@gmail.com',
-                'role' => 'superadmin',
-                'login' => 'simon11',
+                'role' => 'admin',
+                'login' => 'simon',
                 'password' => '$2y$10$0nQBOCT1wSEB8UmP8rdnN.AJ3KcbG5hqfYl.czksJnQLGG/0SOH4K'
-            ]
+            ],
+            [
+                'name' => 'vardan',
+                'last_name' => 'vardanyan',
+                'email' => 'vardan@gmail.com',
+                'role' => 'user',
+                'login' => 'vardan',
+                'password' => '$2y$10$p75sdCaUe3rV9TAnEes/MuoU7TaZoV3skx/Xzfwn40iaAC5AOHK9K'
+            ],
         ]);
     }
 }

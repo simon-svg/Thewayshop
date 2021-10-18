@@ -31,45 +31,65 @@ class HeaderCatController extends Controller
 
 
 
-    public function headerCat(){
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
         return view('admin.header.headerCategories.headerCat', [
             'data' => $this->data
         ]);
     }
 
-
-    
-    public function add(){
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
         return view('admin.header.headerCategories.insert', ['headerData' => $this->HeaderData]);
     }
 
-
-
-    
-    public function insert(Request $request){
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
         HeaderCategory::insert([
             'name' => $request->name,
             'parentId' => $request->parentId
         ]);
-        return redirect(route('admin.header.cat.view'));
+        return redirect(route('headerCategory.index'));
     }
 
-
-    
-
-
-    public function delete($id){
-        $item = HeaderCategory::findorFail($id);
-        $item->delete();
-        return redirect(route('admin.header.cat.view'));
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        //
     }
 
-
-    
-
-    public function update($id){
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
         $item = HeaderCategory::findorFail($id);
         return view('admin.header.headerCategories.update',[
+            'item' => $item,
             'headerData' => $this->HeaderData,
             'id' => $id,
             'name' => $item->name,
@@ -77,16 +97,34 @@ class HeaderCatController extends Controller
         ]);
     }
 
-
-
-
-    public function updateForm(Request $request){
-        $item = HeaderCategory::findorFail($request->id);
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
+        $item = HeaderCategory::findorFail($id);
 
         $item->update([
             'name' => $request->name,
             'parentId' => $request->parentId
         ]);
-        return redirect(route('admin.header.cat.view'));
+        return redirect(route('headerCategory.index'));
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        $item = HeaderCategory::findorFail($id);
+        $item->delete();
+        return redirect(route('headerCategory.index'));
     }
 }

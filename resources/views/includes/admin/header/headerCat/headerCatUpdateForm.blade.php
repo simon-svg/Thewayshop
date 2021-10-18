@@ -1,6 +1,7 @@
 <div class="admin__section_content">
-    <form class="admin__form" action="{{ route('admin.header.cat.updateForm') }}" method="POST">
+    <form class="admin__form" action="{{ route('headerCategory.update', ['headerCategory' => $item->id]) }}" method="POST">
         @csrf
+        @method('PUT')
         <div class="form__flex">
             <input class="admin__inp admin__inp_header form-control" type="text" value='{{ $name }}' name="name" placeholder="Name">
         </div>

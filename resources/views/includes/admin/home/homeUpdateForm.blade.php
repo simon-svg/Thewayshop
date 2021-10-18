@@ -1,8 +1,9 @@
 <div class="admin__section_form">
     <div class="admin__section_content">
-        <form class="admin__form" action="{{ route('admin.home.updateForm') }}" method="POST"
+        <form class="admin__form" action="{{ route('home.update', ['home' => $item]) }}" method="POST"
             enctype='multipart/form-data'>
             @csrf
+            @method('PUT')
             <div class="form__flex">
                 <input class="admin__inp admin__inp_header form-control" type="text" value='{{ $title }}'
                     name="title" placeholder="Title">

@@ -20,19 +20,23 @@
                             <h3 class="admin__section_item_info">{{ $item->link }}</h3>
                         </td>
                         <td class="admin__section_item_td">
-                            <a href="{{ route('admin.header.update', ['id' => $item->id]) }}">
-                                <i class="admin__icon fas fa-pencil-alt"></i>
-                            </a>
-                            <a href="{{ route('admin.header.delete', ['id' => $item->id]) }}">
-                                <i class="admin__icon fas fa-times"></i>
-                            </a>
+                            <form action="{{ route('header.destroy', ['header' => $item]) }}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <a href="{{ route('header.edit', ['header' => $item]) }}">
+                                    <i class="admin__icon fas fa-pencil-alt"></i>
+                                </a>
+                                <button>
+                                    <i class="admin__icon fas fa-times"></i>
+                                </button>
+                            </form>
                         </td>
                     </tr>
                 @endforeach
             </table>
         </div>
         <div>
-            <a href="{{ route('admin.header.add') }}">
+            <a href="{{ route('header.create') }}">
                 <button class="btn custom-btn admin__form_btn" name="submit">Add Header Item</button>
             </a>
         </div>

@@ -24,33 +24,34 @@ class TeamController extends Controller
     }
 
 
-
-
-    public function store(Request $request)
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
     {
-        $validated = $request->validate([
-            'title' => 'required|unique:posts|max:255',
-            'body' => 'required',
-        ]);
-    }
-
-
-
-
-
-    public function team(){
         return view('admin.team.team', ['data' => $this->data]);
     }
 
-
-
-    public function add(){
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
         return view('admin.team.insert');
     }
 
-
-
-    public function insert(Request $request){
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
         $path = $request->file('img')->store('team');
         Team::insert([
             'name' => $request->name,
@@ -58,29 +59,31 @@ class TeamController extends Controller
             'img' => $path,
             'description' => $request->description
         ]);
-        return redirect(route('admin.team.view'));
+        return redirect(route('team.index'));
     }
 
-
-
-
-
-    public function delete($id){
-        $item = Team::findorFail($id);
-        $img = $item->img;
-        $item->delete();
-        Storage::delete($img);
-        return redirect(route('admin.team.view'));
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        //
     }
 
-
-
-
-
-
-    public function update($id){
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
         $item = Team::findorFail($id);
         return view('admin.team.update', [
+            'item' => $item,
             'id' => $id,
             'name' => $item->name,
             'position' => $item->position,
@@ -89,20 +92,42 @@ class TeamController extends Controller
         ]);
     }
 
-
-
-
-
-    public function updateForm(Request $request){
-        Storage::delete($request->imgHid);
-        $path = $request->file('img')->store('team');
-        $item = Team::findorFail($request->id);
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
+        $img = $request->imgHid;
+        if(!empty($request->img)){
+            Storage::delete($request->imgHid);
+            $img = $request->file('img')->store('team');
+        }
+        $item = Team::findorFail($id);
         $item->update([
             'name' => $request->name,
             'position' => $request->position,
-            'img' => $path,
+            'img' => $img,
             'description' => $request->description
         ]);
-        return redirect(route('admin.team.view'));
+        return redirect(route('team.index'));
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        $item = Team::findorFail($id);
+        $img = $item->img;
+        $item->delete();
+        Storage::delete($img);
+        return redirect(route('team.index'));
     }
 }

@@ -28,9 +28,6 @@
                             <h3 class="admin__section_item_info">{{ $item->message }}</h3>
                         </td>
                         <td class="admin__section_item_td">
-                            <a href="{{ route('admin.contact.update', ['id' => $item->id]) }}">
-                                <i class="admin__icon fas fa-pencil-alt"></i>
-                            </a>
                             <a href="{{ route('admin.contact.delete', ['id' => $item->id]) }}">
                                 <i class="admin__icon fas fa-times"></i>
                             </a>

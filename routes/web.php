@@ -2,12 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 
-
 // languages ******************************************************************************
 Route::get('/language/ru', 'App\Http\Controllers\LangController@ru')->name('ru');
 Route::get('/language/en', 'App\Http\Controllers\LangController@en')->name('en');
-
-
 
 
 
@@ -23,131 +20,40 @@ Route::get('/service', 'App\Http\Controllers\PagesController@service')->name('se
 Route::get('/contact', 'App\Http\Controllers\PagesController@contact')->name('contact');
 
 
+
+// contact insert
+Route::post('admin/contact/insert', 'App\Http\Controllers\Admin\ContactController@insert')
+    ->name('admin.contact.insert');
+
+
+
+
 Route::middleware('auth')->group(function () {
     // admin pages ************************************************************************
     // header
-    Route::prefix('admin/header')->group(function () {
-        Route::name('admin.header.')->group(function () {
-            Route::get('/', 'App\Http\Controllers\Admin\header\HeaderController@header')
-                ->name('view');
-            Route::get('/add', 'App\Http\Controllers\Admin\header\HeaderController@add')
-                ->name('add');
-            Route::post('/insert', 'App\Http\Controllers\Admin\header\HeaderController@insert')
-                ->name('insert');
-            Route::get('/delete/{id}', 'App\Http\Controllers\Admin\header\HeaderController@delete')
-                ->name('delete')->where('id', '[0-9]+');
-            Route::get('/update/{id}', 'App\Http\Controllers\Admin\header\HeaderController@update')
-                ->name('update')->where('id', '[0-9]+');
-            Route::post('/updateForm', 'App\Http\Controllers\Admin\header\HeaderController@updateForm')
-                ->name('updateForm');
-        });
-    });
-
-
-
-    
-
+    Route::resource('header', 'App\Http\Controllers\Admin\header\HeaderController');
 
     // header categories
-    Route::prefix('admin/header')->group(function () {
-        Route::name('admin.header.cat.')->group(function () {
-            Route::get('/cat', 'App\Http\Controllers\Admin\header\HeaderCatController@headerCat')
-                ->name('view');
-            Route::get('/cat/add', 'App\Http\Controllers\Admin\header\HeaderCatController@add')
-                ->name('add');
-            Route::post('/cat/insert', 'App\Http\Controllers\Admin\header\HeaderCatController@insert')
-                ->name('insert');
-            Route::get('/cat/delete/{id}', 'App\Http\Controllers\Admin\header\HeaderCatController@delete')
-                ->name('delete')->where('id', '[0-9]+');
-            Route::get('/cat/update/{id}', 'App\Http\Controllers\Admin\header\HeaderCatController@update')
-                ->name('update')->where('id', '[0-9]+');
-            Route::post('/cat/updateForm', 'App\Http\Controllers\Admin\header\HeaderCatController@updateForm')
-                ->name('updateForm');
-        });
-    });
-
-
-
-
-
-
-
+    Route::resource('headerCategory', 'App\Http\Controllers\Admin\header\HeaderCatController');
 
     // header submenus
     Route::resource('submenu', 'App\Http\Controllers\Admin\header\HeaderSubController');
 
-
-
-
-
-
-
     // home
-    Route::prefix('admin/home')->group(function () {
-        Route::name('admin.home.')->group(function () {
-            Route::get('/', 'App\Http\Controllers\Admin\HomeController@home')
-                ->name('view');
-            Route::get('/add', 'App\Http\Controllers\Admin\HomeController@add')
-                ->name('add');
-            Route::post('/insert', 'App\Http\Controllers\Admin\HomeController@insert')
-                ->name('insert');
-            Route::get('/delete/{id}', 'App\Http\Controllers\Admin\HomeController@delete')
-                ->name('delete')->where('id', '[0-9]+');
-            Route::get('/update/{id}', 'App\Http\Controllers\Admin\HomeController@update')
-                ->name('update')->where('id', '[0-9]+');
-            Route::post('/updateForm', 'App\Http\Controllers\Admin\HomeController@updateForm')
-                ->name('updateForm');
-        });
-    });
-
-
-
-
-
-
+    Route::resource('home', 'App\Http\Controllers\Admin\HomeController');
 
     // our team
-    Route::prefix('admin/team')->group(function () {
-        Route::name('admin.team.')->group(function () {
-            Route::get('/', 'App\Http\Controllers\Admin\TeamController@team')
-                ->name('view');
-            Route::get('/add', 'App\Http\Controllers\Admin\TeamController@add')
-                ->name('add');
-            Route::post('/insert', 'App\Http\Controllers\Admin\TeamController@insert')
-                ->name('insert');
-            Route::get('/delete/{id}', 'App\Http\Controllers\Admin\TeamController@delete')
-                ->name('delete')->where('id', '[0-9]+');
-            Route::get('/update/{id}', 'App\Http\Controllers\Admin\TeamController@update')
-                ->name('update')->where('id', '[0-9]+');
-            Route::post('/updateForm', 'App\Http\Controllers\Admin\TeamController@updateForm')
-                ->name('updateForm');
-        });
-    });
-
-
+    Route::resource('team', 'App\Http\Controllers\Admin\TeamController');
 
 
 
 
 
     // contact
-    Route::prefix('admin/contact')->group(function () {
-        Route::name('admin.contact.')->group(function () {
-            Route::get('/', 'App\Http\Controllers\Admin\ContactController@contact')
-                ->name('view');
-            Route::post('/insert', 'App\Http\Controllers\Admin\ContactController@insert')
-                ->name('insert');
-            Route::get('/delete/{id}', 'App\Http\Controllers\Admin\ContactController@delete')
-                ->name('delete')->where('id', '[0-9]+');
-            Route::get('/update/{id}', 'App\Http\Controllers\Admin\ContactController@update')
-                ->name('update')->where('id', '[0-9]+');
-            Route::post('/updateForm', 'App\Http\Controllers\Admin\ContactController@updateForm')
-                ->name('updateForm');
-        });
-    });
-
-
-
+    Route::get('admin/contact', 'App\Http\Controllers\Admin\ContactController@contact')
+        ->name('admin.contact.view');
+    Route::get('admin/contact/delete/{id}', 'App\Http\Controllers\Admin\ContactController@delete')
+        ->name('admin.contact.delete')->where('id', '[0-9]+');
 
 
 
@@ -170,10 +76,6 @@ Route::middleware('auth')->group(function () {
                 ->name('updateForm');
         });
     });
-
-
-
-
 
 
 
@@ -205,8 +107,6 @@ Route::middleware('auth')->group(function () {
     //     Route::post('/admin/product/insert', 'App\Http\Controllers\Admin\ProductController@insert')
     //     ->name('insert');
     // });
-
-
 
 
 

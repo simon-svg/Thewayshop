@@ -1,5 +1,5 @@
 <div class="admin__section_content">
-    <form class="admin__form" action="{{ route('admin.header.cat.insert') }}" method="POST">
+    <form class="admin__form" action="{{ route('headerCategory.store') }}" method="POST">
         @csrf
         <div class="form__flex">
             <input class="admin__inp admin__inp_header form-control" type="text" name="name" placeholder="Name">

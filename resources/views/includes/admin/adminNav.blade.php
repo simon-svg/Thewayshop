@@ -9,10 +9,10 @@
             </div>
             <ul class="admin__nav_header_list">
                 <li class="admin__nav_header_item">
-                    <a class="admin__item admin__item_submenu" href="{{ route('admin.header.view') }}">Header</a>
+                    <a class="admin__item admin__item_submenu" href="{{ route('header.index') }}">Header</a>
                 </li>
                 <li class="admin__nav_header_item">
-                    <a class="admin__item admin__item_submenu" href="{{ route('admin.header.cat.view') }}">Categories</a>
+                    <a class="admin__item admin__item_submenu" href="{{ route('headerCategory.index') }}">Categories</a>
                 </li>
                 <li class="admin__nav_header_item">
                     <a class="admin__item admin__item_submenu" href="{{ route('submenu.index') }}">Submenus</a>
@@ -36,10 +36,10 @@
             </ul>
         </li>
         <li class="sidebar-admin__item">
-            <a class="admin__item" href="{{ route('admin.home.view') }}">Home</a>
+            <a class="admin__item" href="{{ route('home.index') }}">Home</a>
         </li>
         <li class="sidebar-admin__item">
-            <a class="admin__item" href="{{ route('admin.team.view') }}">Team</a>
+            <a class="admin__item" href="{{ route('team.index') }}">Team</a>
         </li>
         <li class="sidebar-admin__item">
             <a class="admin__item" href="{{ route('admin.contact.view') }}">Contact</a>

@@ -20,19 +20,23 @@
                             <h3 class="admin__section_item_info">{{ $item->parentId }}</h3>
                         </td>
                         <td class="admin__section_item_td">
-                            <a href="{{ route('admin.header.cat.update', ['id' => $item->id]) }}">
-                                <i class="admin__icon fas fa-pencil-alt"></i>
-                            </a>
-                            <a href="{{ route('admin.header.cat.delete', ['id' => $item->id]) }}">
-                                <i class="admin__icon fas fa-times"></i>
-                            </a>
+                            <form action="{{ route('headerCategory.destroy', ['headerCategory' => $item]) }}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <a href="{{ route('headerCategory.edit', ['headerCategory' => $item]) }}">
+                                    <i class="admin__icon fas fa-pencil-alt"></i>
+                                </a>
+                                <button>
+                                    <i class="admin__icon fas fa-times"></i>
+                                </button>
+                            </form>
                         </td>
                     </tr>
                 @endforeach
             </table>
         </div>
         <div>
-            <a href="{{ route('admin.header.cat.add') }}">
+            <a href="{{ route('headerCategory.create') }}">
                 <button class="btn custom-btn admin__form_btn" name="submit">Add Header Category</button>
             </a>
         </div>
