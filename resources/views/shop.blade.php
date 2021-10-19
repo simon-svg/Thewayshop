@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('allTitleBox')
-    @include('includes.all.allTitleBox', ['title' => "Shop"])
+    @include('includes.all.allTitleBox', ['title' => __('messages.shop.shop')])
 @endsection
 
 @section('pagesContent')
@@ -12,13 +12,14 @@
                     <div class="product-categori">
                         <div class="search-product">
                             <form action="#">
-                                <input class="form-control" placeholder="Search here..." type="text">
+                                <input class="form-control" placeholder=@lang('messages.shop.search here placeholder')
+                                    type="text">
                                 <button type="submit"> <i class="fa fa-search"></i> </button>
                             </form>
                         </div>
                         <div class="filter-sidebar-left">
                             <div class="title-left">
-                                <h3>Categories</h3>
+                                <h3>@lang('messages.shop.categories')</h3>
                             </div>
                             <div class="list-group list-group-collapse list-group-sm list-group-tree" id="list-group-men"
                                 data-children=".sub-men">
@@ -68,20 +69,20 @@
                         </div>
                         <div class="filter-price-left">
                             <div class="title-left">
-                                <h3>Price</h3>
+                                <h3>@lang('messages.shop.price')</h3>
                             </div>
                             <div class="price-box-slider">
                                 <div id="slider-range"></div>
                                 <p>
                                     <input type="text" id="amount" readonly
                                         style="border:0; color:#fbb714; font-weight:bold;">
-                                    <button class="btn hvr-hover" type="submit">Filter</button>
+                                    <button class="btn hvr-hover" type="submit">@lang('messages.shop.filter')</button>
                                 </p>
                             </div>
                         </div>
                         <div class="filter-brand-left">
                             <div class="title-left">
-                                <h3>Brand</h3>
+                                <h3>@lang('messages.shop.brand')</h3>
                             </div>
                             <div class="brand-box">
                                 <ul>
@@ -156,16 +157,16 @@
                         <div class="product-item-filter row">
                             <div class="col-12 col-sm-8 text-center text-sm-left">
                                 <div class="toolbar-sorter-right">
-                                    <span>Sort by </span>
+                                    <span>@lang('messages.shop.sort by') </span>
                                     <select id="basic" class="selectpicker show-tick form-control" data-placeholder="$ USD">
-                                        <option data-display="Select">Nothing</option>
-                                        <option value="1">Popularity</option>
-                                        <option value="2">High Price → High Price</option>
-                                        <option value="3">Low Price → High Price</option>
-                                        <option value="4">Best Selling</option>
+                                        <option data-display="Select">@lang('messages.shop.sort by nothing')</option>
+                                        <option value="1">@lang('messages.shop.sort by popularity')</option>
+                                        <option value="2">@lang('messages.shop.sort by hight low')</option>
+                                        <option value="3">@lang('messages.shop.sort by low hight')</option>
+                                        <option value="4">@lang('messages.shop.sort by best selling')</option>
                                     </select>
                                 </div>
-                                <p>Showing all 4 results</p>
+                                <p>@lang('messages.shop.showing all result', ['count' => 5])</p>
                             </div>
                             <div class="col-12 col-sm-4 text-center text-sm-right">
                                 <ul class="nav nav-tabs ml-auto">
@@ -189,20 +190,33 @@
                                             <div class="products-single fix">
                                                 <div class="box-img-hover">
                                                     <div class="type-lb">
-                                                        <p class="sale">Sale</p>
+                                                        <p class="sale">@lang('messages.shop.sale')</p>
                                                     </div>
                                                     <img src="images/img-pro-01.jpg" class="img-fluid" alt="Image">
                                                     <div class="mask-icon">
                                                         <ul>
-                                                            <li><a href="#" data-toggle="tooltip" data-placement="right"
-                                                                    title="View"><i class="fas fa-eye"></i></a></li>
-                                                            <li><a href="#" data-toggle="tooltip" data-placement="right"
-                                                                    title="Compare"><i class="fas fa-sync-alt"></i></a></li>
-                                                            <li><a href="#" data-toggle="tooltip" data-placement="right"
-                                                                    title="Add to Wishlist"><i
-                                                                        class="far fa-heart"></i></a></li>
+                                                            <li>
+                                                                <a href="#" data-toggle="tooltip" data-placement="right"
+                                                                    title=@lang('messages.shop.view')>
+                                                                    <i class="fas fa-eye"></i>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#" data-toggle="tooltip" data-placement="right"
+                                                                    title=@lang('messages.shop.compare')>
+                                                                    <i class="fas fa-sync-alt"></i>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#" data-toggle="tooltip" data-placement="right"
+                                                                    title=@lang('messages.shop.add to wishlist')>
+                                                                    <i class="far fa-heart"></i>
+                                                                </a>
+                                                            </li>
                                                         </ul>
-                                                        <a class="cart" href="#">Add to Cart</a>
+                                                        <a class="cart" href="#">
+                                                            @lang('messages.shop.add to cart')
+                                                        </a>
                                                     </div>
                                                 </div>
                                                 <div class="why-text">
@@ -215,20 +229,31 @@
                                             <div class="products-single fix">
                                                 <div class="box-img-hover">
                                                     <div class="type-lb">
-                                                        <p class="new">New</p>
+                                                        <p class="new">@lang('messages.shop.new')</p>
                                                     </div>
                                                     <img src="images/img-pro-02.jpg" class="img-fluid" alt="Image">
                                                     <div class="mask-icon">
                                                         <ul>
-                                                            <li><a href="#" data-toggle="tooltip" data-placement="right"
-                                                                    title="View"><i class="fas fa-eye"></i></a></li>
-                                                            <li><a href="#" data-toggle="tooltip" data-placement="right"
-                                                                    title="Compare"><i class="fas fa-sync-alt"></i></a></li>
-                                                            <li><a href="#" data-toggle="tooltip" data-placement="right"
-                                                                    title="Add to Wishlist"><i
-                                                                        class="far fa-heart"></i></a></li>
+                                                            <li>
+                                                                <a href="#" data-toggle="tooltip" data-placement="right"
+                                                                    title=@lang('messages.shop.view')>
+                                                                    <i class="fas fa-eye"></i>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#" data-toggle="tooltip" data-placement="right"
+                                                                    title=@lang('messages.shop.compare')>
+                                                                    <i class="fas fa-sync-alt"></i>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#" data-toggle="tooltip" data-placement="right"
+                                                                    title=@lang('messages.shop.add to wishlist')>
+                                                                    <i class="far fa-heart"></i>
+                                                                </a>
+                                                            </li>
                                                         </ul>
-                                                        <a class="cart" href="#">Add to Cart</a>
+                                                        <a class="cart" href="#">@lang('messages.shop.add to cart')</a>
                                                     </div>
                                                 </div>
                                                 <div class="why-text">
@@ -241,21 +266,31 @@
                                             <div class="products-single fix">
                                                 <div class="box-img-hover">
                                                     <div class="type-lb">
-                                                        <p class="sale">Sale</p>
+                                                        <p class="sale">@lang('messages.shop.sale')</p>
                                                     </div>
                                                     <img src="images/img-pro-03.jpg" class="img-fluid" alt="Image">
                                                     <div class="mask-icon">
                                                         <ul>
-                                                            <li><a href="#" data-toggle="tooltip" data-placement="right"
-                                                                    title="View"><i class="fas fa-eye"></i></a></li>
-                                                            <li><a href="#" data-toggle="tooltip" data-placement="right"
-                                                                    title="Compare"><i class="fas fa-sync-alt"></i></a>
+                                                            <li>
+                                                                <a href="#" data-toggle="tooltip" data-placement="right"
+                                                                    title=@lang('messages.shop.view')>
+                                                                    <i class="fas fa-eye"></i>
+                                                                </a>
                                                             </li>
-                                                            <li><a href="#" data-toggle="tooltip" data-placement="right"
-                                                                    title="Add to Wishlist"><i
-                                                                        class="far fa-heart"></i></a></li>
+                                                            <li>
+                                                                <a href="#" data-toggle="tooltip" data-placement="right"
+                                                                    title=@lang('messages.shop.compare')>
+                                                                    <i class="fas fa-sync-alt"></i>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#" data-toggle="tooltip" data-placement="right"
+                                                                    title=@lang('messages.shop.add to wishlist')>
+                                                                    <i class="far fa-heart"></i>
+                                                                </a>
+                                                            </li>
                                                         </ul>
-                                                        <a class="cart" href="#">Add to Cart</a>
+                                                        <a class="cart" href="#">@lang('messages.shop.add to cart')</a>
                                                     </div>
                                                 </div>
                                                 <div class="why-text">
@@ -268,21 +303,31 @@
                                             <div class="products-single fix">
                                                 <div class="box-img-hover">
                                                     <div class="type-lb">
-                                                        <p class="new">New</p>
+                                                        <p class="new">@lang('messages.shop.new')</p>
                                                     </div>
                                                     <img src="images/img-pro-01.jpg" class="img-fluid" alt="Image">
                                                     <div class="mask-icon">
                                                         <ul>
-                                                            <li><a href="#" data-toggle="tooltip" data-placement="right"
-                                                                    title="View"><i class="fas fa-eye"></i></a></li>
-                                                            <li><a href="#" data-toggle="tooltip" data-placement="right"
-                                                                    title="Compare"><i class="fas fa-sync-alt"></i></a>
+                                                            <li>
+                                                                <a href="#" data-toggle="tooltip" data-placement="right"
+                                                                    title=@lang('messages.shop.view')>
+                                                                    <i class="fas fa-eye"></i>
+                                                                </a>
                                                             </li>
-                                                            <li><a href="#" data-toggle="tooltip" data-placement="right"
-                                                                    title="Add to Wishlist"><i
-                                                                        class="far fa-heart"></i></a></li>
+                                                            <li>
+                                                                <a href="#" data-toggle="tooltip" data-placement="right"
+                                                                    title=@lang('messages.shop.compare')>
+                                                                    <i class="fas fa-sync-alt"></i>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#" data-toggle="tooltip" data-placement="right"
+                                                                    title=@lang('messages.shop.add to wishlist')>
+                                                                    <i class="far fa-heart"></i>
+                                                                </a>
+                                                            </li>
                                                         </ul>
-                                                        <a class="cart" href="#">Add to Cart</a>
+                                                        <a class="cart" href="#">@lang('messages.shop.add to cart')</a>
                                                     </div>
                                                 </div>
                                                 <div class="why-text">
@@ -295,21 +340,31 @@
                                             <div class="products-single fix">
                                                 <div class="box-img-hover">
                                                     <div class="type-lb">
-                                                        <p class="sale">Sale</p>
+                                                        <p class="sale">@lang('messages.shop.sale')</p>
                                                     </div>
                                                     <img src="images/img-pro-02.jpg" class="img-fluid" alt="Image">
                                                     <div class="mask-icon">
                                                         <ul>
-                                                            <li><a href="#" data-toggle="tooltip" data-placement="right"
-                                                                    title="View"><i class="fas fa-eye"></i></a></li>
-                                                            <li><a href="#" data-toggle="tooltip" data-placement="right"
-                                                                    title="Compare"><i class="fas fa-sync-alt"></i></a>
+                                                            <li>
+                                                                <a href="#" data-toggle="tooltip" data-placement="right"
+                                                                    title=@lang('messages.shop.view')>
+                                                                    <i class="fas fa-eye"></i>
+                                                                </a>
                                                             </li>
-                                                            <li><a href="#" data-toggle="tooltip" data-placement="right"
-                                                                    title="Add to Wishlist"><i
-                                                                        class="far fa-heart"></i></a></li>
+                                                            <li>
+                                                                <a href="#" data-toggle="tooltip" data-placement="right"
+                                                                    title=@lang('messages.shop.compare')>
+                                                                    <i class="fas fa-sync-alt"></i>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#" data-toggle="tooltip" data-placement="right"
+                                                                    title=@lang('messages.shop.add to wishlist')>
+                                                                    <i class="far fa-heart"></i>
+                                                                </a>
+                                                            </li>
                                                         </ul>
-                                                        <a class="cart" href="#">Add to Cart</a>
+                                                        <a class="cart" href="#">@lang('messages.shop.add to cart')</a>
                                                     </div>
                                                 </div>
                                                 <div class="why-text">
@@ -322,21 +377,31 @@
                                             <div class="products-single fix">
                                                 <div class="box-img-hover">
                                                     <div class="type-lb">
-                                                        <p class="sale">Sale</p>
+                                                        <p class="sale">@lang('messages.shop.sale')</p>
                                                     </div>
                                                     <img src="images/img-pro-03.jpg" class="img-fluid" alt="Image">
                                                     <div class="mask-icon">
                                                         <ul>
-                                                            <li><a href="#" data-toggle="tooltip" data-placement="right"
-                                                                    title="View"><i class="fas fa-eye"></i></a></li>
-                                                            <li><a href="#" data-toggle="tooltip" data-placement="right"
-                                                                    title="Compare"><i class="fas fa-sync-alt"></i></a>
+                                                            <li>
+                                                                <a href="#" data-toggle="tooltip" data-placement="right"
+                                                                    title=@lang('messages.shop.view')>
+                                                                    <i class="fas fa-eye"></i>
+                                                                </a>
                                                             </li>
-                                                            <li><a href="#" data-toggle="tooltip" data-placement="right"
-                                                                    title="Add to Wishlist"><i
-                                                                        class="far fa-heart"></i></a></li>
+                                                            <li>
+                                                                <a href="#" data-toggle="tooltip" data-placement="right"
+                                                                    title=@lang('messages.shop.compare')>
+                                                                    <i class="fas fa-sync-alt"></i>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#" data-toggle="tooltip" data-placement="right"
+                                                                    title=@lang('messages.shop.add to wishlist')>
+                                                                    <i class="far fa-heart"></i>
+                                                                </a>
+                                                            </li>
                                                         </ul>
-                                                        <a class="cart" href="#">Add to Cart</a>
+                                                        <a class="cart" href="#">@lang('messages.shop.add to cart')</a>
                                                     </div>
                                                 </div>
                                                 <div class="why-text">
@@ -349,21 +414,31 @@
                                             <div class="products-single fix">
                                                 <div class="box-img-hover">
                                                     <div class="type-lb">
-                                                        <p class="sale">Sale</p>
+                                                        <p class="sale">@lang('messages.shop.sale')</p>
                                                     </div>
                                                     <img src="images/img-pro-01.jpg" class="img-fluid" alt="Image">
                                                     <div class="mask-icon">
                                                         <ul>
-                                                            <li><a href="#" data-toggle="tooltip" data-placement="right"
-                                                                    title="View"><i class="fas fa-eye"></i></a></li>
-                                                            <li><a href="#" data-toggle="tooltip" data-placement="right"
-                                                                    title="Compare"><i class="fas fa-sync-alt"></i></a>
+                                                            <li>
+                                                                <a href="#" data-toggle="tooltip" data-placement="right"
+                                                                    title=@lang('messages.shop.view')>
+                                                                    <i class="fas fa-eye"></i>
+                                                                </a>
                                                             </li>
-                                                            <li><a href="#" data-toggle="tooltip" data-placement="right"
-                                                                    title="Add to Wishlist"><i
-                                                                        class="far fa-heart"></i></a></li>
+                                                            <li>
+                                                                <a href="#" data-toggle="tooltip" data-placement="right"
+                                                                    title=@lang('messages.shop.compare')>
+                                                                    <i class="fas fa-sync-alt"></i>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#" data-toggle="tooltip" data-placement="right"
+                                                                    title=@lang('messages.shop.add to wishlist')>
+                                                                    <i class="far fa-heart"></i>
+                                                                </a>
+                                                            </li>
                                                         </ul>
-                                                        <a class="cart" href="#">Add to Cart</a>
+                                                        <a class="cart" href="#">@lang('messages.shop.add to cart')</a>
                                                     </div>
                                                 </div>
                                                 <div class="why-text">
@@ -376,21 +451,31 @@
                                             <div class="products-single fix">
                                                 <div class="box-img-hover">
                                                     <div class="type-lb">
-                                                        <p class="sale">Sale</p>
+                                                        <p class="sale">@lang('messages.shop.sale')</p>
                                                     </div>
                                                     <img src="images/img-pro-02.jpg" class="img-fluid" alt="Image">
                                                     <div class="mask-icon">
                                                         <ul>
-                                                            <li><a href="#" data-toggle="tooltip" data-placement="right"
-                                                                    title="View"><i class="fas fa-eye"></i></a></li>
-                                                            <li><a href="#" data-toggle="tooltip" data-placement="right"
-                                                                    title="Compare"><i class="fas fa-sync-alt"></i></a>
+                                                            <li>
+                                                                <a href="#" data-toggle="tooltip" data-placement="right"
+                                                                    title=@lang('messages.shop.view')>
+                                                                    <i class="fas fa-eye"></i>
+                                                                </a>
                                                             </li>
-                                                            <li><a href="#" data-toggle="tooltip" data-placement="right"
-                                                                    title="Add to Wishlist"><i
-                                                                        class="far fa-heart"></i></a></li>
+                                                            <li>
+                                                                <a href="#" data-toggle="tooltip" data-placement="right"
+                                                                    title=@lang('messages.shop.compare')>
+                                                                    <i class="fas fa-sync-alt"></i>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#" data-toggle="tooltip" data-placement="right"
+                                                                    title=@lang('messages.shop.add to wishlist')>
+                                                                    <i class="far fa-heart"></i>
+                                                                </a>
+                                                            </li>
                                                         </ul>
-                                                        <a class="cart" href="#">Add to Cart</a>
+                                                        <a class="cart" href="#">@lang('messages.shop.add to cart')</a>
                                                     </div>
                                                 </div>
                                                 <div class="why-text">
@@ -403,21 +488,31 @@
                                             <div class="products-single fix">
                                                 <div class="box-img-hover">
                                                     <div class="type-lb">
-                                                        <p class="new">New</p>
+                                                        <p class="new">@lang('messages.shop.new')</p>
                                                     </div>
                                                     <img src="images/img-pro-03.jpg" class="img-fluid" alt="Image">
                                                     <div class="mask-icon">
                                                         <ul>
-                                                            <li><a href="#" data-toggle="tooltip" data-placement="right"
-                                                                    title="View"><i class="fas fa-eye"></i></a></li>
-                                                            <li><a href="#" data-toggle="tooltip" data-placement="right"
-                                                                    title="Compare"><i class="fas fa-sync-alt"></i></a>
+                                                            <li>
+                                                                <a href="#" data-toggle="tooltip" data-placement="right"
+                                                                    title=@lang('messages.shop.view')>
+                                                                    <i class="fas fa-eye"></i>
+                                                                </a>
                                                             </li>
-                                                            <li><a href="#" data-toggle="tooltip" data-placement="right"
-                                                                    title="Add to Wishlist"><i
-                                                                        class="far fa-heart"></i></a></li>
+                                                            <li>
+                                                                <a href="#" data-toggle="tooltip" data-placement="right"
+                                                                    title=@lang('messages.shop.compare')>
+                                                                    <i class="fas fa-sync-alt"></i>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#" data-toggle="tooltip" data-placement="right"
+                                                                    title=@lang('messages.shop.add to wishlist')>
+                                                                    <i class="far fa-heart"></i>
+                                                                </a>
+                                                            </li>
                                                         </ul>
-                                                        <a class="cart" href="#">Add to Cart</a>
+                                                        <a class="cart" href="#">@lang('messages.shop.add to cart')</a>
                                                     </div>
                                                 </div>
                                                 <div class="why-text">
@@ -435,23 +530,31 @@
                                                 <div class="products-single fix">
                                                     <div class="box-img-hover">
                                                         <div class="type-lb">
-                                                            <p class="new">New</p>
+                                                            <p class="new">@lang('messages.shop.new')</p>
                                                         </div>
                                                         <img src="images/img-pro-01.jpg" class="img-fluid"
                                                             alt="Image">
                                                         <div class="mask-icon">
                                                             <ul>
-                                                                <li><a href="#" data-toggle="tooltip" data-placement="right"
-                                                                        title="View"><i class="fas fa-eye"></i></a>
+                                                                <li>
+                                                                    <a href="#" data-toggle="tooltip" data-placement="right"
+                                                                        title=@lang('messages.shop.view')>
+                                                                        <i class="fas fa-eye"></i>
+                                                                    </a>
                                                                 </li>
-                                                                <li><a href="#" data-toggle="tooltip" data-placement="right"
-                                                                        title="Compare"><i class="fas fa-sync-alt"></i></a>
+                                                                <li>
+                                                                    <a href="#" data-toggle="tooltip" data-placement="right"
+                                                                        title=@lang('messages.shop.compare')>
+                                                                        <i class="fas fa-sync-alt"></i>
+                                                                    </a>
                                                                 </li>
-                                                                <li><a href="#" data-toggle="tooltip" data-placement="right"
-                                                                        title="Add to Wishlist"><i
-                                                                            class="far fa-heart"></i></a></li>
+                                                                <li>
+                                                                    <a href="#" data-toggle="tooltip" data-placement="right"
+                                                                        title=@lang('messages.shop.add to wishlist')>
+                                                                        <i class="far fa-heart"></i>
+                                                                    </a>
+                                                                </li>
                                                             </ul>
-
                                                         </div>
                                                     </div>
                                                 </div>
@@ -471,7 +574,7 @@
                                                         Suspendisse at ipsum vel lacus vehicula blandit et sollicitudin
                                                         quam. Praesent vulputate semper libero pulvinar consequat. Etiam ut
                                                         placerat lectus.</p>
-                                                    <a class="btn hvr-hover" href="#">Add to Cart</a>
+                                                    <a class="btn hvr-hover" href="#">@lang('messages.shop.add to cart')</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -482,23 +585,31 @@
                                                 <div class="products-single fix">
                                                     <div class="box-img-hover">
                                                         <div class="type-lb">
-                                                            <p class="sale">Sale</p>
+                                                            <p class="sale">@lang('messages.shop.sale')</p>
                                                         </div>
                                                         <img src="images/img-pro-02.jpg" class="img-fluid"
                                                             alt="Image">
                                                         <div class="mask-icon">
                                                             <ul>
-                                                                <li><a href="#" data-toggle="tooltip" data-placement="right"
-                                                                        title="View"><i class="fas fa-eye"></i></a>
+                                                                <li>
+                                                                    <a href="#" data-toggle="tooltip" data-placement="right"
+                                                                        title=@lang('messages.shop.view')>
+                                                                        <i class="fas fa-eye"></i>
+                                                                    </a>
                                                                 </li>
-                                                                <li><a href="#" data-toggle="tooltip" data-placement="right"
-                                                                        title="Compare"><i class="fas fa-sync-alt"></i></a>
+                                                                <li>
+                                                                    <a href="#" data-toggle="tooltip" data-placement="right"
+                                                                        title=@lang('messages.shop.compare')>
+                                                                        <i class="fas fa-sync-alt"></i>
+                                                                    </a>
                                                                 </li>
-                                                                <li><a href="#" data-toggle="tooltip" data-placement="right"
-                                                                        title="Add to Wishlist"><i
-                                                                            class="far fa-heart"></i></a></li>
+                                                                <li>
+                                                                    <a href="#" data-toggle="tooltip" data-placement="right"
+                                                                        title=@lang('messages.shop.add to wishlist')>
+                                                                        <i class="far fa-heart"></i>
+                                                                    </a>
+                                                                </li>
                                                             </ul>
-
                                                         </div>
                                                     </div>
                                                 </div>
@@ -518,7 +629,7 @@
                                                         Suspendisse at ipsum vel lacus vehicula blandit et sollicitudin
                                                         quam. Praesent vulputate semper libero pulvinar consequat. Etiam ut
                                                         placerat lectus.</p>
-                                                    <a class="btn hvr-hover" href="#">Add to Cart</a>
+                                                    <a class="btn hvr-hover" href="#">@lang('messages.shop.add to cart')</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -529,23 +640,31 @@
                                                 <div class="products-single fix">
                                                     <div class="box-img-hover">
                                                         <div class="type-lb">
-                                                            <p class="sale">Sale</p>
+                                                            <p class="sale">@lang('messages.shop.sale')</p>
                                                         </div>
                                                         <img src="images/img-pro-03.jpg" class="img-fluid"
                                                             alt="Image">
                                                         <div class="mask-icon">
                                                             <ul>
-                                                                <li><a href="#" data-toggle="tooltip" data-placement="right"
-                                                                        title="View"><i class="fas fa-eye"></i></a>
+                                                                <li>
+                                                                    <a href="#" data-toggle="tooltip" data-placement="right"
+                                                                        title=@lang('messages.shop.view')>
+                                                                        <i class="fas fa-eye"></i>
+                                                                    </a>
                                                                 </li>
-                                                                <li><a href="#" data-toggle="tooltip" data-placement="right"
-                                                                        title="Compare"><i class="fas fa-sync-alt"></i></a>
+                                                                <li>
+                                                                    <a href="#" data-toggle="tooltip" data-placement="right"
+                                                                        title=@lang('messages.shop.compare')>
+                                                                        <i class="fas fa-sync-alt"></i>
+                                                                    </a>
                                                                 </li>
-                                                                <li><a href="#" data-toggle="tooltip" data-placement="right"
-                                                                        title="Add to Wishlist"><i
-                                                                            class="far fa-heart"></i></a></li>
+                                                                <li>
+                                                                    <a href="#" data-toggle="tooltip" data-placement="right"
+                                                                        title=@lang('messages.shop.add to wishlist')>
+                                                                        <i class="far fa-heart"></i>
+                                                                    </a>
+                                                                </li>
                                                             </ul>
-
                                                         </div>
                                                     </div>
                                                 </div>
@@ -565,7 +684,7 @@
                                                         Suspendisse at ipsum vel lacus vehicula blandit et sollicitudin
                                                         quam. Praesent vulputate semper libero pulvinar consequat. Etiam ut
                                                         placerat lectus.</p>
-                                                    <a class="btn hvr-hover" href="#">Add to Cart</a>
+                                                    <a class="btn hvr-hover" href="#">@lang('messages.shop.add to cart')</a>
                                                 </div>
                                             </div>
                                         </div>

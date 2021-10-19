@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 // Models
 use App\Models\Header;
@@ -17,16 +18,20 @@ class PagesController extends Controller
     public $homeSlide;
     public $teamData;
 
-    public function setData($data){
+    public function setData($data)
+    {
         $this->data = $data;
     }
-    public function setHomeSlide($homeSlide){
+    public function setHomeSlide($homeSlide)
+    {
         $this->homeSlide = $homeSlide;
     }
-    public function setTeamData($teamData){
+    public function setTeamData($teamData)
+    {
         $this->teamData = $teamData;
     }
-    public function __construct(){
+    public function __construct()
+    {
         $all = Header::headers();
         $this->setData($all);
 
@@ -36,78 +41,116 @@ class PagesController extends Controller
 
 
 
-    public function home(){
+    public function home()
+    {
         $homeSlide = Home::get();
         $this->setHomeSlide($homeSlide);
         return view('index', [
             'data' => $this->data,
-            'homeSlide' => $this->homeSlide
+            'homeSlide' => $this->homeSlide,
+            'user' => Auth::user()
         ]);
     }
 
 
 
-    public function about(){
+    public function about()
+    {
         return view('about', [
             'data' => $this->data,
-            'team' => $this->teamData
+            'team' => $this->teamData,
+            'user' => Auth::user()
         ]);
     }
 
 
 
-    public function shop(){
-        return view('shop', ['data' => $this->data]);
+    public function shop()
+    {
+        return view('shop', [
+            'data' => $this->data,
+            'user' => Auth::user()
+        ]);
     }
 
 
 
-    public function cart(){
-        return view('cart', ['data' => $this->data]);
+    public function cart()
+    {
+        return view('cart', [
+            'data' => $this->data,
+            'user' => Auth::user()
+        ]);
     }
 
 
 
-    public function checkout(){
-        return view('checkout', ['data' => $this->data]);
+    public function checkout()
+    {
+        return view('checkout', [
+            'data' => $this->data,
+            'user' => Auth::user()
+        ]);
     }
 
 
 
-    public function shopDetail(){
-        return view('shopDetail', ['data' => $this->data]);
+    public function shopDetail()
+    {
+        return view('shopDetail', [
+            'data' => $this->data,
+            'user' => Auth::user()
+        ]);
     }
 
 
 
-    public function service(){
+    public function service()
+    {
         return view('service', [
             'data' => $this->data,
-            'team' => $this->teamData
+            'team' => $this->teamData,
+            'user' => Auth::user()
         ]);
     }
 
 
 
-    public function contact(){
-        return view('contact', ['data' => $this->data]);
+    public function contact()
+    {
+        return view('contact', [
+            'data' => $this->data,
+            'user' => Auth::user()
+        ]);
     }
 
 
 
-    public function registration(){
-        return view('registration', ['data' => $this->data]);
+    public function registration()
+    {
+        return view('registration', [
+            'data' => $this->data,
+            'user' => Auth::user()
+        ]);
     }
 
 
 
-    public function login(){
-        return view('login', ['data' => $this->data]);
+    public function login()
+    {
+        return view('login', [
+            'data' => $this->data,
+            'user' => Auth::user()
+        ]);
     }
 
 
 
-    public function myAccount(){
-        return view('my-account', ['data' => $this->data]);
+    public function myAccount()
+    {
+        return view('my-account', [
+            'data' => $this->data,
+            'user' => Auth::user()
+        ]);
     }
 }

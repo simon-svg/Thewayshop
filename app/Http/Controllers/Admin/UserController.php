@@ -19,21 +19,34 @@ class UserController extends Controller
         $this->setData($data);
     }
 
-
-
-    public function user(){
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
         return view('admin.user.user', ['data' => $this->data]);
     }
 
-
-
-    public function add(){
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
         return view('admin.user.insert');
     }
 
-
-
-    public function insert(Request $request){
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
         $data = $request->validate([
             'name' => ['required'],
             'lastName' => ['required'],
@@ -49,24 +62,31 @@ class UserController extends Controller
             'login' => $data['login'],
             'password' => bcrypt($data['password'])
         ]);
-        return redirect(route('admin.users.view'));
+        return redirect(route('users.index'));
     }
 
-
-
-
-    public function delete($id){
-        $item = User::findorFail($id);
-        $item->delete();
-        return redirect(route('admin.users.view'));
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        //
     }
 
-
-
-
-    public function update($id){
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
         $item = User::findorFail($id);
         return view('admin.user.update', [
+            'item' => $item,
             'id' => $item['id'],
             'name' => $item['name'],
             'lastName' => $item['last_name'],
@@ -76,11 +96,16 @@ class UserController extends Controller
         ]);
     }
 
-
-
-
-    public function updateForm(Request $request){
-        $item = User::findorFail($request->id);
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
+        $item = User::findorFail($id);
         $data = $request->validate([
             'name' => ['required'],
             'lastName' => ['required'],
@@ -95,7 +120,19 @@ class UserController extends Controller
             'role' => $request->role,
             'login' => $data['login']
         ]);
-        dd($item);
-        return redirect(route('admin.users.view'));
+        return redirect(route('users.index'));
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        $item = User::findorFail($id);
+        $item->delete();
+        return redirect(route('users.index'));
     }
 }

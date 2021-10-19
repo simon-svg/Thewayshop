@@ -3,51 +3,45 @@
         <div class="row my-5">
             <div class="col-sm-6 col-lg-4">
                 <div class="service-block-inner">
-                    <h3>OUR MISSION</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua. </p>
+                    <h3>@lang('messages.about.our mission')</h3>
+                    <p>@lang('messages.about.our mission info')</p>
                 </div>
             </div>
             <div class="col-sm-6 col-lg-4">
                 <div class="service-block-inner">
-                    <h3>OUR VISION</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua. </p>
+                    <h3>@lang('messages.about.our vision')</h3>
+                    <p>@lang('messages.about.our vision info')</p>
                 </div>
             </div>
             <div class="col-sm-6 col-lg-4">
                 <div class="service-block-inner">
-                    <h3>OUR PHILOSOPHY</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua. </p>
+                    <h3>@lang('messages.about.our philosophy')</h3>
+                    <p>@lang('messages.about.our philosophy info')</p>
                 </div>
             </div>
             <div class="col-sm-6 col-lg-4">
                 <div class="service-block-inner">
-                    <h3>We are Trusted</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua. </p>
+                    <h3>@lang('messages.about.we are trusted')</h3>
+                    <p>@lang('messages.about.we are trusted info')</p>
                 </div>
             </div>
             <div class="col-sm-6 col-lg-4">
                 <div class="service-block-inner">
-                    <h3>We are Professional</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua. </p>
+                    <h3>@lang('messages.about.we are proffesional')</h3>
+                    <p>@lang('messages.about.we are proffesional info')</p>
                 </div>
             </div>
             <div class="col-sm-6 col-lg-4">
                 <div class="service-block-inner">
-                    <h3>OUR STORIES</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua. </p>
+                    <h3>@lang('messages.about.our stories')</h3>
+                    <p>@lang('messages.about.our stories info')</p>
                 </div>
             </div>
         </div>
 
         <div class="row my-4">
             <div class="col-12">
-                <h2 class="noo-sh-title">Meet Our Team</h2>
+                <h2 class="noo-sh-title">@lang('messages.about.meet our team')</h2>
             </div>
             @foreach ($team as $person)
                 <div class="col-sm-6 col-lg-3">

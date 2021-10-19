@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('allTitleBox')
-    @include('includes.all.allTitleBox', ['title' => "Login"])
+    @include('includes.all.allTitleBox', ['title' => __('messages.login.login')])
 @endsection
 
 @section('pagesContent')

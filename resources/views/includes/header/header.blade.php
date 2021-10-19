@@ -6,28 +6,13 @@
                     <div id="offer-box" class="carouselTicker">
                         <ul class="offer-box">
                             <li>
-                                <i class="fab fa-opencart"></i> Off 10%! Shop Now Man
+                                <i class="fab fa-opencart"></i> @lang('messages.header.Off 10%! Shop Now Man')
                             </li>
                             <li>
-                                <i class="fab fa-opencart"></i> 50% - 80% off on Fashion
+                                <i class="fab fa-opencart"></i> @lang('messages.header.50% - 80% off on Fashion')
                             </li>
                             <li>
-                                <i class="fab fa-opencart"></i> 20% off Entire Purchase Promo code: offT20
-                            </li>
-                            <li>
-                                <i class="fab fa-opencart"></i> Off 50%! Shop Now
-                            </li>
-                            <li>
-                                <i class="fab fa-opencart"></i> Off 10%! Shop Now Man
-                            </li>
-                            <li>
-                                <i class="fab fa-opencart"></i> 50% - 80% off on Fashion
-                            </li>
-                            <li>
-                                <i class="fab fa-opencart"></i> 20% off Entire Purchase Promo code: offT20
-                            </li>
-                            <li>
-                                <i class="fab fa-opencart"></i> Off 50%! Shop Now
+                                <i class="fab fa-opencart"></i> @lang('messages.header.20% off Entire Purchase Promo code: offT20')
                             </li>
                         </ul>
                     </div>
@@ -35,35 +20,32 @@
             </div>
             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                 <div class="custom-select-box">
-                        <a class="header__change_lang" href="{{ route('en') }}">EN</a>
-                        <a class="header__change_lang" href="{{ route('ru') }}">RU</a>
-                    {{-- <select id="basic" class="selectpicker show-tick form-control" data-placeholder="en">
-                        <option>EN</option>
-                        <option>AM</option>
-                    </select> --}}
+                    @include('partials.language_switcher')
                 </div>
                 <div class="right-phone-box">
-                    <p>Call US :- +374 55-32-14-13</p>
+                    <p>@lang('messages.header.call us') :- +374 55-32-14-13</p>
                 </div>
                 <div class="our-link">
                     <ul>
-                        @auth("web")
+                        @auth('web')
+                            @if ($user->role == 'admin')
+                                <li>
+                                    <a href="{{ route('header.index') }}">@lang('messages.header.admin')</a>
+                                </li>
+                            @endif
                             <li>
-                                <a href="{{ route('header.index') }}">Admin</a>
+                                <a href="{{ route('myAccount') }}">@lang('messages.header.my account')</a>
                             </li>
                             <li>
-                                <a href="{{ route('myAccount') }}">My Account</a>
-                            </li>
-                            <li>
-                                <a href="{{ route('logout') }}">Log Out</a>
+                                <a href="{{ route('logout') }}">@lang('messages.header.log out')</a>
                             </li>
                         @endauth
-                        @guest("web")
+                        @guest('web')
                             <li>
-                                <a href="{{ route('registration') }}">Register</a>
+                                <a href="{{ route('registration') }}">@lang('messages.header.register')</a>
                             </li>
                             <li>
-                                <a href="{{ route('login') }}">Log In</a>
+                                <a href="{{ route('login') }}">@lang('messages.header.login')</a>
                             </li>
                         @endguest
                     </ul>

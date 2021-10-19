@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('allTitleBox')
-    @include('includes.all.allTitleBox', ['title' => "Registration"])
+    @include('includes.all.allTitleBox', ['title' => __('messages.register.register')])
 @endsection
 
 @section('pagesContent')

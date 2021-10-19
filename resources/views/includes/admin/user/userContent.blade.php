@@ -32,19 +32,23 @@
                             <h3 class="admin__section_item_info">{{ $item->login }}</h3>
                         </td>
                         <td class="admin__section_item_td">
-                            <a href="{{ route('admin.users.update', ['id' => $item->id]) }}">
-                                <i class="admin__icon fas fa-pencil-alt"></i>
-                            </a>
-                            <a href="{{ route('admin.users.delete', ['id' => $item->id]) }}">
-                                <i class="admin__icon fas fa-times"></i>
-                            </a>
+                            <form action="{{ route('users.destroy', ['user' => $item]) }}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <a href="{{ route('users.edit', ['user' => $item]) }}">
+                                    <i class="admin__icon fas fa-pencil-alt"></i>
+                                </a>
+                                <button>
+                                    <i class="admin__icon fas fa-times"></i>
+                                </button>
+                            </form>
                         </td>
                     </tr>
                 @endforeach
             </table>
         </div>
         <div>
-            <a href="{{ route('admin.users.add') }}">
+            <a href="{{ route('users.create') }}">
                 <button class="btn custom-btn admin__form_btn" name="submit">Add User</button>
             </a>
         </div>

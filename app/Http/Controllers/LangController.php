@@ -19,4 +19,7 @@ class LangController extends Controller
         App::setLocale('en');
         return redirect()->back();
     }
+
+
+   
 }

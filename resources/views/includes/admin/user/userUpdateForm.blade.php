@@ -1,7 +1,8 @@
 <div class="admin__section_form">
     <div class="admin__section_content">
-        <form class="admin__form" action="{{ route('admin.users.updateForm') }}" method="POST" >
+        <form class="admin__form" action="{{ route('users.update', ['user' => $item]) }}" method="POST" >
             @csrf
+            @method('PUT')
             <div class="form__flex">
                 <input class="admin__inp admin__inp_header form-control" type="text" value='{{ $name }}'
                     name="name" placeholder="Name">
@@ -18,16 +19,12 @@
                 <select class="form__flex admin__select" name="role">
                     <option value="user">user</option>
                     <option value="admin">admin</option>
-                    <option value="superadmin">superadmin</option>
                 </select>
             </div>
             <div class="form__flex">
                 <input class="admin__inp admin__inp_header form-control" type="login" value='{{ $login }}'
                     name="login" placeholder="login">
             </div>
-
-            <input class="admin__inp admin__inp_header form-control" type="hidden" value='{{ $id }}'
-                name="id">
             <div>
                 <button class="btn custom-btn admin__form_btn" name="submit">Update User</button>
             </div>
