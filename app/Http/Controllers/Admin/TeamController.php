@@ -19,7 +19,7 @@ class TeamController extends Controller
     }
 
     public function __construct(){
-        $data = Team::get();
+        $data = Team::paginate(10);
         $this->setData($data);
     }
 

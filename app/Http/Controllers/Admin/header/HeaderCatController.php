@@ -23,7 +23,7 @@ class HeaderCatController extends Controller
 
 
     public function __construct(){
-        $data = HeaderCategory::get();
+        $data = HeaderCategory::paginate(10);
         $this->setData($data);
         $HeaderData = Header::get();
         $this->setHeaderData($HeaderData);

@@ -51,6 +51,12 @@ Route::middleware('auth')->group(function () {
     // users
     Route::resource('users', 'App\Http\Controllers\Admin\UserController');
 
+    // product
+    Route::resource('product', 'App\Http\Controllers\Admin\product\ProductController');
+
+    // product category
+    Route::resource('productCategory', 'App\Http\Controllers\Admin\product\ProductCategoryController');
+
 
 
     // contact
@@ -62,24 +68,7 @@ Route::middleware('auth')->group(function () {
 
 
 
-
-
-    // product
-    Route::prefix('admin/product')->group(function () {
-        Route::name('admin.product.')->group(function () {
-            Route::get('/', 'App\Http\Controllers\Admin\ProductController@product')
-                ->name('view');
-            Route::get('/add', 'App\Http\Controllers\Admin\ProductController@add')
-                ->name('add');
-            Route::post('/insert', 'App\Http\Controllers\Admin\ProductController@insert')
-                ->name('insert');
-        });
-    });
-
-
-
-
-
+    
 
     // registration
     Route::get('/myAccount', 'App\Http\Controllers\PagesController@myAccount')->name('myAccount');

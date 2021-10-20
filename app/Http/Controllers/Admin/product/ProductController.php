@@ -1,27 +1,13 @@
 <?php
 
-namespace App\Http\Controllers\Admin\header;
+namespace App\Http\Controllers\Admin\product;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Product;
 
-// Models
-use App\Models\Header;
-
-class HeaderController extends Controller
+class ProductController extends Controller
 {
-    public $data;
-
-    public function setData($data){
-        $this->data = $data;
-    }
-
-    public function __construct(){
-        $data = Header::paginate(10);
-        $this->setData($data);
-    }
-
-
     /**
      * Display a listing of the resource.
      *
@@ -29,9 +15,7 @@ class HeaderController extends Controller
      */
     public function index()
     {
-        return view('admin.header.header', [
-            'data' => $this->data
-        ]);
+        return view('admin.product.product');
     }
 
     /**
@@ -41,7 +25,7 @@ class HeaderController extends Controller
      */
     public function create()
     {
-        return view('admin.header.insert');
+        return view('admin.product.insert');
     }
 
     /**
@@ -52,11 +36,21 @@ class HeaderController extends Controller
      */
     public function store(Request $request)
     {
-        Header::insert([
-            'name' => $request->name,
-            'link' => $request->link
-        ]);
-        return redirect(route('header.index'));
+        // Product::insert([
+        //     'name' => $request->name,
+        //     'price' => $request->price,
+        //     'sale' => $request->sale,
+        //     'description' => $request->description,
+        //     // size
+        //     'number' => $request->number,
+        //     'img' => $request->img,
+        //     'show' => $request->show,
+        //     'bestProduct' => $request->bestProduct,
+        //     'category_id' => $request->categoryId,
+        //     'show' => $request->show,
+        //     // imgs
+        // ]);
+        dd($request);
     }
 
     /**
@@ -78,14 +72,7 @@ class HeaderController extends Controller
      */
     public function edit($id)
     {
-        $item = Header::findorFail($id);
-        return view('admin.header.update',[
-            'item' => $item,
-            'data' => $this->data,
-            'id' => $id,
-            'name' => $item->name,
-            'link' => $item->link
-        ]);
+        //
     }
 
     /**
@@ -97,13 +84,7 @@ class HeaderController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $item = Header::findorFail($request->id);
-
-        $item->update([
-            'name' => $request->name,
-            'link' => $request->link
-        ]);
-        return redirect(route('header.index'));
+        //
     }
 
     /**
@@ -114,8 +95,6 @@ class HeaderController extends Controller
      */
     public function destroy($id)
     {
-        $item = Header::findorFail($id);
-        $item->delete();
-        return redirect(route('header.index'));
+        //
     }
 }

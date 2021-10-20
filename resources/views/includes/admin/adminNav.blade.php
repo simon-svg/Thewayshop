@@ -28,11 +28,11 @@
             </div>
             <ul class="admin__nav_header_list">
                 <li class="admin__nav_header_item">
-                    <a class="admin__item admin__item_submenu" href="{{ route('admin.product.view') }}">Product</a>
+                    <a class="admin__item admin__item_submenu" href="{{ route('product.index') }}">Product</a>
                 </li>
-                {{-- <li class="admin__nav_header_item">
-                    <a class="admin__item admin__item_submenu" href="{{ route('admin.product.size.view') }}">Product</a>
-                </li> --}}
+                <li class="admin__nav_header_item">
+                    <a class="admin__item admin__item_submenu" href="{{ route('productCategory.index') }}">Product Category</a>
+                </li>
             </ul>
         </li>
         <li class="sidebar-admin__item">

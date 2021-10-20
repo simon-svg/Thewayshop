@@ -29,7 +29,7 @@ class HomeSeeder extends Seeder
                 'title' => 'Welcome To <br> Thewayshop',
                 'subtitle' => 'See how your users experience your website in realtime or view <br> trends to see any changes in performance over time.',
                 'img' => 'home/HHvEHym0aTmjTjUzqDXmiboJg7L4zHXs8IkgDv5B.jpg'
-            ]
+            ],
         ]);
     }
 }

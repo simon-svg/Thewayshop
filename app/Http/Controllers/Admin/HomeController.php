@@ -19,7 +19,7 @@ class HomeController extends Controller
     }
     public function __construct()
     {
-        $data = Home::get();
+        $data = Home::paginate(10);
         $this->setData($data);
     }
 

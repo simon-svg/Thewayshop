@@ -5,7 +5,7 @@
                 <tr>
                     <th class="admin__table_title">id</th>
                     <th class="admin__table_title">name</th>
-                    <th class="admin__table_title">parentId</th>
+                    <th class="admin__table_title">parent category id</th>
                     <th class="admin__table_title">panel</th>
                 </tr>
                 @foreach ($data as $item)
@@ -17,13 +17,14 @@
                             <h3 class="admin__section_item_info">{{ $item->name }}</h3>
                         </td>
                         <td class="admin__section_item_td">
-                            <h3 class="admin__section_item_info">{{ $item->parentId }}</h3>
+                            <h3 class="admin__section_item_info">{{ $item->parent_category_id }}</h3>
                         </td>
                         <td class="admin__section_item_td">
-                            <form action="{{ route('headerCategory.destroy', ['headerCategory' => $item]) }}" method="POST">
+                            <form action="{{ route('productCategory.destroy', ['productCategory' => $item]) }}"
+                                method="POST">
                                 @csrf
                                 @method('DELETE')
-                                <a href="{{ route('headerCategory.edit', ['headerCategory' => $item]) }}">
+                                <a href="{{ route('productCategory.edit', ['productCategory' => $item]) }}">
                                     <i class="admin__icon fas fa-pencil-alt"></i>
                                 </a>
                                 <button>
@@ -36,8 +37,8 @@
             </table>
         </div>
         <div>
-            <a href="{{ route('headerCategory.create') }}">
-                <button class="btn custom-btn admin__form_btn" name="submit">Add Header Category</button>
+            <a href="{{ route('productCategory.create') }}">
+                <button class="btn custom-btn admin__form_btn" name="submit">Add Product Category</button>
             </a>
         </div>
         {{ $data->links('vendor.pagination.bootstrap-4') }}

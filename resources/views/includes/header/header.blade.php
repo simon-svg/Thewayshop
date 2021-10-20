@@ -97,7 +97,7 @@
                                                                     </li>
                                                                 @else
                                                                     <li>
-                                                                        <a href="{{ route('shop') }}">
+                                                                        <a href="{{ route('shop', ['name' => $menu['name']]) }}">
                                                                             {{ $menu['name'] }}
                                                                         </a>
                                                                     </li>

@@ -21,7 +21,7 @@
             </table>
         </div>
         <div>
-            <a href="{{ route('admin.product.add') }}">
+            <a href="{{ route('product.create') }}">
                 <button class="btn custom-btn admin__form_btn" name="submit">Add Product</button>
             </a>
         </div>

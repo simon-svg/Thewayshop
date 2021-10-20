@@ -28,7 +28,7 @@ class HeaderSubController extends Controller
 
 
     public function __construct(){
-        $data = HeaderSubmenu::get();
+        $data = HeaderSubmenu::paginate(10);
         $this->setData($data);
         $HeaderData = Header::get();
         $this->setheaderData($HeaderData);

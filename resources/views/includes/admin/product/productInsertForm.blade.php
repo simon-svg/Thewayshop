@@ -1,5 +1,5 @@
 <div class="admin__section_content">
-    <form class="admin__form" action="{{ route('admin.product.insert') }}" method="POST">
+    <form class="admin__form" action="{{ route('product.store') }}" method="POST">
         @csrf
         <div class="form__flex">
             <input class="admin__inp admin__inp_header form-control" type="text" name="name" placeholder="Name">
@@ -38,9 +38,11 @@
                 <option value="0">no</option>
             </select>
         </div>
-        <div class="form__flex">
-            <input class="admin__inp admin__inp_header form-control" type="text" name="bestProduct"
-                placeholder="Best Product">
+        <div class="form__flex admin__select">best product
+            <select name="bestProduct">
+                <option value="1">yes</option>
+                <option value="0">no</option>
+            </select>
         </div>
         <div class="form__flex">
             <input class="admin__inp admin__inp_header form-control" type="number" name="categoryId"

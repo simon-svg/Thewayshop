@@ -15,7 +15,7 @@ class ContactController extends Controller
     }
 
     public function __construct(){
-        $contacts = Contact::get();
+        $contacts = Contact::paginate(10);
         $this->setData($contacts);
     }
 

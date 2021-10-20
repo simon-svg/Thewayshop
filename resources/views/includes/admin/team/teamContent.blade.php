@@ -51,5 +51,6 @@
                 <button class="btn custom-btn admin__form_btn" name="submit">Add Team</button>
             </a>
         </div>
+        {{ $data->links('vendor.pagination.bootstrap-4') }}
     </div>
 </div>

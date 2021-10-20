@@ -1,27 +1,31 @@
 <?php
 
-namespace App\Http\Controllers\Admin\header;
+namespace App\Http\Controllers\Admin\product;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\ProductCategory;
+use App\Models\HeaderCategory;
 
-// Models
-use App\Models\Header;
-
-class HeaderController extends Controller
+class ProductCategoryController extends Controller
 {
     public $data;
+    public $headerCategory;
 
     public function setData($data){
         $this->data = $data;
     }
-
-    public function __construct(){
-        $data = Header::paginate(10);
-        $this->setData($data);
+    public function setHeaderCategory($headerCategory){
+        $this->headerCategory = $headerCategory;
     }
 
+    public function __construct(){
+        $productCategory = ProductCategory::paginate(10);
+        $this->setData($productCategory);
 
+        $headerCategory = HeaderCategory::where('parentId', 3)->get();
+        $this->setHeaderCategory($headerCategory);
+    }
     /**
      * Display a listing of the resource.
      *
@@ -29,8 +33,8 @@ class HeaderController extends Controller
      */
     public function index()
     {
-        return view('admin.header.header', [
-            'data' => $this->data
+        return view('admin.productCategory.productCategory', [
+            'data' => $this->data,
         ]);
     }
 
@@ -41,7 +45,9 @@ class HeaderController extends Controller
      */
     public function create()
     {
-        return view('admin.header.insert');
+        return view('admin.productCategory.insert', [
+            'headerCategorys' => $this->headerCategory,
+        ]);
     }
 
     /**
@@ -52,11 +58,11 @@ class HeaderController extends Controller
      */
     public function store(Request $request)
     {
-        Header::insert([
+        ProductCategory::insert([
             'name' => $request->name,
-            'link' => $request->link
+            'parent_category_id' => $request->parentCategoryId,
         ]);
-        return redirect(route('header.index'));
+        return redirect(route('productCategory.index'));
     }
 
     /**
@@ -78,13 +84,10 @@ class HeaderController extends Controller
      */
     public function edit($id)
     {
-        $item = Header::findorFail($id);
-        return view('admin.header.update',[
-            'item' => $item,
-            'data' => $this->data,
-            'id' => $id,
-            'name' => $item->name,
-            'link' => $item->link
+        $productCategory = ProductCategory::findOrFail($id);
+        return view('admin.productCategory.update', [
+            'item' => $productCategory,
+            'headerCategorys' => $this->headerCategory,
         ]);
     }
 
@@ -97,13 +100,12 @@ class HeaderController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $item = Header::findorFail($request->id);
-
+        $item = ProductCategory::findOrFail($id);
         $item->update([
             'name' => $request->name,
-            'link' => $request->link
+            'parent_category_id' => $request->parentCategoryId,
         ]);
-        return redirect(route('header.index'));
+        return redirect(route('productCategory.index'));
     }
 
     /**
@@ -114,8 +116,8 @@ class HeaderController extends Controller
      */
     public function destroy($id)
     {
-        $item = Header::findorFail($id);
+        $item = ProductCategory::findOrFail($id);
         $item->delete();
-        return redirect(route('header.index'));
+        return redirect(route('productCategory.index'));
     }
 }

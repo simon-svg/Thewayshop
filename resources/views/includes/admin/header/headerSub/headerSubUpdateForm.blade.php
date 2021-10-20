@@ -10,7 +10,7 @@
             <select name="parentCategoryId" class="admin__select">
                 <option value="">no</option>
                 @foreach ($headerCategoryData as $categoryItem)
-                    @if($categoryItem->id == $item->parentCategoryId){}
+                    @if($categoryItem->id == $item->parentCategoryId)
                         <option value="{{ $categoryItem->id }}" selected class="parentCatId-option">{{ $categoryItem->name }}</option>
                     @else
                         <option value="{{ $categoryItem->id }}" class="parentCatId-option">{{ $categoryItem->name }}</option>

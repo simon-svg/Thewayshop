@@ -15,7 +15,7 @@ class UserController extends Controller
     }
 
     public function __construct(){
-        $data = User::get();
+        $data = User::paginate(10);
         $this->setData($data);
     }
 

@@ -24,6 +24,7 @@ class CreateProductsTable extends Migration
             $table->string('img');
             $table->string('imgs');
             $table->enum('show', ['0', '1']);
+            $table->enum('bestProduct', ['0', '1']);
             $table->integer('category_id');
             $table->integer('count');
             $table->timestamps();
