@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('allTitleBox')
-    @include('includes.all.allTitleBox', ['title' => "Services"])
+    @include('includes.all.allTitleBox', ['title' => __('messages.services.services')])
 @endsection
 
 @section('ourTeam')

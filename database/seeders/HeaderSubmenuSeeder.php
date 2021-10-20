@@ -44,11 +44,6 @@ class HeaderSubmenuSeeder extends Seeder
                 'name' => 'Checkout',
                 'parentCategoryId' => 3,
                 'link' => 'checkout'
-            ],
-            [
-                'name' => 'Shop Details',
-                'parentCategoryId' => 3,
-                'link' => 'shopDetail'
             ]
         ]);
     }

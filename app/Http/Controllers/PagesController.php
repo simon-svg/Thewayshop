@@ -95,9 +95,9 @@ class PagesController extends Controller
 
 
 
-    public function shopDetail()
+    public function productDetail()
     {
-        return view('shopDetail', [
+        return view('productDetail', [
             'data' => $this->data,
             'user' => Auth::user()
         ]);

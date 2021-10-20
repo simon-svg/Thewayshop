@@ -196,7 +196,7 @@
                                                     <div class="mask-icon">
                                                         <ul>
                                                             <li>
-                                                                <a href="#" data-toggle="tooltip" data-placement="right"
+                                                                <a href="{{ route('productDetail') }}" data-toggle="tooltip" data-placement="right"
                                                                     title=@lang('messages.shop.view')>
                                                                     <i class="fas fa-eye"></i>
                                                                 </a>
@@ -235,7 +235,7 @@
                                                     <div class="mask-icon">
                                                         <ul>
                                                             <li>
-                                                                <a href="#" data-toggle="tooltip" data-placement="right"
+                                                                <a href="{{ route('productDetail') }}" data-toggle="tooltip" data-placement="right"
                                                                     title=@lang('messages.shop.view')>
                                                                     <i class="fas fa-eye"></i>
                                                                 </a>
@@ -272,7 +272,7 @@
                                                     <div class="mask-icon">
                                                         <ul>
                                                             <li>
-                                                                <a href="#" data-toggle="tooltip" data-placement="right"
+                                                                <a href="{{ route('productDetail') }}" data-toggle="tooltip" data-placement="right"
                                                                     title=@lang('messages.shop.view')>
                                                                     <i class="fas fa-eye"></i>
                                                                 </a>
@@ -309,7 +309,7 @@
                                                     <div class="mask-icon">
                                                         <ul>
                                                             <li>
-                                                                <a href="#" data-toggle="tooltip" data-placement="right"
+                                                                <a href="{{ route('productDetail') }}" data-toggle="tooltip" data-placement="right"
                                                                     title=@lang('messages.shop.view')>
                                                                     <i class="fas fa-eye"></i>
                                                                 </a>
@@ -346,7 +346,7 @@
                                                     <div class="mask-icon">
                                                         <ul>
                                                             <li>
-                                                                <a href="#" data-toggle="tooltip" data-placement="right"
+                                                                <a href="{{ route('productDetail') }}" data-toggle="tooltip" data-placement="right"
                                                                     title=@lang('messages.shop.view')>
                                                                     <i class="fas fa-eye"></i>
                                                                 </a>
@@ -383,7 +383,7 @@
                                                     <div class="mask-icon">
                                                         <ul>
                                                             <li>
-                                                                <a href="#" data-toggle="tooltip" data-placement="right"
+                                                                <a href="{{ route('productDetail') }}" data-toggle="tooltip" data-placement="right"
                                                                     title=@lang('messages.shop.view')>
                                                                     <i class="fas fa-eye"></i>
                                                                 </a>
@@ -420,7 +420,7 @@
                                                     <div class="mask-icon">
                                                         <ul>
                                                             <li>
-                                                                <a href="#" data-toggle="tooltip" data-placement="right"
+                                                                <a href="{{ route('productDetail') }}" data-toggle="tooltip" data-placement="right"
                                                                     title=@lang('messages.shop.view')>
                                                                     <i class="fas fa-eye"></i>
                                                                 </a>
@@ -457,7 +457,7 @@
                                                     <div class="mask-icon">
                                                         <ul>
                                                             <li>
-                                                                <a href="#" data-toggle="tooltip" data-placement="right"
+                                                                <a href="{{ route('productDetail') }}" data-toggle="tooltip" data-placement="right"
                                                                     title=@lang('messages.shop.view')>
                                                                     <i class="fas fa-eye"></i>
                                                                 </a>
@@ -494,7 +494,7 @@
                                                     <div class="mask-icon">
                                                         <ul>
                                                             <li>
-                                                                <a href="#" data-toggle="tooltip" data-placement="right"
+                                                                <a href="{{ route('productDetail') }}" data-toggle="tooltip" data-placement="right"
                                                                     title=@lang('messages.shop.view')>
                                                                     <i class="fas fa-eye"></i>
                                                                 </a>
@@ -537,7 +537,7 @@
                                                         <div class="mask-icon">
                                                             <ul>
                                                                 <li>
-                                                                    <a href="#" data-toggle="tooltip" data-placement="right"
+                                                                    <a href="{{ route('productDetail') }}" data-toggle="tooltip" data-placement="right"
                                                                         title=@lang('messages.shop.view')>
                                                                         <i class="fas fa-eye"></i>
                                                                     </a>
@@ -592,7 +592,7 @@
                                                         <div class="mask-icon">
                                                             <ul>
                                                                 <li>
-                                                                    <a href="#" data-toggle="tooltip" data-placement="right"
+                                                                    <a href="{{ route('productDetail') }}" data-toggle="tooltip" data-placement="right"
                                                                         title=@lang('messages.shop.view')>
                                                                         <i class="fas fa-eye"></i>
                                                                     </a>
@@ -647,7 +647,7 @@
                                                         <div class="mask-icon">
                                                             <ul>
                                                                 <li>
-                                                                    <a href="#" data-toggle="tooltip" data-placement="right"
+                                                                    <a href="{{ route('productDetail') }}" data-toggle="tooltip" data-placement="right"
                                                                         title=@lang('messages.shop.view')>
                                                                         <i class="fas fa-eye"></i>
                                                                     </a>

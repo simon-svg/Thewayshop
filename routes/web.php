@@ -2,22 +2,19 @@
 
 use Illuminate\Support\Facades\Route;
 
-// languages ******************************************************************************
-// Route::get('/language/ru', 'App\Http\Controllers\LangController@ru')->name('ru');
-// Route::get('/language/en', 'App\Http\Controllers\LangController@en')->name('en');
-
 // pages ******************************************************************************
 Route::get('/', 'App\Http\Controllers\PagesController@home')->name('home');
 Route::get('/about', 'App\Http\Controllers\PagesController@about')->name('about');
 Route::get('/shop', 'App\Http\Controllers\PagesController@shop')->name('shop');
 Route::get('/cart', 'App\Http\Controllers\PagesController@cart')->name('cart');
 Route::get('/checkout', 'App\Http\Controllers\PagesController@checkout')->name('checkout');
-Route::get('/shopDetail', 'App\Http\Controllers\PagesController@shopDetail')->name('shopDetail');
+Route::get('/productDetail', 'App\Http\Controllers\PagesController@productDetail')->name('productDetail');
 Route::get('/service', 'App\Http\Controllers\PagesController@service')->name('service');
 Route::get('/contact', 'App\Http\Controllers\PagesController@contact')->name('contact');
 
 
-// localization
+
+// languages ******************************************************************************
 Route::get('language/{locale}', function ($locale) {
     app()->setLocale($locale);
     session()->put('locale', $locale);

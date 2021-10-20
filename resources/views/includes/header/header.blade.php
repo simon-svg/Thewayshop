@@ -121,7 +121,8 @@
             <div class="attr-nav">
                 <ul>
                     <li class="search"><a href="#"><i class="fa fa-search"></i></a></li>
-                    <li class="side-menu"><a href="#">
+                    <li class="side-menu">
+                        <a href="#">
                             <i class="fa fa-shopping-bag"></i>
                             <span class="badge">3</span>
                         </a></li>
@@ -153,8 +154,8 @@
                         <p>1x - <span class="price">$40.00</span></p>
                     </li>
                     <li class="total">
-                        <a href="#" class="btn btn-default hvr-hover btn-cart">VIEW CART</a>
-                        <span class="float-right"><strong>Total</strong>: $180.00</span>
+                        <a href="#" class="btn btn-default hvr-hover btn-cart">@lang('messages.header.view cart')</a>
+                        <span class="float-right"><strong>@lang('messages.header.total')</strong>: $180.00</span>
                     </li>
                 </ul>
             </li>
@@ -166,7 +167,7 @@
     <div class="container">
         <div class="input-group">
             <span class="input-group-addon"><i class="fa fa-search"></i></span>
-            <input type="text" class="form-control" placeholder="Search">
+            <input type="text" class="form-control" placeholder=@lang('messages.header.search')>
             <span class="input-group-addon close-search"><i class="fa fa-times"></i></span>
         </div>
     </div>
