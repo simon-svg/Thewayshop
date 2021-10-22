@@ -13,6 +13,6 @@ class Home extends Model
 
     public $timestamps = true;
     protected $fillable = [
-        'title', 'subtitle', 'img', 'created_at', 'updated_at', 'deleted_at'
+        'title_en', 'title_ru', 'subtitle_en', 'subtitle_ru', 'img', 'created_at', 'updated_at', 'deleted_at'
     ];
 }

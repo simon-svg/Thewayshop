@@ -5,23 +5,31 @@
             @csrf
             @method('PUT')
             <div class="form__flex">
-                <input class="admin__inp admin__inp_header form-control" type="text" value='{{ $title }}'
-                    name="title" placeholder="Title">
+                <input class="admin__inp admin__inp_header form-control" type="text" value='{{ $item->title_en }}'
+                    name="titleEn" placeholder="Title En">
             </div>
             <div class="form__flex">
-                <input class="admin__inp admin__inp_header form-control" type="text" value='{{ $subtitle }}'
-                    name="subtitle" placeholder="Subtitle">
+                <input class="admin__inp admin__inp_header form-control" type="text" value='{{ $item->title_ru }}'
+                    name="titleRu" placeholder="Title Ru">
+            </div>
+            <div class="form__flex">
+                <input class="admin__inp admin__inp_header form-control" type="text" value='{{ $item->subtitle_en }}'
+                    name="subtitleEn" placeholder="Subtitle En">
+            </div>
+            <div class="form__flex">
+                <input class="admin__inp admin__inp_header form-control" type="text" value='{{ $item->subtitle_ru }}'
+                    name="subtitleRu" placeholder="Subtitle Ru">
             </div>
             <div class="form__flex">
                 <input class="admin__inp admin__inp_header form-control" type="file" name="img">
             </div>
 
             <div class="form__flex">
-                <input class="admin__inp admin__inp_header form-control" type="hidden" value='{{ $id }}'
+                <input class="admin__inp admin__inp_header form-control" type="hidden" value='{{ $item->id }}'
                     name="id">
             </div>
             <div class="form__flex">
-                <input class="admin__inp admin__inp_header form-control" type="hidden" value='{{ $img }}'
+                <input class="admin__inp admin__inp_header form-control" type="hidden" value='{{ $item->img }}'
                     name="imgHid">
             </div>
             <div>

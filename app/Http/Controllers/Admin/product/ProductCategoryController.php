@@ -59,7 +59,8 @@ class ProductCategoryController extends Controller
     public function store(Request $request)
     {
         ProductCategory::insert([
-            'name' => $request->name,
+            'name_en' => $request->nameEn,
+            'name_ru' => $request->nameRu,
             'parent_category_id' => $request->parentCategoryId,
         ]);
         return redirect(route('productCategory.index'));
@@ -102,7 +103,8 @@ class ProductCategoryController extends Controller
     {
         $item = ProductCategory::findOrFail($id);
         $item->update([
-            'name' => $request->name,
+            'name_en' => $request->nameEn,
+            'name_ru' => $request->nameRu,
             'parent_category_id' => $request->parentCategoryId,
         ]);
         return redirect(route('productCategory.index'));

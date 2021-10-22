@@ -16,18 +16,24 @@ class HomeSeeder extends Seeder
     {
         DB::table('homes')->insert([
             [
-                'title' => 'Welcome To <br> Thewayshop',
-                'subtitle' => 'See how your users experience your website in realtime or view <br> trends to see any changes in performance over time.',
+                'title_en' => 'Welcome To <br> Thewayshop',
+                'title_ru' => 'Добро пожаловать в <br> Thewayshop',
+                'subtitle_en' => 'See how your users experience your website in realtime or view <br> trends to see any changes in performance over time.',
+                'subtitle_ru' => 'Посмотрите, как пользователи воспринимают ваш веб-сайт в реальном времени, или просмотрите тенденции <br>, чтобы увидеть любые изменения производительности с течением времени.',
                 'img' => 'home/tso2aAbnM3oZoqOTdZORYp3e8meGGJnvwoOoLS1z.jpg'
             ],
             [
-                'title' => 'Welcome To <br> Thewayshop',
-                'subtitle' => 'See how your users experience your website in realtime or view <br> trends to see any changes in performance over time.',
+                'title_en' => 'Welcome To <br> Thewayshop',
+                'title_ru' => 'Добро пожаловать в <br> Thewayshop',
+                'subtitle_en' => 'See how your users experience your website in realtime or view <br> trends to see any changes in performance over time.',
+                'subtitle_ru' => 'Посмотрите, как пользователи воспринимают ваш веб-сайт в реальном времени, или просмотрите тенденции <br>, чтобы увидеть любые изменения производительности с течением времени.',
                 'img' => 'home/hlqQb2Yl7E1YW4OdaAQtZ5QDzigXYzJzhzimMvYw.jpg'
             ],
             [
-                'title' => 'Welcome To <br> Thewayshop',
-                'subtitle' => 'See how your users experience your website in realtime or view <br> trends to see any changes in performance over time.',
+                'title_en' => 'Welcome To <br> Thewayshop',
+                'title_ru' => 'Добро пожаловать в <br> Thewayshop',
+                'subtitle_en' => 'See how your users experience your website in realtime or view <br> trends to see any changes in performance over time.',
+                'subtitle_ru' => 'Посмотрите, как пользователи воспринимают ваш веб-сайт в реальном времени, или просмотрите тенденции <br>, чтобы увидеть любые изменения производительности с течением времени.',
                 'img' => 'home/HHvEHym0aTmjTjUzqDXmiboJg7L4zHXs8IkgDv5B.jpg'
             ],
         ]);

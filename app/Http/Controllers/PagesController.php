@@ -153,4 +153,14 @@ class PagesController extends Controller
             'user' => Auth::user()
         ]);
     }
+
+
+
+    public function myAccountSettings()
+    {
+        return view('my-account-settings', [
+            'data' => $this->data,
+            'user' => Auth::user()
+        ]);
+    }
 }

@@ -16,15 +16,18 @@ class HeaderCategorySeeder extends Seeder
     {
         DB::table('header_categories')->insert([
             [
-                'name' => 'TOP',
+                'name_en' => 'TOP',
+                'name_ru' => 'ТОП',
                 'parentId' => 3
             ],
             [
-                'name' => 'BOTTOM',
+                'name_en' => 'BOTTOM',
+                'name_ru' => 'НИЖНИЙ',
                 'parentId' => 3
             ],
             [
-                'name' => 'Shop',
+                'name_en' => 'Shop',
+                'name_ru' => 'Магазин',
                 'parentId' => 4
             ]
         ]);

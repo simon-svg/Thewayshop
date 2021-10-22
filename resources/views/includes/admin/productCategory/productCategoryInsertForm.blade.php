@@ -2,13 +2,16 @@
     <form class="admin__form" action="{{ route('productCategory.store') }}" method="POST">
         @csrf
         <div class="form__flex">
-            <input class="admin__inp admin__inp_header form-control" type="text" name="name" placeholder="Name">
+            <input class="admin__inp admin__inp_header form-control" type="text" name="nameEn" placeholder="Name En">
+        </div>
+        <div class="form__flex">
+            <input class="admin__inp admin__inp_header form-control" type="text" name="nameRu" placeholder="Name Ru">
         </div>
         <div class="form__flex admin__select">parent category 
             <select name="parentCategoryId">
                 <option value="">no</option>
                 @foreach ($headerCategorys as $headerCategory)
-                    <option value="{{ $headerCategory->id }}">{{ $headerCategory->name }}</option>
+                    <option value="{{ $headerCategory->id }}">{{ $headerCategory->name_en }}</option>
                 @endforeach
             </select>
         </div>

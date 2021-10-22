@@ -3,9 +3,11 @@
         @csrf
         @method('PUT')
         <div class="form__flex">
-            <input class="admin__inp admin__inp_header form-control" type="text" value='{{ $name }}' name="name" placeholder="Name">
+            <input class="admin__inp admin__inp_header form-control" type="text" value='{{ $nameEn }}' name="nameEn" placeholder="Name En">
         </div>
-
+        <div class="form__flex">
+            <input class="admin__inp admin__inp_header form-control" type="text" value='{{ $nameRu }}' name="nameRu" placeholder="Name Ru">
+        </div>
         <div class="form__flex">
             <span>Parent Id</span>
             <select name="parentId" class="admin__select">

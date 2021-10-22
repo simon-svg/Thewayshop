@@ -13,6 +13,6 @@ class ProductCategory extends Model
 
     public $timestamps = true;
     protected $fillable = [
-        'name', 'parent_category_id',
+        'name_en', 'name_ru', 'parent_category_id',
     ];
 }

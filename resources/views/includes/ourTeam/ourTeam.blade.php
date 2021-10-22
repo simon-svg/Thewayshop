@@ -27,8 +27,8 @@
             </div>
             <div class="col-sm-6 col-lg-4">
                 <div class="service-block-inner">
-                    <h3>@lang('messages.about.we are proffesional')</h3>
-                    <p>@lang('messages.about.we are proffesional info')</p>
+                    <h3>@lang('messages.about.we are professional')</h3>
+                    <p>@lang('messages.about.we are professional info')</p>
                 </div>
             </div>
             <div class="col-sm-6 col-lg-4">
@@ -48,8 +48,8 @@
                     <div class="hover-team">
                         <div class="our-team"> <img src="{{ Storage::url($person->img) }}" alt="" />
                             <div class="team-content">
-                                <h3 class="title">{{ $person->name }}</h3>
-                                <span class="post">{{ $person->position }}</span>
+                                <h3 class="title">{{ $person->name_en }}</h3>
+                                <span class="post">{{ $person->position_en }}</span>
                             </div>
                             <ul class="social">
                                 <li>
@@ -68,7 +68,7 @@
                             <div class="icon"> <i class="fa fa-plus" aria-hidden="true"></i> </div>
                         </div>
                         <div class="team-description">
-                            <p>{{ $person->description }}</p>
+                            <p>{{ $person->description_en }}</p>
                         </div>
                         <hr class="my-0">
                     </div>

@@ -15,7 +15,8 @@ class CreateHeaderSubmenusTable extends Migration
     {
         Schema::create('header_submenus', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('name_en');
+            $table->string('name_ru');
             $table->integer('parentCategoryId');
             $table->string('link')->nullable(true);
             $table->timestamps();

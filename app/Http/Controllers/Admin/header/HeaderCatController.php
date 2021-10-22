@@ -50,7 +50,9 @@ class HeaderCatController extends Controller
      */
     public function create()
     {
-        return view('admin.header.headerCategories.insert', ['headerData' => $this->HeaderData]);
+        return view('admin.header.headerCategories.insert', [
+            'headerData' => $this->HeaderData,
+        ]);
     }
 
     /**
@@ -62,7 +64,8 @@ class HeaderCatController extends Controller
     public function store(Request $request)
     {
         HeaderCategory::insert([
-            'name' => $request->name,
+            'name_en' => $request->nameEn,
+            'name_ru' => $request->nameRu,
             'parentId' => $request->parentId
         ]);
         return redirect(route('headerCategory.index'));
@@ -92,7 +95,8 @@ class HeaderCatController extends Controller
             'item' => $item,
             'headerData' => $this->HeaderData,
             'id' => $id,
-            'name' => $item->name,
+            'nameEn' => $item->name_en,
+            'nameRu' => $item->name_ru,
             'parentId' => $item->parentId
         ]);
     }
@@ -109,7 +113,8 @@ class HeaderCatController extends Controller
         $item = HeaderCategory::findorFail($id);
 
         $item->update([
-            'name' => $request->name,
+            'name_en' => $request->nameEn,
+            'name_ru' => $request->nameRu,
             'parentId' => $request->parentId
         ]);
         return redirect(route('headerCategory.index'));

@@ -15,7 +15,8 @@ class CreateHeaderCategoriesTable extends Migration
     {
         Schema::create('header_categories', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('name_en');
+            $table->string('name_ru');
             $table->integer('parentId');
             $table->timestamps();
             $table->softDeletes();

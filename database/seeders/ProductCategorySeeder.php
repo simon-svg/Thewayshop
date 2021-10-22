@@ -16,19 +16,23 @@ class ProductCategorySeeder extends Seeder
     {
         DB::table('product_categories')->insert([
             [
-                'name' => 'Jackets',
+                'name_en' => 'Jackets',
+                'name_ru' => 'Куртки',
                 'parent_category_id' => 1,
             ],
             [
-                'name' => 'Shirts',
+                'name_en' => 'Shirts',
+                'name_ru' => 'Рубашки',
                 'parent_category_id' => 1,
             ],
             [
-                'name' => 'Jeans',
+                'name_en' => 'Jeans',
+                'name_ru' => 'Джинсы',
                 'parent_category_id' => 2,
             ],
             [
-                'name' => 'Trousers',
+                'name_en' => 'Trousers',
+                'name_ru' => 'Штаны',
                 'parent_category_id' => 2,
             ],
         ]);

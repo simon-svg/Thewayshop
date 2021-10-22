@@ -4,7 +4,8 @@
             <table class="admin__table">
                 <tr>
                     <th class="admin__table_title">id</th>
-                    <th class="admin__table_title">name</th>
+                    <th class="admin__table_title">name en</th>
+                    <th class="admin__table_title">name ru</th>
                     <th class="admin__table_title">parent category id</th>
                     <th class="admin__table_title">panel</th>
                 </tr>
@@ -14,7 +15,10 @@
                             <h3 class="admin__section_item_info">{{ $item->id }}</h3>
                         </td>
                         <td class="admin__section_item_td">
-                            <h3 class="admin__section_item_info">{{ $item->name }}</h3>
+                            <h3 class="admin__section_item_info">{{ $item->name_en }}</h3>
+                        </td>
+                        <td class="admin__section_item_td">
+                            <h3 class="admin__section_item_info">{{ $item->name_ru }}</h3>
                         </td>
                         <td class="admin__section_item_td">
                             <h3 class="admin__section_item_info">{{ $item->parent_category_id }}</h3>

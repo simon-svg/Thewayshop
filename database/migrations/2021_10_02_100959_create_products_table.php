@@ -15,18 +15,20 @@ class CreateProductsTable extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('name_en');
+            $table->string('name_ru');
             $table->string('price');
             $table->string('sale');
-            $table->text('description');
+            $table->text('description_en');
+            $table->text('description_ru');
+            $table->integer('count');
             $table->string('size');
             $table->string('number');
             $table->string('img');
-            $table->string('imgs');
             $table->enum('show', ['0', '1']);
-            $table->enum('bestProduct', ['0', '1']);
+            $table->enum('best_product', ['0', '1']);
             $table->integer('category_id');
-            $table->integer('count');
+            $table->string('imgs');
             $table->timestamps();
             $table->softDeletes();
         });

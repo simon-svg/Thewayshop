@@ -70,7 +70,8 @@ class HeaderSubController extends Controller
     public function store(Request $request)
     {
         HeaderSubmenu::insert([
-            'name' => $request->name,
+            'name_en' => $request->nameEn,
+            'name_ru' => $request->nameRu,
             'parentCategoryId' => $request->parentCategoryId,
             'link' => $request->link
         ]);
@@ -114,7 +115,8 @@ class HeaderSubController extends Controller
     {
         $item = HeaderSubmenu::findorFail($id);
         $item->update([
-            'name' => $request->name,
+            'name_en' => $request->nameEn,
+            'name_ru' => $request->nameRu,
             'parentCategoryId' => $request->parentCategoryId,
             'link' => $request->link
         ]);

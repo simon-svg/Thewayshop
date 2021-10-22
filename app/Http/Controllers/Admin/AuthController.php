@@ -56,4 +56,23 @@ class AuthController extends Controller
         auth("web")->logout();
         return redirect(route('home'));
     }
+
+
+
+
+    public function settingsChange(Request $request){
+        $user = User::findOrFail($request->id);
+        $user->update([
+            'name' => $request->name,
+            'last_name' => $request->lastName,
+            'email' => $request->email,
+            'login' => $request->login,
+            'profession' => $request->profession,
+            'country' => $request->country,
+            'address' => $request->address,
+            'phone' => $request->phone,
+            'description' => $request->description,
+        ]);
+        return redirect(route('myAccount'));
+    }
 }

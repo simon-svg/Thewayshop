@@ -63,7 +63,7 @@
                     aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand" href="{{ route('home') }}"><img src="images/logo.png" class="logo"
+                <a class="navbar-brand" href="{{ route('home') }}"><img src="/images/logo.png" class="logo"
                         alt="thewayshop"></a>
             </div>
 
@@ -73,32 +73,34 @@
                         @if (@isset($item['link']))
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route($item['link']) }}">
-                                    {{ $item['name'] }}
+                                    {{ $item["name_en"] }}
                                 </a>
                             <li>
                             @else
                             <li class="dropdown megamenu-fw">
                                 <a class="nav-link dropdown-toggle arrow" data-toggle="dropdown"
-                                    href="#">{{ $item['name'] }}</a>
+                                    href="#">{{ $item["name_en"] }}</a>
                                 <ul class="dropdown-menu header__item_cont" role="menu">
                                     <li>
                                         <div class="row">
                                             @foreach ($item['categories'] as $cat)
                                                 <div class="col-menu header__item_cont_item">
-                                                    <h6 class="title">{{ $cat['name'] }}</h6>
+                                                    <h6 class="title">
+                                                        {{ $cat["name_en"] }}
+                                                    </h6>
                                                     <div class="content">
                                                         <ul class="menu-col">
                                                             @foreach ($cat['categories'] as $menu)
                                                                 @if (@isset($menu['link']))
                                                                     <li>
                                                                         <a href="{{ route($menu['link']) }}">
-                                                                            {{ $menu['name'] }}
+                                                                            {{ $menu['name_en'] }}
                                                                         </a>
                                                                     </li>
                                                                 @else
                                                                     <li>
-                                                                        <a href="{{ route('shop', ['name' => $menu['name']]) }}">
-                                                                            {{ $menu['name'] }}
+                                                                        <a href="{{ route('shop', ['name' => $menu['name_en']]) }}">
+                                                                            {{ $menu['name_en'] }}
                                                                         </a>
                                                                     </li>
                                                                 @endif
@@ -136,19 +138,19 @@
             <li class="cart-box">
                 <ul class="cart-list">
                     <li>
-                        <a href="#" class="photo"><img src="images/img-pro-01.jpg" class="cart-thumb"
+                        <a href="#" class="photo"><img src="/images/img-pro-01.jpg" class="cart-thumb"
                                 alt="" /></a>
                         <h6><a href="#">Delica omtantur </a></h6>
                         <p>1x - <span class="price">$80.00</span></p>
                     </li>
                     <li>
-                        <a href="#" class="photo"><img src="images/img-pro-02.jpg" class="cart-thumb"
+                        <a href="#" class="photo"><img src="/images/img-pro-02.jpg" class="cart-thumb"
                                 alt="" /></a>
                         <h6><a href="#">Omnes ocurreret</a></h6>
                         <p>1x - <span class="price">$60.00</span></p>
                     </li>
                     <li>
-                        <a href="#" class="photo"><img src="images/img-pro-03.jpg" class="cart-thumb"
+                        <a href="#" class="photo"><img src="/images/img-pro-03.jpg" class="cart-thumb"
                                 alt="" /></a>
                         <h6><a href="#">Agam facilisis</a></h6>
                         <p>1x - <span class="price">$40.00</span></p>

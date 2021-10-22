@@ -13,7 +13,7 @@ class HeaderCategory extends Model
 
     public $timestamps = true;
     protected $fillable = [
-        'name', 'parentId', 'created_at', 'updated_at', 'deleted_at'
+        'name_en', 'name_ru', 'parentId', 'created_at', 'updated_at', 'deleted_at'
     ];
 
 

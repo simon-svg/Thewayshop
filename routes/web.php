@@ -72,6 +72,8 @@ Route::middleware('auth')->group(function () {
 
     // registration
     Route::get('/myAccount', 'App\Http\Controllers\PagesController@myAccount')->name('myAccount');
+    Route::get('/myAccount/settings', 'App\Http\Controllers\PagesController@myAccountSettings')->name('myAccountSettings');
+    Route::post('/myAccount/settings/change', 'App\Http\Controllers\Admin\AuthController@settingsChange')->name('myAccountSettingsChange');
     Route::get('logout', 'App\Http\Controllers\Admin\AuthController@logout')
         ->name('logout');
 });

@@ -192,7 +192,7 @@
                                                     <div class="type-lb">
                                                         <p class="sale">@lang('messages.shop.sale')</p>
                                                     </div>
-                                                    <img src="images/img-pro-01.jpg" class="img-fluid" alt="Image">
+                                                    <img src="/images/img-pro-01.jpg" class="img-fluid" alt="Image">
                                                     <div class="mask-icon">
                                                         <ul>
                                                             <li>
@@ -231,7 +231,7 @@
                                                     <div class="type-lb">
                                                         <p class="new">@lang('messages.shop.new')</p>
                                                     </div>
-                                                    <img src="images/img-pro-02.jpg" class="img-fluid" alt="Image">
+                                                    <img src="/images/img-pro-02.jpg" class="img-fluid" alt="Image">
                                                     <div class="mask-icon">
                                                         <ul>
                                                             <li>
@@ -268,7 +268,7 @@
                                                     <div class="type-lb">
                                                         <p class="sale">@lang('messages.shop.sale')</p>
                                                     </div>
-                                                    <img src="images/img-pro-03.jpg" class="img-fluid" alt="Image">
+                                                    <img src="/images/img-pro-03.jpg" class="img-fluid" alt="Image">
                                                     <div class="mask-icon">
                                                         <ul>
                                                             <li>
@@ -305,7 +305,7 @@
                                                     <div class="type-lb">
                                                         <p class="new">@lang('messages.shop.new')</p>
                                                     </div>
-                                                    <img src="images/img-pro-01.jpg" class="img-fluid" alt="Image">
+                                                    <img src="/images/img-pro-01.jpg" class="img-fluid" alt="Image">
                                                     <div class="mask-icon">
                                                         <ul>
                                                             <li>
@@ -342,7 +342,7 @@
                                                     <div class="type-lb">
                                                         <p class="sale">@lang('messages.shop.sale')</p>
                                                     </div>
-                                                    <img src="images/img-pro-02.jpg" class="img-fluid" alt="Image">
+                                                    <img src="/images/img-pro-02.jpg" class="img-fluid" alt="Image">
                                                     <div class="mask-icon">
                                                         <ul>
                                                             <li>
@@ -379,7 +379,7 @@
                                                     <div class="type-lb">
                                                         <p class="sale">@lang('messages.shop.sale')</p>
                                                     </div>
-                                                    <img src="images/img-pro-03.jpg" class="img-fluid" alt="Image">
+                                                    <img src="/images/img-pro-03.jpg" class="img-fluid" alt="Image">
                                                     <div class="mask-icon">
                                                         <ul>
                                                             <li>
@@ -416,7 +416,7 @@
                                                     <div class="type-lb">
                                                         <p class="sale">@lang('messages.shop.sale')</p>
                                                     </div>
-                                                    <img src="images/img-pro-01.jpg" class="img-fluid" alt="Image">
+                                                    <img src="/images/img-pro-01.jpg" class="img-fluid" alt="Image">
                                                     <div class="mask-icon">
                                                         <ul>
                                                             <li>
@@ -453,7 +453,7 @@
                                                     <div class="type-lb">
                                                         <p class="sale">@lang('messages.shop.sale')</p>
                                                     </div>
-                                                    <img src="images/img-pro-02.jpg" class="img-fluid" alt="Image">
+                                                    <img src="/images/img-pro-02.jpg" class="img-fluid" alt="Image">
                                                     <div class="mask-icon">
                                                         <ul>
                                                             <li>
@@ -490,7 +490,7 @@
                                                     <div class="type-lb">
                                                         <p class="new">@lang('messages.shop.new')</p>
                                                     </div>
-                                                    <img src="images/img-pro-03.jpg" class="img-fluid" alt="Image">
+                                                    <img src="/images/img-pro-03.jpg" class="img-fluid" alt="Image">
                                                     <div class="mask-icon">
                                                         <ul>
                                                             <li>
@@ -532,7 +532,7 @@
                                                         <div class="type-lb">
                                                             <p class="new">@lang('messages.shop.new')</p>
                                                         </div>
-                                                        <img src="images/img-pro-01.jpg" class="img-fluid"
+                                                        <img src="/images/img-pro-01.jpg" class="img-fluid"
                                                             alt="Image">
                                                         <div class="mask-icon">
                                                             <ul>
@@ -587,7 +587,7 @@
                                                         <div class="type-lb">
                                                             <p class="sale">@lang('messages.shop.sale')</p>
                                                         </div>
-                                                        <img src="images/img-pro-02.jpg" class="img-fluid"
+                                                        <img src="/images/img-pro-02.jpg" class="img-fluid"
                                                             alt="Image">
                                                         <div class="mask-icon">
                                                             <ul>
@@ -642,7 +642,7 @@
                                                         <div class="type-lb">
                                                             <p class="sale">@lang('messages.shop.sale')</p>
                                                         </div>
-                                                        <img src="images/img-pro-03.jpg" class="img-fluid"
+                                                        <img src="/images/img-pro-03.jpg" class="img-fluid"
                                                             alt="Image">
                                                         <div class="mask-icon">
                                                             <ul>

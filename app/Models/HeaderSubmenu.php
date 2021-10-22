@@ -14,6 +14,6 @@ class HeaderSubmenu extends Model
 
     public $timestamps = true;
     protected $fillable = [
-        'name', 'parentCategoryId', 'link', 'created_at', 'updated_at', 'deleted_at'
+        'name_en', 'name_ru', 'parentCategoryId', 'link', 'created_at', 'updated_at', 'deleted_at'
     ];
 }

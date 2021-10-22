@@ -15,7 +15,8 @@ class CreateHeadersTable extends Migration
     {
         Schema::create('headers', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('name_en');
+            $table->string('name_ru');
             $table->string('link')->nullable(true);
             $table->timestamps();
             $table->softDeletes();

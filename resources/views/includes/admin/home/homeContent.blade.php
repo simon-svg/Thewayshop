@@ -4,8 +4,10 @@
             <table class="admin__table">
                 <tr>
                     <th class="admin__table_title">id</th>
-                    <th class="admin__table_title">title</th>
-                    <th class="admin__table_title">subtitle</th>
+                    <th class="admin__table_title">title en</th>
+                    <th class="admin__table_title">title ru</th>
+                    <th class="admin__table_title">subtitle en</th>
+                    <th class="admin__table_title">subtitle ru</th>
                     <th class="admin__table_title">img</th>
                     <th class="admin__table_title">panel</th>
                 </tr>
@@ -15,16 +17,21 @@
                             <h3 class="admin__section_item_info">{{ $item->id }}</h3>
                         </td>
                         <td class="admin__section_item_td">
-                            <h3 class="admin__section_item_info">{{ $item->title }}</h3>
+                            <h3 class="admin__section_item_info">{{ $item->title_en }}</h3>
                         </td>
                         <td class="admin__section_item_td">
-                            <h3 class="admin__section_item_info">{{ $item->subtitle }}</h3>
+                            <h3 class="admin__section_item_info">{{ $item->title_ru }}</h3>
+                        </td>
+                        <td class="admin__section_item_td" width='350'>
+                            <h3 class="admin__section_item_info">{{ $item->subtitle_en }}</h3>
+                        </td>
+                        <td class="admin__section_item_td" width='350'>
+                            <h3 class="admin__section_item_info">{{ $item->subtitle_ru }}</h3>
                         </td>
                         <td class="admin__section_item_td">
                             <div class="admin__img_cont">
                                 <img class="admin__img" src="{{ Storage::url("$item->img") }}" alt="home">
                             </div>
-                            <h3 class="admin__section_item_info">{{ $item->img }}</h3>
                         </td>
                         <td class="admin__section_item_td">
                             <form action="{{ route('home.destroy', ['home' => $item->id]) }}" method="POST">

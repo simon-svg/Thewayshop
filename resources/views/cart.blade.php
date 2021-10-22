@@ -25,7 +25,7 @@
                                 <tr>
                                     <td class="thumbnail-img">
                                         <a href="#">
-                                            <img class="img-fluid" src="images/img-pro-01.jpg" alt="" />
+                                            <img class="img-fluid" src="/images/img-pro-01.jpg" alt="" />
                                         </a>
                                     </td>
                                     <td class="name-pr">
@@ -50,7 +50,7 @@
                                 <tr>
                                     <td class="thumbnail-img">
                                         <a href="#">
-                                            <img class="img-fluid" src="images/img-pro-02.jpg" alt="" />
+                                            <img class="img-fluid" src="/images/img-pro-02.jpg" alt="" />
                                         </a>
                                     </td>
                                     <td class="name-pr">
@@ -75,7 +75,7 @@
                                 <tr>
                                     <td class="thumbnail-img">
                                         <a href="#">
-                                            <img class="img-fluid" src="images/img-pro-03.jpg" alt="" />
+                                            <img class="img-fluid" src="/images/img-pro-03.jpg" alt="" />
                                         </a>
                                     </td>
                                     <td class="name-pr">
@@ -108,7 +108,7 @@
                     <div class="coupon-box">
                         <div class="input-group input-group-sm">
                             <input class="form-control" aria-label="Coupon code" type="text"
-                                placeholder=@lang('messages.cart.coupon code placheholder')>
+                                placeholder="@lang('messages.cart.coupon code placheholder')">
                             <div class="input-group-append">
                                 <button class="btn btn-theme" type="button">@lang('messages.cart.apply coupon')</button>
                             </div>

@@ -3,17 +3,22 @@
         @csrf
         @method('PUT')
         <div class="form__flex">
-            <input class="admin__inp admin__inp_header form-control" type="text" value='{{ $item->name }}' name="name"
-                placeholder="Name">
+            <input class="admin__inp admin__inp_header form-control" type="text" value='{{ $item->name_en }}' name="nameEn"
+                placeholder="Name En">
         </div>
+        <div class="form__flex">
+            <input class="admin__inp admin__inp_header form-control" type="text" value='{{ $item->name_ru }}' name="nameRu"
+                placeholder="Name Ru">
+        </div>
+
         <div class="form__flex">
             <select name="parentCategoryId" class="admin__select">
                 <option value="">no</option>
                 @foreach ($headerCategoryData as $categoryItem)
                     @if($categoryItem->id == $item->parentCategoryId)
-                        <option value="{{ $categoryItem->id }}" selected class="parentCatId-option">{{ $categoryItem->name }}</option>
+                        <option value="{{ $categoryItem->id }}" selected class="parentCatId-option">{{ $categoryItem->name_en }}</option>
                     @else
-                        <option value="{{ $categoryItem->id }}" class="parentCatId-option">{{ $categoryItem->name }}</option>
+                        <option value="{{ $categoryItem->id }}" class="parentCatId-option">{{ $categoryItem->name_en }}</option>
                     @endif
                 @endforeach
             </select>

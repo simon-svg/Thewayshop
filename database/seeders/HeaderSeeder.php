@@ -17,27 +17,33 @@ class HeaderSeeder extends Seeder
     {
         DB::table('headers')->insert([
             [
-                'name' => 'Home',
+                'name_en' => 'Home',
+                'name_ru' => 'Главная',
                 'link' => 'home'
             ],
             [
-                'name' => 'About Us',
+                'name_en' => 'About Us',
+                'name_ru' => 'О нас',
                 'link' => 'about'
             ],
             [
-                'name' => 'Product',
+                'name_en' => 'Product',
+                'name_ru' => 'Продукт',
                 'link' => null
             ],
             [
-                'name' => 'Shop',
+                'name_en' => 'Shop',
+                'name_ru' => 'Магазин',
                 'link' => null
             ],
             [
-                'name' => 'Our Service',
+                'name_en' => 'Our Service',
+                'name_ru' => 'Наш сервис',
                 'link' => 'service',
             ],
             [
-                'name' => 'Contact Us',
+                'name_en' => 'Contact Us',
+                'name_ru' => 'Связаться с нами',
                 'link' => 'contact',
             ]
         ]);

@@ -3,7 +3,10 @@
         @csrf
         @method('PUT')
         <div class="form__flex">
-            <input class="admin__inp admin__inp_header form-control" type="text" value='{{ $name }}' name="name" placeholder="Name">
+            <input class="admin__inp admin__inp_header form-control" type="text" value='{{ $nameEn }}' name="nameEn" placeholder="Name">
+        </div>
+        <div class="form__flex">
+            <input class="admin__inp admin__inp_header form-control" type="text" value='{{ $nameRu }}' name="nameRu" placeholder="Name">
         </div>
         <div class="form__flex">
             <input class="admin__inp admin__inp_header form-control" type="text" value='{{ $link }}' name="link" placeholder="Link">

@@ -4,11 +4,18 @@
             enctype='multipart/form-data'>
             @csrf
             <div class="form__flex">
-                <input class="admin__inp admin__inp_header form-control" type="text" name="title" placeholder="Title">
+                <input class="admin__inp admin__inp_header form-control" type="text" name="titleEn" placeholder="Title En">
             </div>
             <div class="form__flex">
-                <textarea class="admin__inp admin__inp_header form-control" type="text" name="subtitle"
-                    placeholder="Subtitle"></textarea>
+                <input class="admin__inp admin__inp_header form-control" type="text" name="titleRu" placeholder="Title Ru">
+            </div>
+            <div class="form__flex">
+                <textarea class="admin__inp admin__inp_header form-control" type="text" name="subtitleEn"
+                    placeholder="Subtitle En"></textarea>
+            </div>
+            <div class="form__flex">
+                <textarea class="admin__inp admin__inp_header form-control" type="text" name="subtitleRu"
+                    placeholder="Subtitle Ru"></textarea>
             </div>
             <div class="form__flex">
                 <input class="admin__inp admin__inp_header form-control" type="file" name="img">

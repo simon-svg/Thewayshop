@@ -53,7 +53,8 @@ class HeaderController extends Controller
     public function store(Request $request)
     {
         Header::insert([
-            'name' => $request->name,
+            'name_en' => $request->nameEn,
+            'name_ru' => $request->nameRu,
             'link' => $request->link
         ]);
         return redirect(route('header.index'));
@@ -83,7 +84,8 @@ class HeaderController extends Controller
             'item' => $item,
             'data' => $this->data,
             'id' => $id,
-            'name' => $item->name,
+            'nameEn' => $item->name_en,
+            'nameRu' => $item->name_ru,
             'link' => $item->link
         ]);
     }
@@ -100,7 +102,8 @@ class HeaderController extends Controller
         $item = Header::findorFail($request->id);
 
         $item->update([
-            'name' => $request->name,
+            'name_en' => $request->nameEn,
+            'name_ru' => $request->nameRu,
             'link' => $request->link
         ]);
         return redirect(route('header.index'));

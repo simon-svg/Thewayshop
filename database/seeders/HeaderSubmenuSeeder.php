@@ -16,40 +16,41 @@ class HeaderSubmenuSeeder extends Seeder
     {
         DB::table('header_submenus')->insert([
             [
-                'name' => 'Jackets',
+                'name_en' => 'Jackets',
+                'name_ru' => 'Куртки',
                 'parentCategoryId' => 1,
                 'link' => null
             ],
             [
-                'name' => 'Shirts',
+                'name_en' => 'Shirts',
+                'name_ru' => 'Рубашки',
                 'parentCategoryId' => 1,
                 'link' => null
             ], 
             [
-                'name' => 'Jeans',
+                'name_en' => 'Jeans',
+                'name_ru' => 'Джинсы',
                 'parentCategoryId' => 2,
                 'link' => null
             ], 
             [
-                'name' => 'Trousers',
+                'name_en' => 'Trousers',
+                'name_ru' => 'Штаны',
                 'parentCategoryId' => 2,
                 'link' => null
             ],
             [
-                'name' => 'Cart',
+                'name_en' => 'Cart',
+                'name_ru' => 'Корзина',
                 'parentCategoryId' => 3,
                 'link' => 'cart'
             ],
             [
-                'name' => 'Checkout',
+                'name_en' => 'Checkout',
+                'name_ru' => 'Проверить',
                 'parentCategoryId' => 3,
                 'link' => 'checkout'
             ],
-            [
-                'name' => 'Shop Details',
-                'parentCategoryId' => 3,
-                'link' => 'shopDetail'
-            ]
         ]);
     }
 }

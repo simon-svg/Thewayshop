@@ -3,14 +3,17 @@
         @csrf
 
         <div class="form__flex">
-            <input class="admin__inp admin__inp_header form-control" type="text" name="name" placeholder="Name">
+            <input class="admin__inp admin__inp_header form-control" type="text" name="nameEn" placeholder="Name En">
+        </div>
+        <div class="form__flex">
+            <input class="admin__inp admin__inp_header form-control" type="text" name="nameRu" placeholder="Name Ru">
         </div>
 
         <div class="form__flex">
             <select name="parentCategoryId" class="admin__select">
                 <option value="">no</option>
                 @foreach ($headerCategoryData as $item)
-                    <option value="{{ $item->id }}">{{ $item->name }}</option>
+                    <option value="{{ $item->id }}">{{ $item->name_en }}</option>
                 @endforeach
             </select>
             <span>Parent Category Id</span>

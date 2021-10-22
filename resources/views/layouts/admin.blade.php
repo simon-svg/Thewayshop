@@ -9,7 +9,7 @@
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
         integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
 
@@ -27,7 +27,6 @@
 
         @yield('adminContent')
     </div>
-
 
     <script src="/js/admin.js"></script>
 </body>

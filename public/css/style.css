@@ -2433,3 +2433,46 @@
 .header__change_lang:last-child{
     margin-left: 10px;
 }
+
+/*
+my account
+*/
+
+.account__cont{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.account__welcome{
+    text-transform: capitalize;
+}
+.account__panel{
+    width: 250px;
+}
+.account__panel_name{
+    display: block;
+    width: 100%;
+    text-transform: uppercase;
+    font-size: 16px;
+    padding: 4px 8px;
+    border: 1px solid #eeeeee;
+}
+.account__panel_name:hover{
+    background-color: #d33b33;
+    color: #ffffff;
+}
+.active{
+    background-color: #d33b33;
+    color: #ffffff;
+}
+.account__inner{
+    width: calc(100% - 300px);
+}
+.account__settings_inp{
+    color: #000000;
+    font-weight: 600;
+}
+.account__settings_inp::placeholder{
+    color: #aaaaaa;
+    font-weight: 100;
+}

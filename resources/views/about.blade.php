@@ -13,7 +13,7 @@
                     <p>@lang('messages.about.we are thewayshop info')</p>
                 </div>
                 <div class="col-lg-6">
-                    <div class="banner-frame"> <img class="img-thumbnail img-fluid" src="images/about-img.jpg" alt="" />
+                    <div class="banner-frame"> <img class="img-thumbnail img-fluid" src="/images/about-img.jpg" alt="" />
                     </div>
                 </div>
             </div>

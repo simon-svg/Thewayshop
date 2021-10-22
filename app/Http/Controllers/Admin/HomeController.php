@@ -4,8 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Home;
 use Illuminate\Support\Facades\Storage;
+use App\Models\Home;
 
 class HomeController extends Controller
 {
@@ -57,8 +57,10 @@ class HomeController extends Controller
     {
         $path = $request->file('img')->store('home');
         Home::insert([
-            'title' => $request->title,
-            'subtitle' => $request->subtitle,
+            'title_en' => $request->titleEn,
+            'title_ru' => $request->titleRu,
+            'subtitle_en' => $request->subtitleEn,
+            'subtitle_ru' => $request->subtitleRu,
             'img' => $path,
         ]);
         return redirect(route('home.index'));
@@ -87,10 +89,6 @@ class HomeController extends Controller
         return view('admin.home.update',[
             'item' => $item,
             'data' => $this->data,
-            'id' => $id,
-            'title' => $item->title,
-            'subtitle' => $item->subtitle,
-            'img' => $item->img
         ]);
     }
 
@@ -110,8 +108,10 @@ class HomeController extends Controller
         }
         $item = Home::findorFail($id);
         $item->update([
-            'title' => $request->title,
-            'subtitle' => $request->subtitle,
+            'title_en' => $request->titleEn,
+            'title_ru' => $request->titleRu,
+            'subtitle_en' => $request->subtitleEn,
+            'subtitle_ru' => $request->subtitleRu,
             'img' => $img
         ]);
         return redirect(route('home.index'));

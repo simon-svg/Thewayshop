@@ -54,10 +54,13 @@ class TeamController extends Controller
     {
         $path = $request->file('img')->store('team');
         Team::insert([
-            'name' => $request->name,
-            'position' => $request->position,
+            'name_en' => $request->nameEn,
+            'name_ru' => $request->nameRu,
+            'position_en' => $request->positionEn,
+            'position_ru' => $request->positionRu,
             'img' => $path,
-            'description' => $request->description
+            'description_en' => $request->descriptionEn,
+            'description_ru' => $request->descriptionRu,
         ]);
         return redirect(route('team.index'));
     }
@@ -84,11 +87,6 @@ class TeamController extends Controller
         $item = Team::findorFail($id);
         return view('admin.team.update', [
             'item' => $item,
-            'id' => $id,
-            'name' => $item->name,
-            'position' => $item->position,
-            'img' => $item->img,
-            'description' => $item->description
         ]);
     }
 
@@ -108,10 +106,13 @@ class TeamController extends Controller
         }
         $item = Team::findorFail($id);
         $item->update([
-            'name' => $request->name,
-            'position' => $request->position,
+            'name_en' => $request->nameEn,
+            'name_ru' => $request->nameRu,
+            'position_en' => $request->positionEn,
+            'position_ru' => $request->positionRu,
             'img' => $img,
-            'description' => $request->description
+            'description_en' => $request->descriptionEn,
+            'description_ru' => $request->descriptionRu
         ]);
         return redirect(route('team.index'));
     }

@@ -1,8 +1,11 @@
 <div class="admin__section_content">
-    <form class="admin__form" action="{{ route('product.store') }}" method="POST">
+    <form class="admin__form" action="{{ route('product.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="form__flex">
-            <input class="admin__inp admin__inp_header form-control" type="text" name="name" placeholder="Name">
+            <input class="admin__inp admin__inp_header form-control" type="text" name="nameEn" placeholder="Name En">
+        </div>
+        <div class="form__flex">
+            <input class="admin__inp admin__inp_header form-control" type="text" name="nameRu" placeholder="Name Ru">
         </div>
         <div class="form__flex">
             <input class="admin__inp admin__inp_header form-control" type="number" name="price" placeholder="Price">
@@ -11,8 +14,12 @@
             <input class="admin__inp admin__inp_header form-control" type="text" name="sale" placeholder="Sale">
         </div>
         <div class="form__flex">
-            <textarea class="admin__inp admin__inp_header form-control" type="text" name="description"
-                placeholder='Description'></textarea>
+            <textarea class="admin__inp admin__inp_header form-control" type="text" name="descriptionEn"
+                placeholder='Description En'></textarea>
+        </div>
+        <div class="form__flex">
+            <textarea class="admin__inp admin__inp_header form-control" type="text" name="descriptionRu"
+                placeholder='Description Ru'></textarea>
         </div>
         <div class="product__select_group">
             <div class="more__info_group">
@@ -44,9 +51,12 @@
                 <option value="0">no</option>
             </select>
         </div>
-        <div class="form__flex">
-            <input class="admin__inp admin__inp_header form-control" type="number" name="categoryId"
-                placeholder="Category Id">
+        <div class="form__flex admin__select">category id
+            <select name="categoryId">
+                @foreach ($productCategory as $item)
+                    <option value="{{ $item->id }}">{{ $item->name_en }}</option>
+                @endforeach
+            </select>
         </div>
         <div class="product__select_group">
             <span class="select__info">Images</span>
@@ -57,9 +67,6 @@
                         name="imgs[]" placeholder="Imgs">
                 </div>
             </div>
-        </div>
-        <div class="form__flex">
-            <input class="admin__inp admin__inp_header form-control" type="text" name="sale" placeholder="Sale">
         </div>
 
         <div>
