@@ -2461,10 +2461,6 @@ my account
     background-color: #d33b33;
     color: #ffffff;
 }
-.active{
-    background-color: #d33b33;
-    color: #ffffff;
-}
 .account__inner{
     width: calc(100% - 300px);
 }
@@ -2475,4 +2471,8 @@ my account
 .account__settings_inp::placeholder{
     color: #aaaaaa;
     font-weight: 100;
+}
+.account__panel_active{
+    background-color: #d33b33;
+    color: #ffffff;
 }

@@ -11,7 +11,7 @@
                 <div class="account__panel">
                     <ul class="account__panel_list">
                         <li class="account_panel_item">
-                            <a href="#" class="account__panel_name active">@lang('messages.account.main')</a>
+                            <a href="#" class="account__panel_name account__panel_active">@lang('messages.account.main')</a>
                         </li>
                         <li class="account_panel_item">
                             <a href="{{ route('myAccountSettings') }}" class="account__panel_name">@lang('messages.account.settings')</a>

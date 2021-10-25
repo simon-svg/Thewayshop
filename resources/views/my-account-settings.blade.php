@@ -14,7 +14,7 @@
                             <a href="{{ route('myAccount') }}" class="account__panel_name">@lang('messages.account.main')</a>
                         </li>
                         <li class="account_panel_item">
-                            <a href="#" class="account__panel_name active">@lang('messages.account.settings')</a>
+                            <a href="#" class="account__panel_name account__panel_active">@lang('messages.account.settings')</a>
                         </li>
                     </ul>
                 </div>
