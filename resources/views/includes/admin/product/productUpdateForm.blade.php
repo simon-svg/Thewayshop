@@ -60,7 +60,7 @@
                     <option value="0">no</option>
                 </select>
             </div>
-            <div class="form__flex admin__select">category id
+            <div class="form__flex admin__select">category
                 <select name="categoryId">
                     @foreach ($productCategory as $categoryItem)
                         @if($categoryItem->id == $item->category_id)
