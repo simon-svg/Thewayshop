@@ -5,22 +5,28 @@ namespace App\Http\Controllers\Admin\product;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use App\Http\Requests\ProductRequest;
 use App\Models\Product;
 use App\Models\ProductCategory;
+use App\Models\ProductSize;
+use App\Models\Img;
 
 class ProductController extends Controller
 {
     public $data;
     public $productCategory;
 
-    public function setProductCategory($productCategory){
+    public function setProductCategory($productCategory)
+    {
         $this->productCategory = $productCategory;
     }
-    public function setData($data){
+    public function setData($data)
+    {
         $this->data = $data;
     }
 
-    public function __construct(){
+    public function __construct()
+    {
         $productCategory = ProductCategory::get();
         $this->setProductCategory($productCategory);
 
@@ -58,18 +64,16 @@ class ProductController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ProductRequest $request)
     {
-        // dd($request->img);
         $path = $request->file('img')->store('product');
-        Product::insert([
+        $product = Product::insertGetId([
             'name_en' => $request->nameEn,
             'name_ru' => $request->nameRu,
             'price' => $request->price,
             'sale' => $request->sale,
             'description_en' => $request->descriptionEn,
             'description_ru' => $request->descriptionRu,
-            'size' => $request->size[0],
             'number' => $request->number,
             'img' => $path,
             'show' => $request->show,
@@ -77,8 +81,27 @@ class ProductController extends Controller
             'category_id' => $request->categoryId,
             'show' => $request->show,
             'count' => $request->count,
-            'imgs' => $request->imgs[0],
         ]);
+
+        if (!empty($request->size)) {
+            foreach ($request->size as $size) {
+                ProductSize::insert([
+                    'name' => $size,
+                    'product_id' => $product
+                ]);
+            }
+        }
+
+        if (!empty($request->imgs)) {
+            foreach ($request->imgs as $img) {
+                $imgPath = $img->store('product');
+                Img::insert([
+                    'product_id' => $product,
+                    'img' => $imgPath,
+                ]);
+            }
+        }
+
         return redirect(route('product.index'));
     }
 
@@ -102,7 +125,7 @@ class ProductController extends Controller
     public function edit($id)
     {
         $item = Product::findorFail($id);
-        return view('admin.product.update',[
+        return view('admin.product.update', [
             'item' => $item,
             'data' => $this->data,
             'productCategory' => $this->productCategory,
@@ -119,7 +142,7 @@ class ProductController extends Controller
     public function update(Request $request, $id)
     {
         $img = $request->imgHid;
-        if(!empty($request->img)){
+        if (!empty($request->img)) {
             Storage::delete($request->imgHid);
             $img = $request->file('img')->store('product');
         }
@@ -152,10 +175,24 @@ class ProductController extends Controller
      */
     public function destroy($id)
     {
+        $sizeItems = ProductSize::where('product_id', $id)->get();
+        foreach ($sizeItems as $item) {
+            $item->delete();
+        }
+
+        $imgItems = Img::where('product_id', $id)->get();
+        foreach ($imgItems as $item) {
+            $item->delete();
+            $img = $item->img;
+            Storage::delete($img);
+        }
+
         $item = Product::findOrFail($id);
         $img = $item->img;
         $item->delete();
         Storage::delete($img);
+
+
         return redirect(route('product.index'));
     }
 }

@@ -11,6 +11,10 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\Header;
 use App\Models\Home;
 use App\Models\Team;
+use App\Models\Product;
+use App\Models\ProductCategory;
+use App\Models\ProductSize;
+use App\Models\Img;
 
 class PagesController extends Controller
 {
@@ -67,8 +71,12 @@ class PagesController extends Controller
 
     public function shop()
     {
+        $products = Product::products();
+        $productsCategory = ProductCategory::all();
         return view('shop', [
             'data' => $this->data,
+            'products' => $products,
+            'productsCategory' => $productsCategory,
             'user' => Auth::user()
         ]);
     }
@@ -95,10 +103,12 @@ class PagesController extends Controller
 
 
 
-    public function productDetail()
+    public function productDetail($id)
     {
+        $product = Product::products($id);
         return view('productDetail', [
             'data' => $this->data,
+            'product' => $product,
             'user' => Auth::user()
         ]);
     }

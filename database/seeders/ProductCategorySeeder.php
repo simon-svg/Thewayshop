@@ -31,8 +31,8 @@ class ProductCategorySeeder extends Seeder
                 'parent_category_id' => 2,
             ],
             [
-                'name_en' => 'Trousers',
-                'name_ru' => 'Штаны',
+                'name_en' => 'Hats',
+                'name_ru' => 'Шляпа',
                 'parent_category_id' => 2,
             ],
         ]);

@@ -73,4 +73,7 @@
             <button class="btn custom-btn admin__form_btn" name="submit">Add Product</button>
         </div>
     </form>
+    @foreach ($errors->all() as $error)
+        <p style="color: red">{{ $error }}</p>
+    @endforeach
 </div>

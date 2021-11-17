@@ -7,8 +7,7 @@
                     <th class="admin__table_title">name en</th>
                     <th class="admin__table_title">price</th>
                     <th class="admin__table_title">sale</th>
-                    <th class="admin__table_title">description en</th>
-                    <th class="admin__table_title">size</th>
+                    <th class="admin__table_title" width='25%'>description en</th>
                     <th class="admin__table_title">count</th>
                     <th class="admin__table_title">number</th>
                     <th class="admin__table_title">img</th>
@@ -18,7 +17,6 @@
                     <th class="admin__table_title">panel</th>
                 </tr>
                 @foreach ($data as $item)
-                {{-- {{ dd($item->number) }} --}}
                     <tr class="admin__section_item">
                         <td class="admin__section_item_td">
                             <h3 class="admin__section_item_info">{{ $item->id }}</h3>
@@ -34,9 +32,6 @@
                         </td>
                         <td class="admin__section_item_td">
                             <h3 class="admin__section_item_info">{{ $item->description_en }}</h3>
-                        </td>
-                        <td class="admin__section_item_td">
-                            <h3 class="admin__section_item_info">{{ $item->size }}</h3>
                         </td>
                         <td class="admin__section_item_td">
                             <h3 class="admin__section_item_info">{{ $item->count }}</h3>
@@ -81,3 +76,4 @@
         </div>
     </div>
 </div>
+

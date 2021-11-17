@@ -34,8 +34,8 @@ class HeaderSubmenuSeeder extends Seeder
                 'link' => null
             ], 
             [
-                'name_en' => 'Trousers',
-                'name_ru' => 'Штаны',
+                'name_en' => 'Hats',
+                'name_ru' => 'Шляпа',
                 'parentCategoryId' => 2,
                 'link' => null
             ],

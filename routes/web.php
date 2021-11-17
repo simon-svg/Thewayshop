@@ -8,7 +8,7 @@ Route::get('/about', 'App\Http\Controllers\PagesController@about')->name('about'
 Route::get('/shop', 'App\Http\Controllers\PagesController@shop')->name('shop');
 Route::get('/cart', 'App\Http\Controllers\PagesController@cart')->name('cart');
 Route::get('/checkout', 'App\Http\Controllers\PagesController@checkout')->name('checkout');
-Route::get('/productDetail', 'App\Http\Controllers\PagesController@productDetail')->name('productDetail');
+Route::get('/productDetail/{id}', 'App\Http\Controllers\PagesController@productDetail')->name('productDetail');
 Route::get('/service', 'App\Http\Controllers\PagesController@service')->name('service');
 Route::get('/contact', 'App\Http\Controllers\PagesController@contact')->name('contact');
 
@@ -57,6 +57,8 @@ Route::middleware('auth')->group(function () {
     // product category
     Route::resource('productCategory', 'App\Http\Controllers\Admin\product\ProductCategoryController');
 
+    // product size
+    Route::resource('productSize', 'App\Http\Controllers\Admin\product\ProductSizeController');
 
 
     // contact

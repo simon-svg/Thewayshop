@@ -828,6 +828,7 @@
  .products-single .box-img-hover{
      overflow: hidden;
      position: relative;
+     height: 300px;
 }
  .box-img-hover img{
      margin: 0 auto;
@@ -2248,11 +2249,16 @@
      position: relative;
      bottom: 0;
      background: #010101;
+     height: 90px;
+     overflow: hidden;
 }
  .carousel-indicators li{
      width: 30%;
      height: 100%;
      cursor: pointer;
+}
+.carousel-item{
+    height: 430px;
 }
  .single-product-details h2{
      color: #010101;
