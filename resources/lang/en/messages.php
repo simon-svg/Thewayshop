@@ -67,7 +67,6 @@ return [
         'brand' => 'Brand',
         'sort by' => 'Sort by',
         'sort by nothing' => 'Nothing',
-        'sort by popularity' => 'Popularity',
         'sort by low hight' => 'Low Price -> Hight Price',
         'sort by hight low' => 'Hight Price -> Low Price',
         'sort by best selling' => 'Best Selling',
@@ -78,6 +77,7 @@ return [
         'view' => 'View',
         'compare' => 'Compare',
         'add to wishlist' => 'Add',
+        'no items found' => 'No items found',
     ],
     'footer' => [
         'about' => 'ABOUT',

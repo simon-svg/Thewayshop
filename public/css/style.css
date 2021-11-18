@@ -2482,3 +2482,20 @@ my account
     background-color: #d33b33;
     color: #ffffff;
 }
+
+
+/*
+products pagination
+*/
+
+.page-item.active .page-link{
+    background-color: red;
+    border-color: red;
+}
+.page-link{
+    color: red;
+}
+.no_item_found{
+    font-size: 30px;
+    margin-left: 15px;
+}

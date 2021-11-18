@@ -17,21 +17,31 @@ class Product extends Model
         'name_en', 'name_ru', 'price', 'sale', 'description_en', 'description_ru', 'category_id', 'best_product', 'number', 'img', 'imgs', 'show', 'count', 'created_at', 'updated_at', 'deleted_at'
     ];
 
-    public static function products($id = null){
+    public static function products($id = null, $name = null, $sort = null, $search = null)
+    {
         $getProducts = '';
-        if(!empty($id)){
+        if (!empty($id)) {
             $getProducts = Product::with('size')->with('imgs')->findOrFail($id);
         } else {
-            $getProducts = Product::with('size')->with('imgs')->get();
+            if(!empty($name)){
+                $getProducts = Product::with('size')
+                    ->with('imgs')
+                    ->join('product_categories', 'products.category_id', 'product_categories.id')
+                    ->select('products.*', 'product_categories.name_en as category_name')
+                    ->where('product_categories.name_en', $name)
+                    ->paginate(6);
+            }
         }
         return $getProducts;
     }
 
-    public function size(){
+    public function size()
+    {
         return $this->hasMany(ProductSize::class, 'product_id', 'id');
     }
 
-    public function imgs(){
+    public function imgs()
+    {
         return $this->hasMany(Img::class, 'product_id', 'id');
     }
 }

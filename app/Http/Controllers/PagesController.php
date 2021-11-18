@@ -69,9 +69,9 @@ class PagesController extends Controller
 
 
 
-    public function shop()
+    public function shop($name, $sort = null, $search = null)
     {
-        $products = Product::products();
+        $products = Product::products($id = null , $name);
         $productsCategory = ProductCategory::all();
         return view('shop', [
             'data' => $this->data,

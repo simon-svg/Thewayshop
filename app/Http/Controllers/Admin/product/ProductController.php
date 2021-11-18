@@ -192,7 +192,6 @@ class ProductController extends Controller
         $item->delete();
         Storage::delete($img);
 
-
         return redirect(route('product.index'));
     }
 }

@@ -5,12 +5,13 @@ use Illuminate\Support\Facades\Route;
 // pages ******************************************************************************
 Route::get('/', 'App\Http\Controllers\PagesController@home')->name('home');
 Route::get('/about', 'App\Http\Controllers\PagesController@about')->name('about');
-Route::get('/shop', 'App\Http\Controllers\PagesController@shop')->name('shop');
 Route::get('/cart', 'App\Http\Controllers\PagesController@cart')->name('cart');
 Route::get('/checkout', 'App\Http\Controllers\PagesController@checkout')->name('checkout');
 Route::get('/productDetail/{id}', 'App\Http\Controllers\PagesController@productDetail')->name('productDetail');
 Route::get('/service', 'App\Http\Controllers\PagesController@service')->name('service');
 Route::get('/contact', 'App\Http\Controllers\PagesController@contact')->name('contact');
+Route::get('/shop/{name?}/{sort?}', 'App\Http\Controllers\PagesController@shop')->name('shop');
+// Route::get('/shop/{sort}', 'App\Http\Controllers\Admin\product\ProductController@sortHightToLow')->name('sortHightToLow');
 
 
 

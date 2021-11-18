@@ -67,7 +67,6 @@ return [
         'brand' => 'Марка',
         'sort by' => 'Сортировать по',
         'sort by nothing' => 'Ничего',
-        'sort by popularity' => 'Популярность',
         'sort by low hight' => 'Низкая цена -> Высокая цена',
         'sort by hight low' => 'Высокая цена -> Низкая цена',
         'sort by best selling' => 'Лучшие продажи',
@@ -78,6 +77,7 @@ return [
         'view' => 'Вид',
         'compare' => 'Сравнивать',
         'add to wishlist' => 'Добавить',
+        'no items found' => 'Товаров не найдено',
     ],
     'footer' => [
         'about' => 'О',
