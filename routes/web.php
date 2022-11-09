@@ -11,7 +11,6 @@ Route::get('/productDetail/{id}', 'App\Http\Controllers\PagesController@productD
 Route::get('/service', 'App\Http\Controllers\PagesController@service')->name('service');
 Route::get('/contact', 'App\Http\Controllers\PagesController@contact')->name('contact');
 Route::get('/shop/{name?}/{sort?}', 'App\Http\Controllers\PagesController@shop')->name('shop');
-// Route::get('/shop/{sort}', 'App\Http\Controllers\Admin\product\ProductController@sortHightToLow')->name('sortHightToLow');
 
 
 
@@ -61,6 +60,10 @@ Route::middleware('auth')->group(function () {
     // product size
     Route::resource('productSize', 'App\Http\Controllers\Admin\product\ProductSizeController');
 
+    // product img
+    Route::resource('productImg', 'App\Http\Controllers\Admin\product\ProductImgController');
+    Route::get('productImg/imgdelete/{id}', 'App\Http\Controllers\Admin\product\ProductImgController@imgDeleteProcess')
+        ->name('admin.productImg.imgdelete');
 
     // contact
     Route::get('admin/contact', 'App\Http\Controllers\Admin\ContactController@contact')
@@ -71,7 +74,7 @@ Route::middleware('auth')->group(function () {
 
 
 
-    
+
 
     // registration
     Route::get('/myAccount', 'App\Http\Controllers\PagesController@myAccount')->name('myAccount');

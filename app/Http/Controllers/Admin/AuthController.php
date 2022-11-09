@@ -42,9 +42,8 @@ class AuthController extends Controller
         if(auth('web')->attempt($data)){
             return redirect(route('home'));
         }
-        else{
-            return redirect(route('login'))->withErrors(['login' => "login or password is incorrect"]);
-        }
+
+        return redirect(route('login'))->withErrors(['login' => "login or password is incorrect"]);
     }
 
 

@@ -36,6 +36,9 @@
                 <li class="admin__nav_header_item">
                     <a class="admin__item admin__item_submenu" href="{{ route('productSize.index') }}">Product Size</a>
                 </li>
+                <li class="admin__nav_header_item">
+                    <a class="admin__item admin__item_submenu" href="{{ route('productImg.index') }}">Product Img</a>
+                </li>
             </ul>
         </li>
         <li class="sidebar-admin__item">

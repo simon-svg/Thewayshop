@@ -166,3 +166,18 @@
     margin-bottom: 10px;
     display: inline-block;
 }
+.more__info_group_img{
+    width: 100px;
+    margin-left: 10px;
+}
+.more__info_group_img:first-child{
+    margin: 0;
+}
+.more__info_times{
+    color: gray;
+}
+.more__info_group_btn{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}

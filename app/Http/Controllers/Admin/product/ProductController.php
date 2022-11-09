@@ -154,7 +154,6 @@ class ProductController extends Controller
             'sale' => $request->sale,
             'description_en' => $request->descriptionEn,
             'description_ru' => $request->descriptionRu,
-            'size' => $request->size[0],
             'number' => $request->number,
             'img' => $img,
             'show' => $request->show,
@@ -162,8 +161,34 @@ class ProductController extends Controller
             'category_id' => $request->categoryId,
             'show' => $request->show,
             'count' => $request->count,
-            'imgs' => $request->imgs[0],
         ]);
+
+
+        if (!empty($request->size)) {
+            $sizesArr = array_filter($request->size);
+            $itemSizes = ProductSize::where('product_id', $id)->get();
+            foreach($itemSizes as $size){
+                $size->delete();
+            }
+            foreach($sizesArr as $size){
+                ProductSize::insert([
+                    'name' => $size,
+                    'product_id' => $id,
+                ]);
+            }
+        }
+
+
+        if (!empty($request->imgs)) {
+            foreach ($request->imgs as $img) {
+                $imgPath = $img->store('product');
+                Img::insert([
+                    'product_id' => $id,
+                    'img' => $imgPath,
+                ]);
+            }
+        }
+
         return redirect(route('product.index'));
     }
 

@@ -17,23 +17,25 @@
                     name="price" placeholder="Price">
             </div>
             <div class="form__flex">
-                <input class="admin__inp admin__inp_header form-control" type="text" name="sale" value='{{ $item->sale }}'
-                placeholder="Sale">
+                <input class="admin__inp admin__inp_header form-control" type="text" name="sale"
+                    value='{{ $item->sale }}' placeholder="Sale">
             </div>
             <div class="form__flex">
-                <input class="admin__inp admin__inp_header form-control" type="text" value='{{ $item->description_en }}'
-                    name="descriptionEn" placeholder="Description Ru">
+                <input class="admin__inp admin__inp_header form-control" type="text"
+                    value='{{ $item->description_en }}' name="descriptionEn" placeholder="Description Ru">
             </div>
             <div class="form__flex">
-                <input class="admin__inp admin__inp_header form-control" type="text" value='{{ $item->description_ru }}'
-                    name="descriptionRu" placeholder="Description Ru">
+                <input class="admin__inp admin__inp_header form-control" type="text"
+                    value='{{ $item->description_ru }}' name="descriptionRu" placeholder="Description Ru">
             </div>
             <div class="product__select_group">
                 <div class="more__info_group">
                     <div class="more__info_group_plus more__size_group_plus">+</div>
                     <div class="admin__inps_with_plus">
-                        <input class="admin__inp admin__inp_header form-control admin__inp_with_plus" type="text"
-                            name="size[]" placeholder="Size">
+                        @foreach ($item->size as $size)
+                            <input class="admin__inp admin__inp_header form-control admin__inp_with_plus" type="text"
+                                name="size[]" value="{{ $size->name }}" placeholder="Size">
+                        @endforeach
                     </div>
                 </div>
             </div>
@@ -50,20 +52,20 @@
             </div>
             <div class="form__flex admin__select">show
                 <select name="show">
-                    <option value="1">yes</option>
-                    <option value="0">no</option>
+                    <option value="1" @if ($item->show == 1)selected @endif>yes</option>
+                    <option value="0" @if ($item->show == 0)selected @endif>no</option>
                 </select>
             </div>
             <div class="form__flex admin__select">best product
                 <select name="bestProduct">
-                    <option value="1">yes</option>
-                    <option value="0">no</option>
+                    <option value="1" @if ($item->best_product == 1)selected @endif>yes</option>
+                    <option value="0" @if ($item->best_product == 0)selected @endif>no</option>
                 </select>
             </div>
             <div class="form__flex admin__select">category
                 <select name="categoryId">
                     @foreach ($productCategory as $categoryItem)
-                        @if($categoryItem->id == $item->category_id)
+                        @if ($categoryItem->id == $item->category_id)
                             <option value="{{ $categoryItem->id }}" selected>{{ $categoryItem->name_en }}</option>
                         @else
                             <option value="{{ $categoryItem->id }}">{{ $categoryItem->name_en }}</option>
@@ -74,6 +76,14 @@
             <div class="product__select_group">
                 <span class="select__info">Images</span>
                 <div class="more__info_group">
+                    @foreach ($item->imgs as $img)
+                        <img class="more__info_group_img" src="{{ Storage::url("$img->img") }}" alt="img">
+                        <a href="{{ route('admin.productImg.imgdelete', ['id' => $img->id]) }}"
+                        ><i class="fas fa-times more__info_times"></i>
+                        </a>
+                    @endforeach
+                </div>
+                <div class="more__info_group">
                     <div class="more__info_group_plus more__img_group_plus">+</div>
                     <div class="admin__imgs_with_plus">
                         <input class="admin__inp admin__inp_header form-control admin__inp_with_plus" type="file"
@@ -81,7 +91,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="form__flex">
                 <input class="admin__inp admin__inp_header form-control" type="hidden" value='{{ $item->id }}'
                     name="id">
