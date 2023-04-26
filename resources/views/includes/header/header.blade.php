@@ -73,7 +73,7 @@
                         @if (@isset($item['link']))
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route($item['link']) }}">
-                                    {{ $item["name_en"] }}
+                                    {{ $item["name_".app()->getLocale()] }}
                                 </a>
                             <li>
                             @else

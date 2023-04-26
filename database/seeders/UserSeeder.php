@@ -16,20 +16,12 @@ class UserSeeder extends Seeder
     {
         DB::table('users')->insert([
             [
-                'name' => 'simon',
+                'name' => 'Admin',
                 'last_name' => 'Karapetyan',
-                'email' => 'simonkarapetyan605@gmail.com',
+                'email' => 'admin@gmail.com',
                 'role' => 'admin',
-                'login' => 'simon',
-                'password' => '$2y$10$0nQBOCT1wSEB8UmP8rdnN.AJ3KcbG5hqfYl.czksJnQLGG/0SOH4K'
-            ],
-            [
-                'name' => 'vardan',
-                'last_name' => 'vardanyan',
-                'email' => 'vardan@gmail.com',
-                'role' => 'user',
-                'login' => 'vardan',
-                'password' => '$2y$10$p75sdCaUe3rV9TAnEes/MuoU7TaZoV3skx/Xzfwn40iaAC5AOHK9K'
+                'login' => 'admin',
+                'password' => bcrypt('admin1'),
             ],
         ]);
     }
