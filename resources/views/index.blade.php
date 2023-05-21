@@ -9,8 +9,8 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-md-12">
-                                <h1 class="m-b-20"><strong>{!! $item->title_en !!}</strong></h1>
-                                <p class="m-b-40">{!! $item->subtitle_en !!}</p>
+                                <h1 class="m-b-20"><strong>{!! $item['title_'.app()->getLocale()] !!}</strong></h1>
+                                <p class="m-b-40">{!! $item['subtitle_'.app()->getLocale()] !!}</p>
                                 <p><a class="btn hvr-hover" href="#">Shop New</a></p>
                             </div>
                         </div>

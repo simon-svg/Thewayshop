@@ -17,7 +17,7 @@ class UserSeeder extends Seeder
         DB::table('users')->insert([
             [
                 'name' => 'Admin',
-                'last_name' => 'Karapetyan',
+                'last_name' => 'Admin',
                 'email' => 'admin@gmail.com',
                 'role' => 'admin',
                 'login' => 'admin',
